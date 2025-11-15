@@ -245,47 +245,6 @@ PUT /api/integra/trans/v1/traslado/setPacienteAvisar/TR-1001?horaRecoger=2025-11
 }
 ```
 
----
-
-### 4.1.3 Modelos de datos (según OpenAPI)
-
-- StatusInfo
-  - status: array de Status
-
-- Status
-  - idTrasladoCCTSES (string, opcional)
-  - idTrasladoExterno (string, opcional)
-  - idVehiculo (string, requerido)
-  - idUnidad (string, requerido)
-  - idEstadoTraslado (string, opcional) → [TB_TRASLADO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_traslado_estados)
-  - idEstadoVehiculo (string, opcional) → [TB_VEHICULO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_vehiculo_estados)
-  - fechaHora (date-time, requerido)
-  - idMotivo (string, opcional) → [TB_MOTIVO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_motivo_estados)
-  - gps (objeto Gps, opcional según caso de uso)
-  - idActividadJornada (string, opcional) → [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#entidad-tb_actividad_tipos)
-  - idJornada (string, opcional)
-
-- Gps
-  - longitud (string), latitud (string), rumbo (number), velocidad (integer)
-
-- TrasladoReactivaDto
-  - trasladoIDs (string, opcional, IDs separados por “,”)
-  - fechaHora (date-time, requerido)
-  - idMotivo (string, requerido)
-  - txMotivo (string, opcional)
-
-- Response
-  - resultado: Result
-
-- Result
-  - estado (string): AA=OK, AE=Error
-  - codigo (string): 000=correcto
-  - descripcion (string)
-
-Notas de validación y negocio:
-- Los códigos de referencia de tablas TB_ deben existir en sus correspondientes catálogos funcionales.
-- Para anulaciones, los códigos deben pertenecer a TB_ANULACION_MOTIVOS. Para cambios de estado, los motivos seguirán TB_MOTIVO_ESTADOS y los estados, TB_TRASLADO_ESTADOS o TB_VEHICULO_ESTADOS.
-
 
 
 

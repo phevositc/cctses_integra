@@ -3,10 +3,13 @@ site_url: https://phevositc.github.io/cctses-integra
 use_directory_urls: false
 
 nav:
-  - "Inicio": "Guia_integracion.md"
+  - "Inicio": "index.md"
   - "Circuito A":
     - "4.1 Empresa - ️CCTSES": "CircuitoA/circuitoA-doc.md"
     - "4.2 Tablas": "CircuitoA/CircuitoA-doc_funcional.md"
+  - "Circuito B":
+    - "4.1 CTSES-Empresa": "CircuitoB/CCTSES-doc_tecnica.md"
+    - "4.2 Tablas": "CircuitoB/CircuitoA-doc_funcional.md"
 
 theme:
   language: es

@@ -12,12 +12,6 @@ Control de versiones
 | 0.6     | 06/06/2024 | Phevos ITC | Versión 0.6 |
 
 
-## Indice
-
-
-
-
-
 ## **1. Introducción**
 
 El presente documento tiene como objetivo explicar la forma de hacer uso de la interfaz de integración entre la 
@@ -92,15 +86,10 @@ Esquema de ciruitos de integración
 <br>
 <br>
 
-**Ámbito de la integración:**
+**Detalle de cada Circuito:**
 
-La integración tiene que soportar la siguiente operativa:
+- [Circuito A: Empresa ➡️ CCTSES](CircuitoA/circuitoA-doc.md)
+- [Circuito B: CCTSES ➡️ Empresa](CircuitoB-doc.md)
 
-//TODO: Incluir la operación aquí.
-
-Emisión/recepción de traslados (órdenes de transporte).
-Emisión/recepción de status 
-Emisión/recepción de planificación de trabajo
-Emisión/recepción de propuestas de rutas
 
 
