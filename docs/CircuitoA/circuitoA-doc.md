@@ -38,7 +38,7 @@ sequenceDiagram
 
 1) POST /api/integra/trans/v1/status/
 
-| Campo | Detalle |
+| Propiedad | Descripción |
 |:--|:--|
 | Método | POST |
 | Ruta | /api/integra/trans/v1/status/ |
@@ -46,8 +46,40 @@ sequenceDiagram
 | Resumen | Crea o actualiza una orden (evento de estado) |
 | Descripción | Informa estados puntuales de recursos (vehículo, traslado, jornada) y posicionamiento GPS. Casos de uso: cambio de estado de traslado/vehículo, inicio/fin de jornada, modos especiales, información periódica, asignación/desasignación de traslado. |
 | Body | application/json: StatusInfo |
-| Campos | - StatusInfo.status: array de Status<br>- Campos de Status y sus referencias:<br>• idEstadoTraslado: código en [TB_TRASLADO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_traslado_estados)<br>• idEstadoVehiculo: código en [TB_VEHICULO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_vehiculo_estados)<br>• idMotivo: código del motivo del status en [TB_MOTIVO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_motivo_estados)<br>• idActividadJornada: código en [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#entidad-tb_actividad_tipos) |
 | Respuestas | 201: Response<br>400: Response (validación)<br>500: Response (error interno) |
+
+??? info "Tipos de datos"
+
+    StatusInfo
+
+    | Propiedad | Tipo | Descripción |
+    |:--|:--|:--|
+    | status | array<Status> | Lista de elementos Status a reportar en la operación. |
+
+    Status
+
+    | Propiedad | Tipo | Descripción |
+    |:--|:--|:--|
+    | idTrasladoCCTSES | string | Id único del traslado en CCTSES (opcional). |
+    | idTrasladoExterno | string | Id único del traslado en el sistema externo (opcional). |
+    | idVehiculo | string | Matrícula del vehículo asociado al status (requerido). |
+    | idUnidad | string | Id de la unidad administrativa asociada al status (requerido). |
+    | idEstadoTraslado | string | Id del estado del traslado (opcional). Referencia: [TB_TRASLADO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_traslado_estados). |
+    | idEstadoVehiculo | string | Id del estado del vehículo (opcional). Referencia: [TB_VEHICULO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_vehiculo_estados). |
+    | fechaHora | date-time | Fecha y hora del estado en hora local (formato ISO 8601). Ejemplo: 2021-02-12T20:26:28+02:00 (requerido). |
+    | idMotivo | string | Motivo/origen del status (opcional). Referencia: [TB_MOTIVO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_motivo_estados). |
+    | gps | Gps | Posición GPS donde se ha generado el status (opcional según caso de uso). |
+    | idActividadJornada | string | Tipo de actividad de la jornada (opcional). Referencia: [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#entidad-tb_actividad_tipos). |
+    | idJornada | string | Id/código de la jornada en la que se ha generado este status (opcional). |
+
+    Gps
+
+    | Propiedad | Tipo | Descripción |
+    |:--|:--|:--|
+    | longitud | string | Longitud en grados decimales. |
+    | latitud | string | Latitud en grados decimales. |
+    | rumbo | number | Rumbo del vehículo (grados). |
+    | velocidad | integer | Velocidad del vehículo. |
 
 **Ejemplo de request**
 ```json
@@ -88,7 +120,7 @@ sequenceDiagram
 
 2) DELETE /api/integra/trans/v1/traslado/{trasladoIDs}
 
-| Campo | Detalle |
+| Propiedad | Descripción |
 |:--|:--|
 | Método | DELETE |
 | Ruta | /api/integra/trans/v1/traslado/{trasladoIDs} |
@@ -117,15 +149,23 @@ DELETE /api/integra/trans/v1/traslado/TR-1001,TR-1002?fechaHora=2025-11-15T09:00
 
 3) PUT /api/integra/trans/v1/traslado/reactivar
 
-| Campo | Detalle |
+| Propiedad | Descripción |
 |:--|:--|
 | Método | PUT |
 | Ruta | /api/integra/trans/v1/traslado/reactivar |
 | operationId | putTrasladoReactivacion |
 | Resumen | Reactiva uno o varios traslados |
 | Body | application/json: TrasladoReactivaDto |
-| Campos | trasladoIDs (string, opcional, IDs separados por “,”)<br>fechaHora (date-time, requerido)<br>idMotivo (string, requerido)<br>txMotivo (string, opcional) |
 | Respuestas | 201: Response<br>400: Response<br>500: Response |
+
+TrasladoReactivaDto
+
+| Propiedad | Tipo | Descripción |
+|:--|:--|:--|
+| trasladoIDs | string | ID o IDs de los traslados separados por coma (opcional). |
+| fechaHora | date-time | Fecha y hora de la solicitud de reactivación (requerido). |
+| idMotivo | string | Motivo de la reactivación (requerido). |
+| txMotivo | string | Texto libre del motivo de la reactivación (opcional). |
 
 **Ejemplo de request**
 ```json
@@ -150,7 +190,7 @@ DELETE /api/integra/trans/v1/traslado/TR-1001,TR-1002?fechaHora=2025-11-15T09:00
 
 4) PUT /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId}
 
-| Campo | Detalle |
+| Propiedad | Descripción |
 |:--|:--|
 | Método | PUT |
 | Ruta | /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId} |
