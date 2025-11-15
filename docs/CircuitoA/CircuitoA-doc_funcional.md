@@ -1,6 +1,8 @@
 ﻿# Circuito A: Empresa Concesionaria - CCTSES
 
-## Entidad: TB_ANULACION_MOTIVOS
+## Entidades funcionales
+
+### TB_ANULACION_MOTIVOS
 
 Esta tabla recoge los motivos de anulación de un traslado. 
 
@@ -62,7 +64,7 @@ No se permite una anulación con un identificador de motivo no registrado en la 
 | VUE    | Vuelta (medios)   | Cancelación del trayecto de vuelta por medios propios del paciente              |
 
 
-## Entidad: TB_TRASLADO_ESTADOS
+### TB_TRASLADO_ESTADOS
 
 Esta tabla recoge los estados por los que un traslado puede pasar desde su alta, hasta su finalización.
 
@@ -76,7 +78,7 @@ Esta tabla recoge los estados por los que un traslado puede pasar desde su alta,
 | LD     | LLEGADO-DESTINO       | El vehículo ha llegado al punto de destino con el paciente                          |
 
 
-### Diagrama de Flujo de Estados del Traslado
+**Diagrama de Flujo de Estados del Traslado**
 
 ```mermaid
 stateDiagram-v2
@@ -89,7 +91,7 @@ stateDiagram-v2
     LlegadaDestino --> Finalizado: Traslado finalizado
 ```
 
-## Entidad: TB_VEHICULO_ESTADOS
+### TB_VEHICULO_ESTADOS
 
 Esta tabla recoge los estados de un vehículo/ambulancia en su diario de trabajo.
 
@@ -104,7 +106,7 @@ Esta tabla recoge los estados de un vehículo/ambulancia en su diario de trabajo
 | 11     | AzulRecoger     | Vehículo con paciente(s) a bordo, llegado al punto de recogida de paciente adicional       |
 | 12     | AzulBajar       | Vehículo llegado a punto de destino, iniciando desembarque de paciente(s)                  |
 
-### Diagrama de Flujo de Estados del Vehículo
+**Diagrama de Flujo de Estados del Vehículo**
 
 ```mermaid
 stateDiagram-v2
@@ -124,7 +126,7 @@ stateDiagram-v2
     Rojo --> [*]: Fin de servicio
 ```
 
-## Entidad: TB_ACTIVIDAD_TIPOS
+### TB_ACTIVIDAD_TIPOS
 
 Una actividad indica el tipo de operativa o tipo de servicio que la ambulancia va a realizar durante esta jornada o turno de trabajo.
 
@@ -142,7 +144,7 @@ Esta tabla recoge los tipos de actividades que son objeto de integración.
 | 8      | SVB           | Soporte Vital Básico para emergencias que requieren atención sanitaria sin medicalizar |
 
 
-## Entidad: TB_MOTIVO_STATUS
+###  TB_MOTIVO_STATUS
 
 Los llamados `status` son una parte fundamental del sistema, ya que permiten conocer en tiempo real la situación de la flota, 
 a través del estado de sus recursos, vehiculos, traslados, .. y la operativa que se realiza en cada uno de ellos.
@@ -161,7 +163,7 @@ En base en esto los tipos de `status` se pueden puede generar por los siguientes
 
 De esta forma, los motivos de los cambios de estado son estos:
 
-##### Tipo: VEHICULO-POSICIONAMIENTO
+#### Tipo: VEHICULO-POSICIONAMIENTO
 
 **Campos requeridos:**
 
@@ -178,12 +180,12 @@ Tabla de Referencia:
 
 | Código | Leyenda               | Descripción Funcional                                                      | Referencia                        |
 |:-------|:----------------------|:---------------------------------------------------------------------------|:----------------------------------|
-| 1      | LOCALIZACION          | Información de localización y posicionamiento GPS del vehículo             | Ver sección [Vehículo](#vehiculo) |
-| 11     | INFORMACION-PERIODICA | Envío periódico de información completa del estado y posición del vehículo | Ver sección [Vehículo](#vehiculo) |
+| 1      | LOCALIZACION          | Información de localización y posicionamiento GPS del vehículo             | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 11     | INFORMACION-PERIODICA | Envío periódico de información completa del estado y posición del vehículo | Ver sección [Vehículo](#tb_vehiculo_estados) |
 
-##### Tipo: TRASLADO
+#### Tipo: TRASLADO
 
-Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASLADO_ESTADOS`](#entidad-tb_traslado_estados).
+Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados).
 
 **Campos requeridos:**
 
@@ -191,7 +193,7 @@ Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASL
 - `idTrasladoExterno` - ID único del traslado en el sistema externo
 - `idVehiculo` - Matrícula del vehículo asignado
 - `idUnidad` - Unidad administrativa
-- `idEstadoTraslado` - Estado del traslado (referencia [`TB_TRASLADO_ESTADOS`](#entidad-tb_traslado_estados))
+- `idEstadoTraslado` - Estado del traslado (referencia [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados))
 - `fechaHora` - Fecha y hora del cambio de estado del traslado
 - `idMotivo` - Motivo del status (código 2: TRASLADO CAMBIO ESTADO, 4: TRASLADO-ASIGNACION, 5: TRASLADO-DESASIGNACIÓN)
 - `gps` - Posición GPS del vehículo en el momento del cambio de estado
@@ -202,13 +204,13 @@ Tabla de Referencia:
 
 | Código | Leyenda                | Descripción Funcional                                                  | Referencia                                                |
 |:-------|:-----------------------|:-----------------------------------------------------------------------|:----------------------------------------------------------|
-| 2      | TRASLADO CAMBIO ESTADO | Notificación de cambio de estado en el ciclo de vida de un traslado    | Ver [`TB_TRASLADO_ESTADOS`](#entidad-tb_traslado_estados) |
-| 4      | TRASLADO-ASIGNACION    | Asignación de recursos (conductor y vehículo) a un traslado específico | Ver [`TB_TRASLADO_ESTADOS`](#entidad-tb_traslado_estados) |
-| 5      | TRASLADO-DESASIGNACIÓN | Liberación de recursos previamente asignados a un traslado             | Ver [`TB_TRASLADO_ESTADOS`](#entidad-tb_traslado_estados) |
+| 2      | TRASLADO CAMBIO ESTADO | Notificación de cambio de estado en el ciclo de vida de un traslado    | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 4      | TRASLADO-ASIGNACION    | Asignación de recursos (conductor y vehículo) a un traslado específico | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 5      | TRASLADO-DESASIGNACIÓN | Liberación de recursos previamente asignados a un traslado             | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
 
 #### Tipo: VEHICULO-ESTADO
 
-Los estados por los que pasa un vehículo están recogidos en la tabla [`TB_VEHICULO_ESTADOS`](#entidad-tb_vehiculo_estados).
+Los estados por los que pasa un vehículo están recogidos en la tabla [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados).
 
 La gestión de un vehículo está estrechamente vinculada a la Jornada de Trabajo y a la actividad que se realiza en ella.
 Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trabajo, y en la jornada se realizará un tipo de Actividad específico.
@@ -217,18 +219,18 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
-- `idEstadoVehiculo` - Estado del vehículo (referencia [`TB_VEHICULO_ESTADOS`](#entidad-tb_vehiculo_estados))
+- `idEstadoVehiculo` - Estado del vehículo (referencia [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados))
 - `fechaHora` - Fecha y hora del cambio de estado
 - `idMotivo` - Motivo del cambio (código 3: VEHICULO CAMBIO ESTADO)
 - `gps` - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)
-- `idActividadJornada` - Tipo de actividad de la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#entidad-tb_actividad_tipos))
+- `idActividadJornada` - Tipo de actividad de la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador de la jornada de trabajo
 
 Tabla de Referencia:
 
 | Código | Leyenda                | Descripción Funcional                                      | Referencia                                                |
 |:-------|:-----------------------|:-----------------------------------------------------------|:----------------------------------------------------------|
-| 3      | VEHICULO CAMBIO ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#entidad-tb_vehiculo_estados) |
+| 3      | VEHICULO CAMBIO ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados) |
 
 #### Tipo: VEHICULO-MODOS (Modos Especiales)
 
@@ -246,11 +248,11 @@ Tabla de Referencia:
 
 | Código | Leyenda        | Descripción Funcional                                                                       | Referencia                        |
 |:-------|:---------------|:--------------------------------------------------------------------------------------------|:----------------------------------|
-| 24     | Ninguno        | Vehículo en modo operativo normal sin modos especiales activos                              | Ver sección [Vehículo](#vehiculo) |
-| 25     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      | Ver sección [Vehículo](#vehiculo) |
-| 26     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc. | Ver sección [Vehículo](#vehiculo) |
+| 24     | Ninguno        | Vehículo en modo operativo normal sin modos especiales activos                              | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 25     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 26     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc. | Ver sección [Vehículo](#tb_vehiculo_estados) |
 
-##### Tipo: JORNADA
+#### Tipo: JORNADA
 
 **Campos requeridos:**
 
@@ -259,23 +261,21 @@ Tabla de Referencia:
 - `fechaHora` - Fecha y hora del evento de jornada
 - `idMotivo` - Motivo del status (código 30: Inicio, 31: Fin)
 - `gps` - Posición GPS del vehículo
-- `idActividadJornada` - Tipo de actividad que se va a realizar en la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#entidad-tb_actividad_tipos))
+- `idActividadJornada` - Tipo de actividad que se va a realizar en la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador único de la jornada de trabajo
 
 Tabla de Referencia:
 
 | Código | Leyenda | Descripción Funcional                                                | Referencia                        |
 |:-------|:--------|:---------------------------------------------------------------------|:----------------------------------|
-| 30     | Inicio  | Inicio de jornada laboral del conductor con login en el sistema      | Ver sección [Vehículo](#vehiculo) |
-| 31     | Fin     | Finalización de jornada laboral del conductor con logout del sistema | Ver sección [Vehículo](#vehiculo) |
+| 30     | Inicio  | Inicio de jornada laboral del conductor con login en el sistema      | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 31     | Fin     | Finalización de jornada laboral del conductor con logout del sistema | Ver sección [Vehículo](#tb_vehiculo_estados) |
 
 ##### Tipo: GENÉRICO
 
 | Código | Leyenda     | Descripción Funcional                                                                              | Referencia |
 |:-------|:------------|:---------------------------------------------------------------------------------------------------|:-----------|
 | 0      | DESCONOCIDA | Estado no categorizado o error en la identificación del tipo de status                             | N/A        |
-
-
 
 
 ## Reglas Funcionales Generales
