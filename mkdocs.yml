@@ -14,7 +14,7 @@ nav:
 
 theme:
   language: es
-  favicon: imagenes/favicon.png
+  favicon: img/favicon.png
   name: "material"
   palette:
     - scheme: default
@@ -53,7 +53,7 @@ extra:
     language: "es"
   social:
     - icon: material/email-edit
-      link: mailto:<jssgarcia.docente@gmail.com>
+      link: mailto:<phevositc@gmail.com>
   #analytics:
     #provider: google
     #property: G-X6D0LR7TC8
