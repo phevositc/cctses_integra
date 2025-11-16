@@ -1716,6 +1716,84 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 <li><code>JORNADA</code>: Cambios de estados de una jornada de trabajo.</li>
 </ul>
 <p>De esta forma, los motivos de los cambios de estado son estos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Código</th>
+<th style="text-align: left;">Leyenda</th>
+<th style="text-align: left;">Descripción Funcional</th>
+<th style="text-align: left;">Referencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">LOCALIZACION</td>
+<td style="text-align: left;">Información de localización y posicionamiento GPS del vehículo</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">INFORMACION-PERIODICA</td>
+<td style="text-align: left;">Envío periódico de información completa del estado y posición del vehículo</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">TRASLADO CAMBIO ESTADO</td>
+<td style="text-align: left;">Notificación de cambio de estado en el ciclo de vida de un traslado</td>
+<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">TRASLADO-ASIGNACION</td>
+<td style="text-align: left;">Asignación de recursos (conductor y vehículo) a un traslado específico</td>
+<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">TRASLADO-DESASIGNACIÓN</td>
+<td style="text-align: left;">Liberación de recursos previamente asignados a un traslado</td>
+<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">VEHICULO CAMBIO ESTADO</td>
+<td style="text-align: left;">Notificación de cambio en el estado operativo del vehículo</td>
+<td style="text-align: left;">Ver <a href="#tb_vehiculo_estados"><code>TB_VEHICULO_ESTADOS</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Ninguno</td>
+<td style="text-align: left;">Vehículo en modo operativo normal sin modos especiales activos</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">Comida</td>
+<td style="text-align: left;">Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">Fuera-Servicio</td>
+<td style="text-align: left;">Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc.</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Inicio</td>
+<td style="text-align: left;">Inicio de jornada laboral del conductor con login en el sistema</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">Fin</td>
+<td style="text-align: left;">Finalización de jornada laboral del conductor con logout del sistema</td>
+<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+</tr>
+</tbody>
+</table>
 <h4 id="tipo-vehiculo-posicionamiento">Tipo: VEHICULO-POSICIONAMIENTO<a class="headerlink" href="#tipo-vehiculo-posicionamiento" title="Permanent link">¶</a></h4>
 <p><strong>Campos requeridos:</strong></p>
 <ul>
@@ -1753,6 +1831,9 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>El envio del <code>status</code> localización (1) puede ser sustituido si el <code>status</code> periodico (11) se recibe con información de localización, si no fuera así, ambos <code>status</code> (1,11) deben ser enviados.</p>
+</blockquote>
 <h4 id="tipo-traslado">Tipo: TRASLADO<a class="headerlink" href="#tipo-traslado" title="Permanent link">¶</a></h4>
 <p>Los estados por los que pasa un traslado están recogidos en la tabla <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a>.</p>
 <p><strong>Campos requeridos:</strong></p>
