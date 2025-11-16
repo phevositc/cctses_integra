@@ -219,105 +219,107 @@ POST /api/v1/trasladoasignado
 
 #### **Ejemplo de body (request)**
 
-```json
-{
-  "traslado": {
-    "general": {
-      "trasladoCctsesId": "389696488962",
-      "trasladoExternoId": "",
-      "trasladoFecha": "2025-11-15T21:01:00+01:00",
-      "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
-      "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
-      "trasladoSentidoCd": "E",
-      "TrasladoLinkedId": "",
-      "areaServicioCd": "DB",
-      "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
-      "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
-      "pacienteIdentificadorURL": null,
-      "pacienteInformacionActiva": false,
-      "pacienteMovil": "924772550",
-      "pacienteMovilSmart": false
-    },
-    "beneficiario": {
-      "nombre": "APELLIDOS, NOMBRE",
-      "apellido1": "",
-      "apellido2": "",
-      "cip": "CIP",
-      "nss": "",
-      "dni": "",
-      "telefono": "999888777",
-      "telefonoMovil": "999888777",
-      "informacionActiva": false,
-      "telefonoMovilSmart": false,
-      "generoCd": "1",
-      "generoTx": "",
-      "fechaNacimiento": "",
-      "cap": "",
-      "domicilio": {
-        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
-        "municipioCd": "0",
-        "municipioTx": "",
-        "codigoPostal": "06420"
-      }
-    },
-    "transporte": {
-      "acompFamiliar": 1,
-      "acompMedico": false,
-      "acompEnfermero": false,
-      "conOxigeno": true,
-      "conAyuudante": false,
-      "esUvi": false,
-      "esAlta": false,
-      "esUrgente": true,
-      "modalidadCd": "U",
-      "modalidadTx": "URGENCIA",
-      "modalidadExtraTx": "URGENCIA",
-      "tipoAislamientoCd": "",
-      "conCovid": false,
-      "conVisado": false,
-      "prioridadNivel": 8,
-      "posicionPacienteCd": "T",
-      "posicionPacienteTx": "Camilla",
-      "tipo": "C",
-      "idUnidad": "Identificador Unidad Asingada"
-    },
-    "facultativoPrescriptor": {
-      "nombre": "NOMBRE",
-      "apellido1": "FACTULTATIVO PRESCRIPTOR",
-      "apellido2": "",
-      "nColegiado": "ZZZ858447",
-      "areaServicioCd": null
-    },
-    "origen": {
-      "tipoDestinoCd": 1,
-      "gpsLocation": {
-        "longitud": 0.0,
-        "latitud": 0.0
-      },
-      "domicilio": {
-        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
-        "municipioCd": "06036",
-        "municipioTx": "CASTUERA",
-        "codigoPostal": "06420"
-      },
-      "centro": null
-    },
-    "destino": {
-      "tipoDestinoCd": 2,
-      "gpsLocation": {
-        "longitud": 0.0,
-        "latitud": 0.0
-      },
-      "domicilio": null,
-      "centro": {
-        "centroCCN": "1106000792",
-        "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
-        "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
+??? example "Ejemplo de body (request)"
+
+    ```json
+    {
+      "traslado": {
+        "general": {
+          "trasladoCctsesId": "389696488962",
+          "trasladoExternoId": "",
+          "trasladoFecha": "2025-11-15T21:01:00+01:00",
+          "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
+          "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
+          "trasladoSentidoCd": "E",
+          "TrasladoLinkedId": "",
+          "areaServicioCd": "DB",
+          "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
+          "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
+          "pacienteIdentificadorURL": null,
+          "pacienteInformacionActiva": false,
+          "pacienteMovil": "924772550",
+          "pacienteMovilSmart": false
+        },
+        "beneficiario": {
+          "nombre": "APELLIDOS, NOMBRE",
+          "apellido1": "",
+          "apellido2": "",
+          "cip": "CIP",
+          "nss": "",
+          "dni": "",
+          "telefono": "999888777",
+          "telefonoMovil": "999888777",
+          "informacionActiva": false,
+          "telefonoMovilSmart": false,
+          "generoCd": "1",
+          "generoTx": "",
+          "fechaNacimiento": "",
+          "cap": "",
+          "domicilio": {
+            "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+            "municipioCd": "0",
+            "municipioTx": "",
+            "codigoPostal": "06420"
+          }
+        },
+        "transporte": {
+          "acompFamiliar": 1,
+          "acompMedico": false,
+          "acompEnfermero": false,
+          "conOxigeno": true,
+          "conAyuudante": false,
+          "esUvi": false,
+          "esAlta": false,
+          "esUrgente": true,
+          "modalidadCd": "U",
+          "modalidadTx": "URGENCIA",
+          "modalidadExtraTx": "URGENCIA",
+          "tipoAislamientoCd": "",
+          "conCovid": false,
+          "conVisado": false,
+          "prioridadNivel": 8,
+          "posicionPacienteCd": "T",
+          "posicionPacienteTx": "Camilla",
+          "tipo": "C",
+          "idUnidad": "Identificador Unidad Asingada"
+        },
+        "facultativoPrescriptor": {
+          "nombre": "NOMBRE",
+          "apellido1": "FACTULTATIVO PRESCRIPTOR",
+          "apellido2": "",
+          "nColegiado": "ZZZ858447",
+          "areaServicioCd": null
+        },
+        "origen": {
+          "tipoDestinoCd": 1,
+          "gpsLocation": {
+            "longitud": 0.0,
+            "latitud": 0.0
+          },
+          "domicilio": {
+            "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+            "municipioCd": "06036",
+            "municipioTx": "CASTUERA",
+            "codigoPostal": "06420"
+          },
+          "centro": null
+        },
+        "destino": {
+          "tipoDestinoCd": 2,
+          "gpsLocation": {
+            "longitud": 0.0,
+            "latitud": 0.0
+          },
+          "domicilio": null,
+          "centro": {
+            "centroCCN": "1106000792",
+            "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
+            "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
+          }
+        }
       }
     }
-  }
-}
-```
+    ```
 
 #### **Ejemplo de respuesta (200)**
 
@@ -455,104 +457,106 @@ POST /api/v1/traslado
 
 #### **Ejemplo de body (request)**
 
-```json
-{{
-  "traslado": {
-    "general": {
-      "trasladoCctsesId": "389696488962",
-      "trasladoExternoId": "",
-      "trasladoFecha": "2025-11-15T21:01:00+01:00",
-      "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
-      "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
-      "trasladoSentidoCd": "E",
-      "TrasladoLinkedId": "",
-      "areaServicioCd": "DB",
-      "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
-      "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
-      "pacienteIdentificadorURL": null,
-      "pacienteInformacionActiva": false,
-      "pacienteMovil": "924772550",
-      "pacienteMovilSmart": false
-    },
-    "beneficiario": {
-      "nombre": "APELLIDOS, NOMBRE",
-      "apellido1": "",
-      "apellido2": "",
-      "cip": "CIP",
-      "nss": "",
-      "dni": "",
-      "telefono": "999888777",
-      "telefonoMovil": "999888777",
-      "informacionActiva": false,
-      "telefonoMovilSmart": false,
-      "generoCd": "1",
-      "generoTx": "",
-      "fechaNacimiento": "",
-      "cap": "",
-      "domicilio": {
-        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
-        "municipioCd": "0",
-        "municipioTx": "",
-        "codigoPostal": "06420"
-      }
-    },
-    "transporte": {
-      "acompFamiliar": 1,
-      "acompMedico": false,
-      "acompEnfermero": false,
-      "conOxigeno": true,
-      "conAyuudante": false,
-      "esUvi": false,
-      "esAlta": false,
-      "esUrgente": true,
-      "modalidadCd": "U",
-      "modalidadTx": "URGENCIA",
-      "modalidadExtraTx": "URGENCIA",
-      "tipoAislamientoCd": "",
-      "conCovid": false,
-      "conVisado": false,
-      "prioridadNivel": 8,
-      "posicionPacienteCd": "T",
-      "posicionPacienteTx": "Camilla",
-      "tipo": "C"
-    },
-    "facultativoPrescriptor": {
-      "nombre": "NOMBRE",
-      "apellido1": "FACULTATIVO PRESCRIPTOR",
-      "apellido2": "",
-      "nColegiado": "ZZZ858447",
-      "areaServicioCd": null
-    },
-    "origen": {
-      "tipoDestinoCd": 1,
-      "gpsLocation": {
-        "longitud": 0.0,
-        "latitud": 0.0
-      },
-      "domicilio": {
-        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
-        "municipioCd": "06036",
-        "municipioTx": "CASTUERA",
-        "codigoPostal": "06420"
-      },
-      "centro": null
-    },
-    "destino": {
-      "tipoDestinoCd": 2,
-      "gpsLocation": {
-        "longitud": 0.0,
-        "latitud": 0.0
-      },
-      "domicilio": null,
-      "centro": {
-        "centroCCN": "1106000792",
-        "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
-        "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
+??? example "Ejemplo de body (request)"
+
+    ```json
+    {
+      "traslado": {
+        "general": {
+          "trasladoCctsesId": "389696488962",
+          "trasladoExternoId": "",
+          "trasladoFecha": "2025-11-15T21:01:00+01:00",
+          "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
+          "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
+          "trasladoSentidoCd": "E",
+          "TrasladoLinkedId": "",
+          "areaServicioCd": "DB",
+          "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
+          "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
+          "pacienteIdentificadorURL": null,
+          "pacienteInformacionActiva": false,
+          "pacienteMovil": "924772550",
+          "pacienteMovilSmart": false
+        },
+        "beneficiario": {
+          "nombre": "APELLIDOS, NOMBRE",
+          "apellido1": "",
+          "apellido2": "",
+          "cip": "CIP",
+          "nss": "",
+          "dni": "",
+          "telefono": "999888777",
+          "telefonoMovil": "999888777",
+          "informacionActiva": false,
+          "telefonoMovilSmart": false,
+          "generoCd": "1",
+          "generoTx": "",
+          "fechaNacimiento": "",
+          "cap": "",
+          "domicilio": {
+            "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+            "municipioCd": "0",
+            "municipioTx": "",
+            "codigoPostal": "06420"
+          }
+        },
+        "transporte": {
+          "acompFamiliar": 1,
+          "acompMedico": false,
+          "acompEnfermero": false,
+          "conOxigeno": true,
+          "conAyuudante": false,
+          "esUvi": false,
+          "esAlta": false,
+          "esUrgente": true,
+          "modalidadCd": "U",
+          "modalidadTx": "URGENCIA",
+          "modalidadExtraTx": "URGENCIA",
+          "tipoAislamientoCd": "",
+          "conCovid": false,
+          "conVisado": false,
+          "prioridadNivel": 8,
+          "posicionPacienteCd": "T",
+          "posicionPacienteTx": "Camilla",
+          "tipo": "C"
+        },
+        "facultativoPrescriptor": {
+          "nombre": "NOMBRE",
+          "apellido1": "FACULTATIVO PRESCRIPTOR",
+          "apellido2": "",
+          "nColegiado": "ZZZ858447",
+          "areaServicioCd": null
+        },
+        "origen": {
+          "tipoDestinoCd": 1,
+          "gpsLocation": {
+            "longitud": 0.0,
+            "latitud": 0.0
+          },
+          "domicilio": {
+            "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+            "municipioCd": "06036",
+            "municipioTx": "CASTUERA",
+            "codigoPostal": "06420"
+          },
+          "centro": null
+        },
+        "destino": {
+          "tipoDestinoCd": 2,
+          "gpsLocation": {
+            "longitud": 0.0,
+            "latitud": 0.0
+          },
+          "domicilio": null,
+          "centro": {
+            "centroCCN": "1106000792",
+            "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
+            "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
+          }
+        }
       }
     }
-  }
-}
-```
+    ```
 
 #### **Ejemplo de respuesta (200)**
 
