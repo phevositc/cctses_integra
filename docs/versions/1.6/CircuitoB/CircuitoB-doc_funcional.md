@@ -46,15 +46,146 @@ Esta tabla recoge las áreas de salud definidas.
 | codigo | Descripcion |
 | :--- | :--- |
 | 0 | OTRAS |
-| 1 | CACERES |
-| 2 | CORIA |
-| 3 | PLASENCIA |
-| 4 | NAVALMORAL DE LA MATA |
-| 5 | BADAJOZ |
-| 6 | DON BENITO/VILLANUEVA DE LA SERENA |
-| 7 | LLERENA/ZAFRA |
-| 8 | MERIDA |
+| CA | CACERES |
+| CO | CORIA |
+| PL | PLASENCIA |
+| NA | NAVALMORAL DE LA MATA |
+| BA | BADAJOZ |
+| DB | DON BENITO/VILLANUEVA DE LA SERENA |
+| LL | LLERENA/ZAFRA |
+| ME | MERIDA |
 
+
+### TB_SALUD_ZONA
+
+Esta tabla recoge las zonas de salud definidas. Estas zonas corresponde con los centros de salud.
+
+??? info "Tabla Zonas de Salud"
+
+    | Código | Descripción                                 |
+    |:-------|:--------------------------------------------|
+    | AA     | ACEUCHAL                                    |
+    | AB     | AHIGAL                                      |
+    | AC     | ALBURQUERQUE                                |
+    | AD     | ALCANTARA                                   |
+    | AE     | ALCONCHEL                                   |
+    | AF     | ALCUESCAR                                   |
+    | AG     | ALDEACENTENERA                              |
+    | AH     | ALDEANUEVA DE LA VERA                       |
+    | AI     | ALDEANUEVA DEL CAMINO                       |
+    | AJ     | ALMARAZ                                     |
+    | AK     | ALMENDRALEJO                                |
+    | AL     | ARROYO DE LA LUZ                            |
+    | AM     | ARROYO DE SAN SERVAN                        |
+    | AN     | AZUAGA                                      |
+    | AO     | BADAJOZ                                     |
+    | AP     | BARCARROTA                                  |
+    | AQ     | BERLANGA                                    |
+    | AR     | BERZOCANA                                   |
+    | AS     | BOHONAL DE IBOR                             |
+    | AT     | CABEZA DEL BUEY                             |
+    | AU     | CABEZUELA DEL VALLE                         |
+    | AV     | CACERES                                     |
+    | AW     | CALAMONTE                                   |
+    | AX     | CAMINOMORISCO                               |
+    | AY     | CAMPANARIO                                  |
+    | AZ     | CAMPILLO DE LLERENA                         |
+    | BA     | CAÑAMERO                                    |
+    | BB     | CAÑAVERAL                                   |
+    | BC     | CASAR DE CACERES                            |
+    | BD     | CASAS DEL CASTAÑAR                          |
+    | BE     | CASTAÑAR DE IBOR                            |
+    | BF     | CASTUERA                                    |
+    | BG     | CECLAVIN                                    |
+    | BH     | CEDILLO                                     |
+    | BI     | CILLEROS                                    |
+    | BJ     | CORDOBILLA DE LACARA                        |
+    | BK     | CORIA                                       |
+    | BL     | DELEITOSA                                   |
+    | BM     | DON BENITO                                  |
+    | BN     | DON BENITO - VILLANUEVA DE LA SERENA        |
+    | BO     | ELJAS                                       |
+    | BP     | FREGENAL DE LA SIERRA                       |
+    | BQ     | FUENTE DE CANTOS                            |
+    | BR     | FUENTE DEL MAESTRE                          |
+    | BS     | GEVORA                                      |
+    | BT     | GUADALUPE                                   |
+    | BU     | GUAREÑA                                     |
+    | BV     | HELECHOSA DE LOS MONTES                     |
+    | BW     | HERRERA DEL DUQUE                           |
+    | BX     | HERVAS                                      |
+    | BY     | HORNACHOS                                   |
+    | BZ     | HOYOS                                       |
+    | CA     | JARAIZ DE LA VERA                           |
+    | CB     | JARANDILLA DE LA VERA                       |
+    | CC     | JEREZ DE LOS CABALLEROS                     |
+    | CD     | LA ROCA DE LA SIERRA                        |
+    | CE     | LA ZARZA                                    |
+    | CF     | LLERENA                                     |
+    | CG     | LOGROSAN                                    |
+    | CH     | LOS SANTOS DE MAIMONA                       |
+    | CI     | LOSAR DE LA VERA                            |
+    | CJ     | MADROÑERA                                   |
+    | CK     | MALPARTIDA DE CACERES                       |
+    | CL     | MEMBRIO                                     |
+    | CM     | MERIDA                                      |
+    | CN     | MIAJADAS                                    |
+    | CO     | MOHEDAS DE GRANADILLA                       |
+    | CP     | MONESTERIO                                  |
+    | CQ     | MONTEHERMOSO                                |
+    | CR     | MONTERRUBIO DE LA SERENA                    |
+    | CS     | MONTIJO                                     |
+    | CT     | MORALEJA                                    |
+    | CU     | NAVALMORAL DE LA MATA                       |
+    | CV     | NAVALVILLAR DE PELA                         |
+    | CW     | NAVAS DEL MADROÑO                           |
+    | CX     | NAVE CACERES                                |
+    | CY     | NAVEZUELAS                                  |
+    | CZ     | NUÑOMORAL                                   |
+    | DA     | OLIVA DE LA FRONTERA                        |
+    | DB     | OLIVENZA                                    |
+    | DC     | ORELLANA LA VIEJA                           |
+    | DD     | PINOFRANQUEADO                              |
+    | DE     | PLASENCIA                                   |
+    | DF     | PUEBLA DEL MAESTRE                          |
+    | DG     | PUEBLONUEVO DEL GUADIANA                    |
+    | DH     | QUINTANA DE LA SERENA                       |
+    | DI     | RIBERA DEL FRESNO                           |
+    | DJ     | SALORINO                                    |
+    | DK     | SAN VICENTE DE ALCANTARA                    |
+    | DL     | SANTA AMALIA                                |
+    | DM     | SANTA MARTA DE LOS BARROS                   |
+    | DN     | SANTIAGO DE ALCÁNTARA                       |
+    | DO     | SEGURA DE LEON                              |
+    | DP     | SERRADILLA                                  |
+    | DQ     | SIRUELA                                     |
+    | DR     | SOLANA DE LOS BARROS                        |
+    | DS     | TALARRUBIAS                                 |
+    | DT     | TALAVAN                                     |
+    | DU     | TALAVERA LA REAL                            |
+    | DV     | TALAYUELA                                   |
+    | ED     | TORRE DE DON MIGUEL                         |
+    | EE     | TORRECILLAS DE LA TIESA                     |
+    | EF     | TORREJONCILLO                               |
+    | EG     | TRUJILLO                                    |
+    | EH     | VALDEFUENTES                                |
+    | EI     | VALENCIA DE ALCANTARA                       |
+    | EJ     | VALENCIA DEL MOMBUEY                        |
+    | EK     | VALENCIA DEL VENTOSO                        |
+    | EL     | VALVERDE DE LEGANES                         |
+    | EM     | VALVERDE DEL FRESNO                         |
+    | EN     | VILLAFRANCA DE LOS BARROS                   |
+    | EO     | VILLANUEVA DE LA SERENA                     |
+    | EP     | VILLANUEVA DE LA SIERRA                     |
+    | EQ     | VILLANUEVA DE LA VERA                       |
+    | ER     | VILLANUEVA DEL FRESNO                       |
+    | ES     | VILLAR DEL PEDROSO                          |
+    | ET     | VILLARTA DE LOS MONTES                      |
+    | EU     | ZAFRA                                       |
+    | EV     | ZAHINOS                                     |
+    | EW     | ZALAMEA DE LA SERENA                        |
+    | EX     | ZARZA DE GRANADILLA                         |
+    | EY     | ZORITA                                      |
 
 ### TB_PRIORIDAD_TRANSPORTE
 
@@ -73,9 +204,9 @@ Indica la posición del paciente respecto a cómo va ubicado dentro de la ambula
 
 | codigo | Descripcion |
 | :--- | :--- |
-| SE | Sentado |
-| SR | Silla ruedas |
-| CA | Camilla |
+| S | Sentado |
+| C | Silla ruedas |
+| T | Camilla |
 
 
 ### TB_TRASLADO_MODO

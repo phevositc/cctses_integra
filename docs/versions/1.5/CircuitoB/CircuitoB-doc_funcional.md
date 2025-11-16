@@ -46,14 +46,14 @@ Esta tabla recoge las áreas de salud definidas.
 | codigo | Descripcion |
 | :--- | :--- |
 | 0 | OTRAS |
-| 1 | CACERES |
-| 2 | CORIA |
-| 3 | PLASENCIA |
-| 4 | NAVALMORAL DE LA MATA |
-| 5 | BADAJOZ |
-| 6 | DON BENITO/VILLANUEVA DE LA SERENA |
-| 7 | LLERENA/ZAFRA |
-| 8 | MERIDA |
+| CA | CACERES |
+| CO | CORIA |
+| PL | PLASENCIA |
+| NA | NAVALMORAL DE LA MATA |
+| BA | BADAJOZ |
+| DB | DON BENITO/VILLANUEVA DE LA SERENA |
+| LL | LLERENA/ZAFRA |
+| ME | MERIDA |
 
 
 ### TB_PRIORIDAD_TRANSPORTE
@@ -73,9 +73,9 @@ Indica la posición del paciente respecto a cómo va ubicado dentro de la ambula
 
 | codigo | Descripcion |
 | :--- | :--- |
-| SE | Sentado |
-| SR | Silla ruedas |
-| CA | Camilla |
+| S | Sentado |
+| C | Silla ruedas |
+| T | Camilla |
 
 
 ### TB_TRASLADO_MODO

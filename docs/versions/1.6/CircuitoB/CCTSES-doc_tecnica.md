@@ -2,6 +2,10 @@
 
 ## **Documentación técnica**
 
+Esta es la documentación técnica de la API del Circuito Integración CCTSES -> Empresa.
+
+---
+
 ## **Información general**
 
 - Título: Emmpresa: Circuito integración con CCTESES
@@ -1008,9 +1012,3 @@ Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
 (ver esquema) | object |  | Unidad adscrita (vehículo/unidad)
 
----
-
-Notas de formato:
-- Encabezados en negrita y sin numeración manual.
-- La columna “Requerido” indica Si cuando el campo aparece en `required` en el OpenAPI; en caso contrario queda vacía.
-- Codificación del fichero: UTF-8.

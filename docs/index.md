@@ -23,11 +23,11 @@ JSON como formato para el intercambio de información.
 
 Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres:
 
-- **Circuito EMPRESA-TRAMBSES**:<br>
-  Este servicio-web recibirá las peticiones enviadas desde el software de la Empresa al aplicativo de TRAMBSES..
+- **Circuito EMPRESA-CCTSES**:<br>
+  Este servicio-web recibirá las peticiones enviadas desde el software de la Empresa al aplicativo de CCTSES..
 
-- **Circuito TRAMBSES-EMPRESA**:<br>
-  Este servicio-web enviará las peticiones enviadas desde la aplicación de TRAMBSES al software de la Empresa.
+- **Circuito CCTSES-EMPRESA**:<br>
+  Este servicio-web enviará las peticiones enviadas desde la aplicación de CCTSES al software de la Empresa.
 
 
 ## **2. Entornos**
@@ -36,8 +36,8 @@ Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres
 Para poder llevar a cabo la integración de forma exitosa, se necesita completar unas determinadas fases:
 
 1. Fase de desarrollo (software de la Empresa)
-2. Fase de pruebas en entorno de pruebas (Empresa y TRAMBSES)
-3. Fase de pruebas en entorno de pre-producción (Empresa y TRAMBSES)
+2. Fase de pruebas en entorno de pruebas (Empresa y CCTSES)
+3. Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)
 4. Puesta en producción
 
 Para cada una de las fases de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración.
