@@ -1,0 +1,3436 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://phevositc.github.io/cctses-integra/versions/1.6/CircuitoB/CCTSES-doc_tecnica_old.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>CCTSES doc tecnica old - CCTSES - Documentación integración</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17%2013h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cctses-documentacion-tecnic" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../../index.html" title="CCTSES - Documentación integración" class="md-header__button md-logo" aria-label="CCTSES - Documentación integración" data-md-component="logo">
+      
+  <img src="../../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CCTSES - Documentación integración
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CCTSES doc tecnica old
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal" aria-label="Cambiar a modo noche" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal" aria-label="Cambiar a modo día" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="CCTSES - Documentación integración" class="md-nav__button md-logo" aria-label="CCTSES - Documentación integración" data-md-component="logo">
+      
+  <img src="../../../img/favicon.png" alt="logo">
+
+    </a>
+    CCTSES - Documentación integración
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../funcional-info.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requerimientos funcionales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versión 1.6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Versión 1.6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuito A
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Circuito A
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CircuitoA/circuitoA-doc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CircuitoA/CircuitoA-doc_funcional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuito B
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Circuito B
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CCTSES-doc_tecnica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CircuitoB-doc_funcional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versión 1.5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Versión 1.5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.5/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuito A
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Circuito A
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.5/CircuitoA/circuitoA-doc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.5/CircuitoA/CircuitoA-doc_funcional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuito B
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Circuito B
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.5/CircuitoB/CCTSES-doc_tecnica.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.5/CircuitoB/CircuitoB-doc_funcional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cctses-documentacion-tecnic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCTSES — Documentación técnic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacion-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información general
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Información general">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1planificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/planificacion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1planificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT /api/v1/planificacion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1propuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT /api/v1/propuesta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1trasladocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/traslado/cs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1traslado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/traslado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1trasladosolicitudanulatrasladoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1trasladosetesperatrasladoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT /api/v1/traslado/setespera/{trasladoId}
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1trasladosetnoesperatrasladoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PUT /api/v1/traslado/setnoespera/{trasladoId}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planificacionaltacmd_v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PlanificacionAltaCmd_v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planificacion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ruta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutatraslado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RutaTraslado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutatramo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RutaTramo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutaincidencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RutaIncidencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planificacionaltaokcmd_v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PlanificacionAltaOkCmd_v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propuestastatuscmd_v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PropuestaStatusCmd_v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trasladostatedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrasladoStateDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stateinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminalstateinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TerminalStateInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journalinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JournalInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpsinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GpsInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trasladocmd_v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrasladoCmd_v1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traslado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traslado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficiario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficiario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domicilio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domicilio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transporte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factultativopresciptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FactultativoPresciptor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpsposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GpsPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centromedico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CentroMedico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidadstatedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UnidadStateDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journalstatedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JournalStateDto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpsinfo2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GpsInfo2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movementstateinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MovementStateInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialstateinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SpecialStateInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectioninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cctsesresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCTSesResponse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResultValues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>CCTSES doc tecnica old</h1>
+
+<h2 id="cctses-documentacion-tecnic"><strong>CCTSES — Documentación técnic</strong><a class="headerlink" href="#cctses-documentacion-tecnic" title="Permanent link">¶</a></h2>
+<p>Fecha de generación: 2025-11-15 21:46</p>
+<h2 id="informacion-general"><strong>Información general</strong><a class="headerlink" href="#informacion-general" title="Permanent link">¶</a></h2>
+<ul>
+<li>Nombre: API de Integración CCTSES. CircuitoB</li>
+<li>Versión: 1.6</li>
+<li>Base URL: https://{server}:{puerto}/api/integra/trans/v1</li>
+</ul>
+<h3 id="notas"><strong>Notas</strong><a class="headerlink" href="#notas" title="Permanent link">¶</a></h3>
+<ul>
+<li>Esta documentación se ha generado a partir de docs/CCTSES/CCTSES-openapi.yaml (OpenAPI 3.0.0) y sigue la plantilla de docs/.support/Plan-Regeneracion-Circuito.md.</li>
+<li>Algunos esquemas incluyen el sufijo Dto (p. ej., TrasladoStateDto). Es coherente con la especificación actual.</li>
+</ul>
+<hr>
+<h2 id="operaciones"><strong>Operaciones</strong><a class="headerlink" href="#operaciones" title="Permanent link">¶</a></h2>
+<ol>
+<li>POST /api/v1/planificacion</li>
+<li>PUT  /api/v1/planificacion</li>
+<li>PUT  /api/v1/propuesta</li>
+<li>GET  /api/v1/traslado/cs</li>
+<li>POST /api/v1/traslado</li>
+<li>DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}</li>
+<li>PUT /api/v1/traslado/setespera/{trasladoId}</li>
+<li>PUT /api/v1/traslado/setnoespera/{trasladoId}</li>
+</ol>
+<hr>
+<h3 id="post-apiv1planificacion"><strong>POST /api/v1/planificacion</strong><a class="headerlink" href="#post-apiv1planificacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">POST</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/planificacion</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Planificacion_post</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Alta-planificacion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">application/json: PlanificacionAltaCmd_v1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<ul>
+<li>Path: (ninguno)</li>
+<li>Query: (ninguno)</li>
+<li>Header: (ninguno)</li>
+</ul>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="put-apiv1planificacion"><strong>PUT /api/v1/planificacion</strong><a class="headerlink" href="#put-apiv1planificacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/planificacion</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Planificacion_put</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Alta-planificacion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">application/json: PlanificacionAltaOkCmd_v1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path/Query/Header: (ninguno)</p>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="put-apiv1propuesta"><strong>PUT /api/v1/propuesta</strong><a class="headerlink" href="#put-apiv1propuesta" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/propuesta</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Propuesta_put</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Alta-planificacion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">application/json: PropuestaStatusCmd_v1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path/Query/Header: (ninguno)</p>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="get-apiv1trasladocs"><strong>GET /api/v1/traslado/cs</strong><a class="headerlink" href="#get-apiv1trasladocs" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">GET</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/traslado/cs</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Traslado_getCurrentState</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Devuelve el estado de todos los traslados indicados en el filtro</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: TrasladoStateDto[]</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Query</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">day</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Día a consultar</td>
+</tr>
+</tbody>
+</table>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="post-apiv1traslado"><strong>POST /api/v1/traslado</strong><a class="headerlink" href="#post-apiv1traslado" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">POST</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Traslado_post</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Crea el traslado desde una orden/comando</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">application/json: TrasladoCmd_v1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path/Query/Header: (ninguno)</p>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="delete-apiv1trasladosolicitudanulatrasladoids"><strong>DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}</strong><a class="headerlink" href="#delete-apiv1trasladosolicitudanulatrasladoids" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">DELETE</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/traslado/solicitudanula/{trasladoIDs}</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Traslado_trasladoSolicitudAnula</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Anula uno o varios traslados</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">trasladoIDs</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: left;">Identificadores de traslado en la ruta</td>
+</tr>
+</tbody>
+</table>
+<p>Query</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">requestId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Identificador de la solicitud específica</td>
+</tr>
+<tr>
+<td style="text-align: left;">requestSource</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Origen de la solicitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoIDs</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">ID o IDs de los traslados separados por ,</td>
+</tr>
+<tr>
+<td style="text-align: left;">fechaHora</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fecha de la solicitud de cancelación</td>
+</tr>
+<tr>
+<td style="text-align: left;">idMotivo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Motivo de anulación (texto libre)</td>
+</tr>
+<tr>
+<td style="text-align: left;">txMotivo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Texto del motivo de la anulación</td>
+</tr>
+</tbody>
+</table>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="put-apiv1trasladosetesperatrasladoid"><strong>PUT /api/v1/traslado/setespera/{trasladoId}</strong><a class="headerlink" href="#put-apiv1trasladosetesperatrasladoid" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/traslado/setespera/{trasladoId}</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Traslado_putPacienteEnEspera</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Establece el estado paciente-en-espera sobre un traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">trasladoId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: left;">Traslado identificador</td>
+</tr>
+</tbody>
+</table>
+<p>Query</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">waitingFrom</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fecha y hora (UTC) del momento en que se pone en espera</td>
+</tr>
+<tr>
+<td style="text-align: left;">enEspera</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Indica si el traslado está en espera (por defecto, false)</td>
+</tr>
+</tbody>
+</table>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<h3 id="put-apiv1trasladosetnoesperatrasladoid"><strong>PUT /api/v1/traslado/setnoespera/{trasladoId}</strong><a class="headerlink" href="#put-apiv1trasladosetnoesperatrasladoid" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/traslado/setnoespera/{trasladoId}</td>
+</tr>
+<tr>
+<td style="text-align: left;">operationId</td>
+<td style="text-align: left;">Traslado_putPacunsetenesperaienteNoEnEspera</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Desmarca el estado paciente-en-espera sobre un traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">200: CCTSesResponse</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Path</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">trasladoId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: left;">Traslado identificador</td>
+</tr>
+</tbody>
+</table>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<p><a id="tipos-de-datos"></a></p>
+<h2 id="tipos-de-datos"><strong>Tipos de datos</strong><a class="headerlink" href="#tipos-de-datos" title="Permanent link">¶</a></h2>
+<h3 id="planificacionaltacmd_v1"><strong>PlanificacionAltaCmd_v1</strong><a class="headerlink" href="#planificacionaltacmd_v1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">planificacion</td>
+<td style="text-align: left;">Planificacion</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Comando para enviar planificación a la empresa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planificacion"><strong>Planificacion</strong><a class="headerlink" href="#planificacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador planifición CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">codigo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código de la planificación</td>
+</tr>
+<tr>
+<td style="text-align: left;">referencia</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Referencia de la planificación</td>
+</tr>
+<tr>
+<td style="text-align: left;">areasTrabajoCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Lista separada por ',' de las áreas de trabajo</td>
+</tr>
+<tr>
+<td style="text-align: left;">nombre</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Nombre de la planificación</td>
+</tr>
+<tr>
+<td style="text-align: left;">idLote</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador del lote</td>
+</tr>
+<tr>
+<td style="text-align: left;">comentario</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Comentario de la planificación</td>
+</tr>
+<tr>
+<td style="text-align: left;">fecha</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Fecha de la planificación</td>
+</tr>
+<tr>
+<td style="text-align: left;">rutas</td>
+<td style="text-align: left;">Ruta[]</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Rutas de la planificación</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ruta"><strong>Ruta</strong><a class="headerlink" href="#ruta" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idRutaCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador ruta CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">idCodigoCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código ruta CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">referencia</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Referencia de la ruta</td>
+</tr>
+<tr>
+<td style="text-align: left;">horaLlegada</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Hora llegada a destino</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadCodigo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Código de la unidad (recurso) que ejecutará la ruta</td>
+</tr>
+<tr>
+<td style="text-align: left;">sentido</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Sentido: E=Entrada(Ida), S=Salida(Retorno)</td>
+</tr>
+<tr>
+<td style="text-align: left;">esLocalizado</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">1 si la unidad-vehículo está geolocalizada; 0 si no</td>
+</tr>
+<tr>
+<td style="text-align: left;">municipioCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Código CNM del municipio</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadBaseLatitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Latitud de la base de la unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadBaseLongitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Longitud de la base de la unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadLocalidadCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Localidad (código) de la base de la unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">idRutaVinculadaCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id de la ruta vinculada (IDA/VUELTA)</td>
+</tr>
+<tr>
+<td style="text-align: left;">traslados</td>
+<td style="text-align: left;">RutaTraslado[]</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Traslados incluidos</td>
+</tr>
+<tr>
+<td style="text-align: left;">tramos</td>
+<td style="text-align: left;">RutaTramo[]</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Tramos de la ruta</td>
+</tr>
+<tr>
+<td style="text-align: left;">incidencias</td>
+<td style="text-align: left;">RutaIncidencia[]</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Incidencias de la ruta</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rutatraslado"><strong>RutaTraslado</strong><a class="headerlink" href="#rutatraslado" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idTrasladoCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador traslado CCTSES</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rutatramo"><strong>RutaTramo</strong><a class="headerlink" href="#rutatramo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idTramoCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador tramo CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">orden</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Nº de orden del tramo</td>
+</tr>
+<tr>
+<td style="text-align: left;">origenLongitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Origen longitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">origenLatitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Origen latitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">origenMunicipioCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código CNM municipio de origen</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinoLongitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Destino longitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinoLatitud</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Destino latitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">destinoMunicipioCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código CNM municipio de destino</td>
+</tr>
+<tr>
+<td style="text-align: left;">duration</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Duración estimada tramo (segundos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">recepcionTrayecto</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Recepción trayecto (segundos)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rutaincidencia"><strong>RutaIncidencia</strong><a class="headerlink" href="#rutaincidencia" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Incidencia identificador</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Incidencia código</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Descripción de la incidencia</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planificacionaltaokcmd_v1"><strong>PlanificacionAltaOkCmd_v1</strong><a class="headerlink" href="#planificacionaltaokcmd_v1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador planifición CCTSES</td>
+</tr>
+</tbody>
+</table>
+<h3 id="propuestastatuscmd_v1"><strong>PropuestaStatusCmd_v1</strong><a class="headerlink" href="#propuestastatuscmd_v1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">requestId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">requestSource</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">idIntegracion</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Identificador planifición CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">estado</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Estado de la propuesta</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trasladostatedto"><strong>TrasladoStateDto</strong><a class="headerlink" href="#trasladostatedto" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">td</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Traslado Identificador</td>
+</tr>
+<tr>
+<td style="text-align: left;">tm</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Traslado conductor nombre (date-time? nullable)</td>
+</tr>
+<tr>
+<td style="text-align: left;">tt</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha del traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">ts</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código de estado del traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">u</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Traslado unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">ua</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código Administrativo de unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">m</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Matrícula</td>
+</tr>
+<tr>
+<td style="text-align: left;">codgrt</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código agrupación por recorrido/día</td>
+</tr>
+<tr>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Traslado conductor nombre</td>
+</tr>
+<tr>
+<td style="text-align: left;">ssinfo</td>
+<td style="text-align: left;">StateInfo[]</td>
+<td style="text-align: left;">Información de estados</td>
+</tr>
+<tr>
+<td style="text-align: left;">tms</td>
+<td style="text-align: left;">TerminalStateInfo</td>
+<td style="text-align: left;">Estado terminal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stateinfo"><strong>StateInfo</strong><a class="headerlink" href="#stateinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha-hora del estado</td>
+</tr>
+<tr>
+<td style="text-align: left;">stateCode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código del estado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="terminalstateinfo"><strong>TerminalStateInfo</strong><a class="headerlink" href="#terminalstateinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">j</td>
+<td style="text-align: left;">JournalInfo</td>
+<td style="text-align: left;">Información de journal</td>
+</tr>
+<tr>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">GpsInfo</td>
+<td style="text-align: left;">Información GPS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="journalinfo"><strong>JournalInfo</strong><a class="headerlink" href="#journalinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Identificador del journal</td>
+</tr>
+<tr>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Origen</td>
+</tr>
+<tr>
+<td style="text-align: left;">created</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha creación</td>
+</tr>
+<tr>
+<td style="text-align: left;">usuario</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Usuario</td>
+</tr>
+<tr>
+<td style="text-align: left;">deviceId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Dispositivo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpsinfo"><strong>GpsInfo</strong><a class="headerlink" href="#gpsinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">lat</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;">Latitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">lon</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;">Longitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">r</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">spd</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">Velocidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">tst</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">Timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trasladocmd_v1"><strong>TrasladoCmd_v1</strong><a class="headerlink" href="#trasladocmd_v1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">traslado</td>
+<td style="text-align: left;">Traslado</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Datos del traslado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traslado"><strong>Traslado</strong><a class="headerlink" href="#traslado" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">general</td>
+<td style="text-align: left;">General</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Información general del traslado</td>
+</tr>
+<tr>
+<td style="text-align: left;">beneficiario</td>
+<td style="text-align: left;">Beneficiario</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Beneficiario</td>
+</tr>
+<tr>
+<td style="text-align: left;">transporte</td>
+<td style="text-align: left;">Transporte</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Datos del transporte</td>
+</tr>
+<tr>
+<td style="text-align: left;">facultativoPrescriptor</td>
+<td style="text-align: left;">FactultativoPresciptor</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Facultativo prescriptor</td>
+</tr>
+<tr>
+<td style="text-align: left;">origen</td>
+<td style="text-align: left;">Target</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Origen</td>
+</tr>
+<tr>
+<td style="text-align: left;">destino</td>
+<td style="text-align: left;">Target</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Destino</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general"><strong>General</strong><a class="headerlink" href="#general" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">trasladoCctsesId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Id único del traslado en CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoExternoId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id único del traslado en sistema externo</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoPlanificacionIdCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id planificación en CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoPlanificacionRutaIdCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id planificación-ruta en CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoPlanificacionRutaCdCCTSES</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Código planificación-ruta en CCTSES</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoPlanficacionUnidadTransporte</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Unidad transporte planificada</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoRutaId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id ruta (si no está planificado)</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoFecha</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fecha/hora objetivo en destino</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoFechaSolicitud</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Fecha de solicitud de la orden</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoFechaRecogida</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fecha de recogida en origen</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoSentidoCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Sentido: E=Ida, S=Vuelta</td>
+</tr>
+<tr>
+<td style="text-align: left;">trasladoLinkedId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Id de traslado enlazado (Ida/Vuelta)</td>
+</tr>
+<tr>
+<td style="text-align: left;">areaServicioCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Área sanitaria (código)</td>
+</tr>
+<tr>
+<td style="text-align: left;">areaServicioTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Área sanitaria (texto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">observaciones</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Observaciones</td>
+</tr>
+</tbody>
+</table>
+<h3 id="beneficiario"><strong>Beneficiario</strong><a class="headerlink" href="#beneficiario" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nombre</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nombre del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">nombreCompleto</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nombre completo</td>
+</tr>
+<tr>
+<td style="text-align: left;">apellido1</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Primer apellido del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">apellido2</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Segundo apellido del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">cip</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">CIP del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">nss</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nº Seguridad Social del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">dni</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">NIF del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">telefono</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Teléfono del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">telefonoMovil</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Teléfono móvil del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">generoCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Sexo del paciente: 1-hombre 2-mujer 3-otro</td>
+</tr>
+<tr>
+<td style="text-align: left;">generoTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Sexo del paciente (texto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">fechaNacimiento</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Fecha de nacimiento del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">cap</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">CAP del paciente</td>
+</tr>
+<tr>
+<td style="text-align: left;">domicilio</td>
+<td style="text-align: left;">Domicilio</td>
+<td style="text-align: left;">Domicilio del paciente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="domicilio"><strong>Domicilio</strong><a class="headerlink" href="#domicilio" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">direccion</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Calle/dirección</td>
+</tr>
+<tr>
+<td style="text-align: left;">municipioCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código CNM del municipio</td>
+</tr>
+<tr>
+<td style="text-align: left;">municipioTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Municipio (texto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">codigoPostal</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Código postal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transporte"><strong>Transporte</strong><a class="headerlink" href="#transporte" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">acompFamiliar</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Si lleva acompañante familiar</td>
+</tr>
+<tr>
+<td style="text-align: left;">acompMedico</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Si lleva médico</td>
+</tr>
+<tr>
+<td style="text-align: left;">acompEnfermero</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Si lleva enfermero</td>
+</tr>
+<tr>
+<td style="text-align: left;">conOxigeno</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Si necesita oxígeno</td>
+</tr>
+<tr>
+<td style="text-align: left;">conAyuudante</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Si lleva ayudante</td>
+</tr>
+<tr>
+<td style="text-align: left;">esUvi</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Requiere vehículo tipo UVI</td>
+</tr>
+<tr>
+<td style="text-align: left;">esAlta</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Traslado de alta</td>
+</tr>
+<tr>
+<td style="text-align: left;">esUrgente</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Indica urgencia</td>
+</tr>
+<tr>
+<td style="text-align: left;">modalidadCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Modalidad (código): Consulta, Cura, Diálisis, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">modalidadTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Modalidad (texto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">modalidadExtraTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Información adicional de la modalidad (Quimioterapia, Radioterapia...)</td>
+</tr>
+<tr>
+<td style="text-align: left;">tipoAislamientoCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Tipo de aislamiento: VR (Vía aérea), GT (Gotas), CT (Contacto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">conCovid</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Paciente con Covid</td>
+</tr>
+<tr>
+<td style="text-align: left;">conVisado</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Traslado autorizado (visado)</td>
+</tr>
+<tr>
+<td style="text-align: left;">prioridadNivel</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Prioridad (1=Programado, 5=Medio, 8=Urgente, 10=Emergencia)</td>
+</tr>
+<tr>
+<td style="text-align: left;">posicionPacienteCd</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Posición: SE (sentado), C (silla ruedas), T (camilla)</td>
+</tr>
+<tr>
+<td style="text-align: left;">posicionPacienteTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Posición (texto)</td>
+</tr>
+<tr>
+<td style="text-align: left;">tipo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Tipo: I (individual), C (colectivo), M (muestras/órganos)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="factultativopresciptor"><strong>FactultativoPresciptor</strong><a class="headerlink" href="#factultativopresciptor" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nombre</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nombre del facultativo</td>
+</tr>
+<tr>
+<td style="text-align: left;">apellido1</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Primer apellido del facultativo</td>
+</tr>
+<tr>
+<td style="text-align: left;">apellido2</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Segundo apellido del facultativo</td>
+</tr>
+<tr>
+<td style="text-align: left;">nColegiado</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nº de colegiado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="target"><strong>Target</strong><a class="headerlink" href="#target" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">tipoDestinoCd</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Tipo de destino: 1=domicilio, 2=centro sanitario</td>
+</tr>
+<tr>
+<td style="text-align: left;">gpsLocation</td>
+<td style="text-align: left;">GpsPosition</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Posición GPS</td>
+</tr>
+<tr>
+<td style="text-align: left;">domicilio</td>
+<td style="text-align: left;">Domicilio</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Dirección del domicilio</td>
+</tr>
+<tr>
+<td style="text-align: left;">centro</td>
+<td style="text-align: left;">CentroMedico</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Centro médico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpsposition"><strong>GpsPosition</strong><a class="headerlink" href="#gpsposition" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">longitud</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;">Longitud</td>
+</tr>
+<tr>
+<td style="text-align: left;">latitud</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;">Latitud</td>
+</tr>
+</tbody>
+</table>
+<h3 id="centromedico"><strong>CentroMedico</strong><a class="headerlink" href="#centromedico" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">centroCCN</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código Nacional de Centro (10 dígitos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">centroTx</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Nombre/Texto del centro</td>
+</tr>
+<tr>
+<td style="text-align: left;">direccion</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Dirección del centro médico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unidadstatedto"><strong>UnidadStateDto</strong><a class="headerlink" href="#unidadstatedto" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">unidad</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadAdmCode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadActividadCode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadActividadName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadCentroCode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Codigo del centro al que pertenece la Unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadCentroName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nombre del centro al que pertenece la Unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadAreaCode</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Codigo del area al que pertenece la Unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">unidadAreaName</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Nombre del área al que pertenece la Unidad</td>
+</tr>
+<tr>
+<td style="text-align: left;">matricula</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">journal</td>
+<td style="text-align: left;">JournalStateDto</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">gps</td>
+<td style="text-align: left;">GpsInfo2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">moveState</td>
+<td style="text-align: left;">MovementStateInfo</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">specialState</td>
+<td style="text-align: left;">SpecialStateInfo</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">connection</td>
+<td style="text-align: left;">ConnectionInfo</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">Estado del terminal</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastTimestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha del ultimo estado</td>
+</tr>
+<tr>
+<td style="text-align: left;">lastReception</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha de la ultima recepción de información</td>
+</tr>
+<tr>
+<td style="text-align: left;">nextTrasladoTimeLeft</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">Minutos resta para ejecutar el siguiente traslado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="journalstatedto"><strong>JournalStateDto</strong><a class="headerlink" href="#journalstatedto" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">personalId</td>
+<td style="text-align: left;">number(decimal)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">personalNombre</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">personalTelefono</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">1: abierto, 0:cerrado</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha produjoj el estado</td>
+</tr>
+<tr>
+<td style="text-align: left;">journalId</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gpsinfo2"><strong>GpsInfo2</strong><a class="headerlink" href="#gpsinfo2" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">latitud</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">longitud</td>
+<td style="text-align: left;">number(double)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">altitud</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">rumbo</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">velocidad</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">geoaddress</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">geociudad</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="movementstateinfo"><strong>MovementStateInfo</strong><a class="headerlink" href="#movementstateinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">0: parado 1:marcha</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestampStopped</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Indica fecha produjo el estado</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Fecha desde estado está activo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specialstateinfo"><strong>SpecialStateInfo</strong><a class="headerlink" href="#specialstateinfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">0: ninguno 1:mod-comida 2:modo-mnto</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Indica fecha produjo el estado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connectioninfo"><strong>ConnectionInfo</strong><a class="headerlink" href="#connectioninfo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">integer(int32)</td>
+<td style="text-align: left;">0: no-conectado 1:conectado</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">string(date-time)</td>
+<td style="text-align: left;">Indica fecha produjo el estado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cctsesresponse"><strong>CCTSesResponse</strong><a class="headerlink" href="#cctsesresponse" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">resultado</td>
+<td style="text-align: left;">Result</td>
+<td style="text-align: left;">Resultado de la operación</td>
+</tr>
+</tbody>
+</table>
+<h3 id="result"><strong>Result</strong><a class="headerlink" href="#result" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">estado</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Resultado de la operación (p. ej., AA=ok, AE=Error)</td>
+</tr>
+<tr>
+<td style="text-align: left;">codigo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Código del resultado</td>
+</tr>
+<tr>
+<td style="text-align: left;">descripcion</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: left;">Descripción del resultado</td>
+</tr>
+<tr>
+<td style="text-align: left;">values</td>
+<td style="text-align: left;">ResultValues</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Mapa de valores adicionales</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resultvalues"><strong>ResultValues</strong><a class="headerlink" href="#resultvalues" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[clave]</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Valor asociado</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025-2026 Phevos IT Consulting S.L
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:&lt;phevositc@gmail.com&gt;" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["header.autohide", "content.tabs.link", "content.code.copy", "content.code.select", "navigation.top", "navigation.path", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
