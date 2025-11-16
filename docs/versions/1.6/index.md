@@ -11,7 +11,7 @@ Los cambios que incluye está versión son los siguientes.
 
 Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Documentación funcional".
 
-La información funcional de los aspectos técnicos específicos se encuentra en [Aspectos funcionales](funcional-info.md).
+La información funcional de los aspectos técnicos específicos se encuentra en [Aspectos funcionales](../../funcional-info.md).
 
 Si hubiera alguna información funcional relevante solo para una determianda versión, se incluirá en un apartado específico dentro de esa versión.
 

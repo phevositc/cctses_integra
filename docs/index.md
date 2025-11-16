@@ -99,8 +99,8 @@ Si hubiera alguna información funcional relevante solo para una determianda ver
 
 **Versiones**
 
-- [Versión 1.5](versiones\1.5\index.md)
-- [Versión 1.6](versiones\1.6\index.md)
+- [Versión 1.5](versions/1.5/index.md)
+- [Versión 1.6](versions/1.6/index.md)
 
 
 
