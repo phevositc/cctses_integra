@@ -38,10 +38,6 @@
         CCTSES->>Empresa: DELETE /api/v1/trasladoasignado/{idTrasladoEmpresa}
         Empresa-->>CCTSES: 200 OK Response
 
-        %% 6) GET /api/v1/traslado/cs
-        CCTSES->>Empresa: GET /api/v1/traslado/cs
-        Empresa-->>CCTSES: 200 OK Response
-
         %% 7) POST /api/v1/traslado
         CCTSES->>Empresa: POST /api/v1/traslado
         Empresa-->>CCTSES: 200 OK Response
@@ -82,15 +78,14 @@
 3. [POST /api/v1/trasladoasignado](#op-post-api-v1-trasladoasignado)
 4. [PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}](#op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad)
 5. [DELETE /api/v1/trasladoasignado/{idTrasladoCctses}](#op-delete-api-v1-trasladoasignado-idtrasladocctses)
-6. [GET  /api/v1/traslado/cs](#op-get-api-v1-traslado-cs)
-7. [POST /api/v1/traslado](#op-post-api-v1-traslado)
-8. [DELETE /api/v1/traslado/{trasladoIDs}](#op-delete-api-v1-traslado-trasladoids)
-9. [DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}](#op-delete-api-v1-traslado-solicitudanula-trasladoids)
-10. [PUT  /api/v1/traslado/setespera/{trasladoId}](#op-put-api-v1-traslado-setespera-trasladoid)
-11. [PUT  /api/v1/traslado/setnoespera/{trasladoId}](#op-put-api-v1-traslado-setnoespera-trasladoid)
-12. [GET  /api/v1/unidad](#op-get-api-v1-unidad)
-13. [PUT  /api/v1/unidad/principal](#op-put-api-v1-unidad-principal)
-14. [PUT  /api/v1/unidad/secundario](#op-put-api-v1-unidad-secundario)
+6. [POST /api/v1/traslado](#op-post-api-v1-traslado)
+7. [DELETE /api/v1/traslado/{trasladoIDs}](#op-delete-api-v1-traslado-trasladoids)
+8. [DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}](#op-delete-api-v1-traslado-solicitudanula-trasladoids)
+9. [PUT  /api/v1/traslado/setespera/{trasladoId}](#op-put-api-v1-traslado-setespera-trasladoid)
+10. [PUT  /api/v1/traslado/setnoespera/{trasladoId}](#op-put-api-v1-traslado-setnoespera-trasladoid)
+11. [GET  /api/v1/unidad](#op-get-api-v1-unidad)
+12. [PUT  /api/v1/unidad/principal](#op-put-api-v1-unidad-principal)
+13. [PUT  /api/v1/unidad/secundario](#op-put-api-v1-unidad-secundario)
 
 ---
 
@@ -228,37 +223,96 @@ POST /api/v1/trasladoasignado
 {
   "traslado": {
     "general": {
-      "trasladoCctsesId": "TR-2001",
-      "trasladoFechaSolicitud": "2025-11-16T08:30:00Z",
+      "trasladoCctsesId": "389696488962",
+      "trasladoExternoId": "",
+      "trasladoFecha": "2025-11-15T21:01:00+01:00",
+      "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
+      "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
       "trasladoSentidoCd": "E",
-      "areaServicioCd": "AS01",
-      "areaServicioTx": "Área 01"
+      "TrasladoLinkedId": "",
+      "areaServicioCd": "DB",
+      "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
+      "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
+      "pacienteIdentificadorURL": null,
+      "pacienteInformacionActiva": false,
+      "pacienteMovil": "924772550",
+      "pacienteMovilSmart": false
+    },
+    "beneficiario": {
+      "nombre": "APELLIDOS, NOMBRE",
+      "apellido1": "",
+      "apellido2": "",
+      "cip": "CIP",
+      "nss": "",
+      "dni": "",
+      "telefono": "999888777",
+      "telefonoMovil": "999888777",
+      "informacionActiva": false,
+      "telefonoMovilSmart": false,
+      "generoCd": "1",
+      "generoTx": "",
+      "fechaNacimiento": "",
+      "cap": "",
+      "domicilio": {
+        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+        "municipioCd": "0",
+        "municipioTx": "",
+        "codigoPostal": "06420"
+      }
     },
     "transporte": {
-      "acompFamiliar": 0,
+      "acompFamiliar": 1,
       "acompMedico": false,
       "acompEnfermero": false,
-      "conOxigeno": false,
+      "conOxigeno": true,
       "conAyuudante": false,
       "esUvi": false,
       "esAlta": false,
-      "esUrgente": false,
-      "modalidadCd": "Consulta",
-      "conVisado": true,
-      "prioridadNivel": 5,
-      "posicionPacienteCd": "SE",
-      "tipo": "I"
+      "esUrgente": true,
+      "modalidadCd": "U",
+      "modalidadTx": "URGENCIA",
+      "modalidadExtraTx": "URGENCIA",
+      "tipoAislamientoCd": "",
+      "conCovid": false,
+      "conVisado": false,
+      "prioridadNivel": 8,
+      "posicionPacienteCd": "T",
+      "posicionPacienteTx": "Camilla",
+      "tipo": "C",
+      "idUnidad": "Identificador Unidad Asingada"
+    },
+    "facultativoPrescriptor": {
+      "nombre": "NOMBRE",
+      "apellido1": "FACTULTATIVO PRESCRIPTOR",
+      "apellido2": "",
+      "nColegiado": "ZZZ858447",
+      "areaServicioCd": null
     },
     "origen": {
-      "tipoDestinoCd": 2,
-      "centro": { "centroCCN": "0123456789" }
+      "tipoDestinoCd": 1,
+      "gpsLocation": {
+        "longitud": 0.0,
+        "latitud": 0.0
+      },
+      "domicilio": {
+        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+        "municipioCd": "06036",
+        "municipioTx": "CASTUERA",
+        "codigoPostal": "06420"
+      },
+      "centro": null
     },
     "destino": {
-      "tipoDestinoCd": 1,
-      "domicilio": {
-        "direccion": "Calle Mayor 1",
-        "municipioCd": "08019",
-        "codigoPostal": "08019"
+      "tipoDestinoCd": 2,
+      "gpsLocation": {
+        "longitud": 0.0,
+        "latitud": 0.0
+      },
+      "domicilio": null,
+      "centro": {
+        "centroCCN": "1106000792",
+        "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
+        "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
       }
     }
   }
@@ -272,10 +326,15 @@ POST /api/v1/trasladoasignado
   "resultado": {
     "estado": "AA",
     "codigo": "000",
-    "descripcion": "OK"
+    "descripcion": "OK",
+    "resultado": [
+      "trasladoEmpresaId": "9885588",
+    ]
   }
 }
 ```
+
+> En la respuesta se devuelve el Identificador único de traslado generado en la empresa
 
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
@@ -316,7 +375,10 @@ PUT /api/v1/trasladoasignado/TR-2001/UNI-01
   "resultado": {
     "estado": "AA",
     "codigo": "000",
-    "descripcion": "OK"
+    "descripcion": "OK",
+    "resultado": [
+      "trasladoEmpresaId": "9885588",
+    ]
   }
 }
 ```
@@ -368,37 +430,6 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
-<a id="op-get-api-v1-traslado-cs"></a>
-### **GET /api/v1/traslado/cs**
-
-Devuelve el estado de todos los traslados indicados en el filtro.
-
-Propiedad | Descripción
-:--|:--
-Método | GET
-Ruta | /api/v1/traslado/cs
-Resumen | Devuelve el estado de todos los traslados indicados en el filtro
-Body | (sin cuerpo)
-Respuestas | 200: TrasladoStateDto[]
-
-Parámetros
-
-Query
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-day | string(date-time) |  | Día a consultar
-
-#### **Ejemplo de llamada**
-
-```text
-GET /api/v1/traslado/cs?day=2025-11-16T00:00:00Z
-```
-
-Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
-
----
-
 <a id="op-post-api-v1-traslado"></a>
 ### **POST /api/v1/traslado**
 
@@ -425,32 +456,100 @@ POST /api/v1/traslado
 #### **Ejemplo de body (request)**
 
 ```json
-{
+{{
   "traslado": {
     "general": {
-      "trasladoCctsesId": "TR-3001",
-      "trasladoFechaSolicitud": "2025-11-16T08:30:00Z",
-      "trasladoSentidoCd": "S",
-      "areaServicioCd": "AS01",
-      "areaServicioTx": "Área 01"
+      "trasladoCctsesId": "389696488962",
+      "trasladoExternoId": "",
+      "trasladoFecha": "2025-11-15T21:01:00+01:00",
+      "trasladoFechaSolicitud": "2025-11-15T21:01:25+01:00",
+      "trasladoFechaRecogida": "2025-11-15T21:01:00+01:00",
+      "trasladoSentidoCd": "E",
+      "TrasladoLinkedId": "",
+      "areaServicioCd": "DB",
+      "areaServicioTx": "DON BENITO/VILLANUEVA DE LA SERENA",
+      "Observaciones": "derivo con oxigeno  a 3 litros por gafas nasales",
+      "pacienteIdentificadorURL": null,
+      "pacienteInformacionActiva": false,
+      "pacienteMovil": "924772550",
+      "pacienteMovilSmart": false
+    },
+    "beneficiario": {
+      "nombre": "APELLIDOS, NOMBRE",
+      "apellido1": "",
+      "apellido2": "",
+      "cip": "CIP",
+      "nss": "",
+      "dni": "",
+      "telefono": "999888777",
+      "telefonoMovil": "999888777",
+      "informacionActiva": false,
+      "telefonoMovilSmart": false,
+      "generoCd": "1",
+      "generoTx": "",
+      "fechaNacimiento": "",
+      "cap": "",
+      "domicilio": {
+        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+        "municipioCd": "0",
+        "municipioTx": "",
+        "codigoPostal": "06420"
+      }
     },
     "transporte": {
-      "acompFamiliar": 0,
+      "acompFamiliar": 1,
       "acompMedico": false,
       "acompEnfermero": false,
-      "conOxigeno": false,
+      "conOxigeno": true,
       "conAyuudante": false,
       "esUvi": false,
       "esAlta": false,
-      "esUrgente": false,
-      "modalidadCd": "Consulta",
-      "conVisado": true,
-      "prioridadNivel": 1,
-      "posicionPacienteCd": "SE",
-      "tipo": "I"
+      "esUrgente": true,
+      "modalidadCd": "U",
+      "modalidadTx": "URGENCIA",
+      "modalidadExtraTx": "URGENCIA",
+      "tipoAislamientoCd": "",
+      "conCovid": false,
+      "conVisado": false,
+      "prioridadNivel": 8,
+      "posicionPacienteCd": "T",
+      "posicionPacienteTx": "Camilla",
+      "tipo": "C"
     },
-    "origen": { "tipoDestinoCd": 1 },
-    "destino": { "tipoDestinoCd": 2, "centro": { "centroCCN": "0123456789" } }
+    "facultativoPrescriptor": {
+      "nombre": "NOMBRE",
+      "apellido1": "FACULTATIVO PRESCRIPTOR",
+      "apellido2": "",
+      "nColegiado": "ZZZ858447",
+      "areaServicioCd": null
+    },
+    "origen": {
+      "tipoDestinoCd": 1,
+      "gpsLocation": {
+        "longitud": 0.0,
+        "latitud": 0.0
+      },
+      "domicilio": {
+        "direccion": "CALLE YUSTE 9, RESIDENCIA MAYORES CASTUERA CASTUERA 06420",
+        "municipioCd": "06036",
+        "municipioTx": "CASTUERA",
+        "codigoPostal": "06420"
+      },
+      "centro": null
+    },
+    "destino": {
+      "tipoDestinoCd": 2,
+      "gpsLocation": {
+        "longitud": 0.0,
+        "latitud": 0.0
+      },
+      "domicilio": null,
+      "centro": {
+        "centroCCN": "1106000792",
+        "centroTx": "HOSPITAL DON BENITO-VILLANUEVA DE LA SERENA",
+        "direccion": "HOSPITAL DE DON BENITO-VILLANU (1106000792)"
+      }
+    }
   }
 }
 ```
@@ -462,10 +561,14 @@ POST /api/v1/traslado
   "resultado": {
     "estado": "AA",
     "codigo": "000",
-    "descripcion": "OK"
+    "descripcion": "OK",
+    "resultado": [
+      "trasladoEmpresaId": "9885588",
+    ]
   }
 }
 ```
+> En la respuesta se devuelve el Identificador único de traslado generado en la empresa
 
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 

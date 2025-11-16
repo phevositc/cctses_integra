@@ -123,7 +123,6 @@ stateDiagram-v2
 | 1      | PROGRAMADO   | Traslados programados (citas, consultas, tratamientos) |
 | 2      | URGENCIA     | Servicios de urgencia no programados |
 | 3      | UME          | Unidad Medicalizada de Emergencia |
-| 4      | UP           | ??? |
 | 5      | CENTRO SALUD | Traslados asociados a centros de salud |
 | 6      | UMTS         | Unidad Móvil de Transporte Sanitario |
 | 7      | UMAR         | Unidad Móvil de Alta Resolución |

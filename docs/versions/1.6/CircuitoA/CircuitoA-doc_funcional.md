@@ -296,9 +296,3 @@ Tabla de Referencia:
 | Código | Leyenda     | Descripción Funcional                                                                              | Referencia |
 |:-------|:------------|:---------------------------------------------------------------------------------------------------|:-----------|
 | 0      | DESCONOCIDA | Estado no categorizado o error en la identificación del tipo de status                             | N/A        |
-
-
-## Reglas Funcionales Generales
-*   **Frecuencia:** Los datos de stock se actualizan cada 5 minutos.
-*   **Ventanas de mantenimiento:** La API puede devolver 503 los domingos de 03:00 a 04:00 AM.
-```
