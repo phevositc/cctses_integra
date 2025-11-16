@@ -1,0 +1,337 @@
+﻿openapi: 3.0.3
+info:
+  title: 'API de Integración de Transporte'
+  version: '1.0.0'
+  description: 'TODO: Añadir descripción funcional del circuito.'
+servers:
+  - url: https://api.miempresa.com/v1
+
+paths:
+  /api/integra/trans/v1/status/:
+    post:
+      operationId: status
+      summary: Crea o actualiza una orden
+      description: |
+        Información de estado de un recurso de la flota en un momento determinado.
+        Casos de uso:
+        - Cambio de estado de un traslado
+        - Cambio de estado en un vehículo
+        - Inicio/fin de jornada/actividad
+        - Inicio/fin de un modo especial de trabajo
+        - Información periódica de estado del vehículo
+        - Asignación/Desasignación de un traslado
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusInfo'
+      responses:
+        '201':
+          description: Recurso creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Solicitud incorrecta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+  /api/integra/trans/v1/traslado/{trasladoIDs}:
+    delete:
+      operationId: traslado
+      summary: Anula uno o varios traslados
+      description: Información para la petición de anulación de un traslado.
+      parameters:
+        - name: trasladoIDs
+          in: path
+          required: true
+          description: ID o IDs de los traslados separados por ,
+          schema:
+            type: string
+        - name: fechaHora
+          in: query
+          required: true
+          description: Fecha de la solicitud de cancelación de orden de traslado
+          schema:
+            type: string
+            format: date-time
+        - name: idMotivo
+          in: query
+          required: true
+          description: Motivo de anulación. Texto libre
+          schema:
+            type: string
+        - name: txMotivo
+          in: query
+          required: false
+          description: texto del motivo de la anulación
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '201':
+          description: Recurso creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Solicitud incorrecta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+  /api/integra/trans/v1/traslado/reactivar:
+    put:
+      operationId: putTrasladoReactivacion
+      summary: Reactiva uno o varios traslados
+      description: Represents a command for the reactivation of un traslado. Encapsulates the necessary information required to perform the reactivation process
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrasladoReactivaDto'
+      responses:
+        '201':
+          description: Recurso creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '400':
+          description: Solicitud incorrecta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+  /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId}:
+    put:
+      operationId: putPacienteAvisar
+      summary: Establece el estado paciente-avisar sobre un traslado
+      parameters:
+        - name: trasladoId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: horaRecoger
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '201':
+          description: Recurso creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+
+components:
+  schemas:
+    StatusInfo:
+      type: object
+      description: |
+        Información de estado de un recurso de la flota en un momento determinado.
+        Casos de uso:
+        a) Cambio de estado de un traslado.
+        b) Cambio de estado en un vehículo.
+        c) Inicio/fin de jornada/actividad
+        d) Inicio/fin de un modo especial de trabajo.
+        e) Información periódica de estado del vehículo.
+        f) Asignación/Desasignación de un traslado.
+      properties:
+        status:
+          type: array
+          items:
+            $ref: '#/components/schemas/Status'
+
+    Status:
+      type: object
+      required:
+        - idVehiculo
+        - idUnidad
+        - fechaHora
+      properties:
+        idTrasladoCCTSES:
+          type: string
+          nullable: true
+          description: Id único de traslado
+        idTrasladoExterno:
+          type: string
+          nullable: true
+          description: Id único de traslado del Sistema externo
+        idVehiculo:
+          type: string
+          description: Matricula del vehiculo asociado al status
+        idUnidad:
+          type: string
+          description: Id de la unidad administrativa asociada al status
+        idEstadoTraslado:
+          type: string
+          nullable: true
+          description: |
+            Id del estado del traslado
+            Tabla de referencia: TB_TRASLADO_ESTADOS
+            Columnas: Codigo, Descripcion
+        idEstadoVehiculo:
+          type: string
+          nullable: true
+          description: |
+            Id del estado del vehículo
+            Tabla de referencia: TB_VEHICULO_ESTADOS
+            Columnas: Codigo, Descripcion
+        fechaHora:
+          type: string
+          format: date-time
+          description: 'Fecha y hora del estado en hora local. Fecha en formato: YYYY-MM-DDTHH:MM:SSZ. Ejemplo: 2021-02-12T20:26:28+02:00'
+        idMotivo:
+          type: string
+          nullable: true
+          description: |
+            Motivo del origen del status
+            Tabla de referencia: TB_MOTIVO_ESTADOS
+            Columnas: Codigo, Descripcion
+        gps:
+          $ref: '#/components/schemas/Gps'
+          description: Gps-posicion donde se ha generado el status
+        idActividadJornada:
+          type: string
+          nullable: true
+          description: |
+            Id del TipoActividad que el conductor está realizando en la jornada a la que pertenece este status
+            Tabla de referencia: TB_ACTIVIDAD_TIPOS
+            Columnas: Codigo, Descripcion
+        idJornada:
+          type: string
+          nullable: true
+          description: Id/codigo de la jornada en la que se ha generado este status
+
+    Gps:
+      type: object
+      required:
+        - longitud
+        - latitud
+        - rumbo
+        - velocidad
+      properties:
+        longitud:
+          type: string
+          description: gps.longitud en grados decimales
+        latitud:
+          type: string
+          description: gps.latitud en grados decimales
+        rumbo:
+          type: number
+        velocidad:
+          type: integer
+
+    TrasladoAnulaDto:
+      type: object
+      required:
+        - fechaHora
+        - idMotivo
+      description: |
+        Información para la petición de anulación de un traslado.
+        This command is part of the apollo.cctses.Integra.trans.business.domain.cmd.v1 namespace and is used
+        to collect the necessary data for transfer cancellation, such as request identifiers, source,
+        transfer IDs, date/time of the request, and the reason for cancellation.
+      properties:
+        trasladoIDs:
+          type: string
+          nullable: true
+          description: ID o IDs de los traslados separados por ,
+        fechaHora:
+          type: string
+          format: date-time
+          description: Fecha de la solicitud de cancelación de orden de traslado
+        idMotivo:
+          type: string
+          description: Motivo de anulación. Texto libre
+        txMotivo:
+          type: string
+          nullable: true
+          description: texto del motivo de la anulación
+
+    TrasladoReactivaDto:
+      type: object
+      required:
+        - fechaHora
+        - idMotivo
+      description: |
+        Represents a command for the reactivation of un traslado.
+        Encapsulates the necessary information required to perform the reactivation process
+      properties:
+        trasladoIDs:
+          type: string
+          nullable: true
+          description: ID o IDs de los traslados separados por ,
+        fechaHora:
+          type: string
+          format: date-time
+          description: Fecha de la solicitud de cancelación de orden de traslado
+        idMotivo:
+          type: string
+          description: Motivo de la reactivación
+        txMotivo:
+          type: string
+          nullable: true
+          description: texto del motivo de la anulación
+
+    Response:
+      type: object
+      description: |
+        Represents the result of a transaction operation, including its success or failure state,
+        along with detailed information about the outcome, such as status, codes, and descriptions.
+      properties:
+        resultado:
+          $ref: '#/components/schemas/Result'
+
+    Result:
+      type: object
+      required:
+        - estado
+        - codigo
+        - descripcion
+      properties:
+        estado:
+          type: string
+          description: 'Resultado de la operación: AA ==> ok, AE ==> Error'
+        codigo:
+          type: string
+          description: 'Código del error: Ejecución correcta => código 000'
+        descripcion:
+          type: string
+          description: Descripción del campo 'codigo', o del error en caso de que 'estado' sea 'AE'
