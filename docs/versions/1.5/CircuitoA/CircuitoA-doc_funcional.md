@@ -164,6 +164,8 @@ En base en esto los tipos de `status` se pueden puede generar por los siguientes
 - `TRASLADO`: Cambios de estados por los que pasa un traslado en su ejecución.
 - `JORNADA`: Cambios de estados de una jornada de trabajo.
 
+
+
 De esta forma, los motivos de los cambios de estado son estos:
 
 #### Tipo: VEHICULO-POSICIONAMIENTO

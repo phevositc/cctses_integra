@@ -1,100 +1,307 @@
-﻿## **CCTSES — Documentación técnic**
+﻿## **CCTSES — Documentación técnica (a partir de OpenAPI)**
 
-Fecha de generación: 2025-11-15 21:46
+Fecha de generación: 2025-11-16 18:23
 
 ## **Información general**
 
-- Nombre: API de Integración CCTSES. CircuitoB
-- Versión: 1.6
-- Base URL: https://{server}:{puerto}/api/integra/trans/v1
-
-### **Notas**
-- Esta documentación se ha generado a partir de docs/CCTSES/CCTSES-openapi.yaml (OpenAPI 3.0.0) y sigue la plantilla de docs/.support/Plan-Regeneracion-Circuito.md.
-- Algunos esquemas incluyen el sufijo Dto (p. ej., TrasladoStateDto). Es coherente con la especificación actual.
+- Título: Emmpresa: Circuito integración con CCTESES
+- Versión: 1.0.0
 
 ---
 
 ## **Operaciones**
 
-1. POST /api/v1/planificacion
-2. PUT  /api/v1/planificacion
-3. PUT  /api/v1/propuesta
-4. GET  /api/v1/traslado/cs
-5. POST /api/v1/traslado
-6. DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
-7. PUT /api/v1/traslado/setespera/{trasladoId}
-8. PUT /api/v1/traslado/setnoespera/{trasladoId}
+1. [POST /api/v1/paquetetraslado](#op-post-api-v1-paquetetraslado)
+2. [PUT  /api/v1/paquetetraslado](#op-put-api-v1-paquetetraslado)
+3. [POST /api/v1/trasladoasignado](#op-post-api-v1-trasladoasignado)
+4. [PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}](#op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad)
+5. [DELETE /api/v1/trasladoasignado/{idTrasladoCctses}](#op-delete-api-v1-trasladoasignado-idtrasladocctses)
+6. [GET  /api/v1/traslado/cs](#op-get-api-v1-traslado-cs)
+7. [POST /api/v1/traslado](#op-post-api-v1-traslado)
+8. [DELETE /api/v1/traslado/{trasladoIDs}](#op-delete-api-v1-traslado-trasladoids)
+9. [DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}](#op-delete-api-v1-traslado-solicitudanula-trasladoids)
+10. [PUT  /api/v1/traslado/setespera/{trasladoId}](#op-put-api-v1-traslado-setespera-trasladoid)
+11. [PUT  /api/v1/traslado/setnoespera/{trasladoId}](#op-put-api-v1-traslado-setnoespera-trasladoid)
+12. [GET  /api/v1/unidad](#op-get-api-v1-unidad)
+13. [PUT  /api/v1/unidad/principal](#op-put-api-v1-unidad-principal)
+14. [PUT  /api/v1/unidad/secundario](#op-put-api-v1-unidad-secundario)
 
 ---
 
-### **POST /api/v1/planificacion**
+<a id="op-post-api-v1-paquetetraslado"></a>
+### **POST /api/v1/paquetetraslado**
 
 Propiedad | Descripción
 :--|:--
 Método | POST
-Ruta | /api/v1/planificacion
-operationId | Planificacion_post
-Resumen | Alta-planificacion
-Body | application/json: PlanificacionAltaCmd_v1
-Respuestas | 200: CCTSesResponse
-
-Parámetros
-
-- Path: (ninguno)
-- Query: (ninguno)
-- Header: (ninguno)
-
-Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
-
----
-
-### **PUT /api/v1/planificacion**
-
-Propiedad | Descripción
-:--|:--
-Método | PUT
-Ruta | /api/v1/planificacion
-operationId | Planificacion_put
-Resumen | Alta-planificacion
-Body | application/json: PlanificacionAltaOkCmd_v1
-Respuestas | 200: CCTSesResponse
+Ruta | /api/v1/paquetetraslado
+Resumen | Alta de paquete de traslados
+Body | application/json: [PaqueteTrasladoAltaCmd_v1](#tipo-paquetetrasladoaltacmd_v1)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
 Path/Query/Header: (ninguno)
 
+#### **Ejemplo de llamada**
+
+```text
+POST /api/v1/paquetetraslado
+```
+
+#### **Ejemplo de body (request)**
+
+```json
+{
+  "paquete": {
+    "idCCTSES": "PK-2025-0001",
+    "codigo": "PK-001",
+    "referencia": "REF-ALTA-001",
+    "areasTrabajoCd": "AREA1,AREA2",
+    "nombre": "Paquete Noviembre",
+    "fecha": "2025-11-16T09:00:00Z",
+    "traslados": [
+      { "idTrasladoCCTSES": "TR-1001" },
+      { "idTrasladoCCTSES": "TR-1002" }
+    ]
+  }
+}
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
-### **PUT /api/v1/propuesta**
+<a id="op-put-api-v1-paquetetraslado"></a>
+### **PUT /api/v1/paquetetraslado**
 
 Propiedad | Descripción
 :--|:--
 Método | PUT
-Ruta | /api/v1/propuesta
-operationId | Propuesta_put
-Resumen | Alta-planificacion
-Body | application/json: PropuestaStatusCmd_v1
-Respuestas | 200: CCTSesResponse
+Ruta | /api/v1/paquetetraslado
+Resumen | Asignar paquete de traslados como enviado correctamete
+Body | application/json: [PaqueteTrasladoAltaOkCmd_v1](#tipo-paquetetrasladoaltaokcmd_v1)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
 Path/Query/Header: (ninguno)
 
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/paquetetraslado
+```
+
+#### **Ejemplo de body (request)**
+
+```json
+{
+  "idCCTSES": "PK-2025-0001"
+}
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
+<a id="op-post-api-v1-trasladoasignado"></a>
+### **POST /api/v1/trasladoasignado**
+
+Propiedad | Descripción
+:--|:--
+Método | POST
+Ruta | /api/v1/trasladoasignado
+Resumen | Crea el traslado con información de la unidad que lo debe ejecutar
+Body | application/json: [TrasladoCmd_v1](#tipo-trasladocmd_v1)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+
+Parámetros
+
+Path/Query/Header: (ninguno)
+
+#### **Ejemplo de llamada**
+
+```text
+POST /api/v1/trasladoasignado
+```
+
+#### **Ejemplo de body (request)**
+
+```json
+{
+  "traslado": {
+    "general": {
+      "trasladoCctsesId": "TR-2001",
+      "trasladoFechaSolicitud": "2025-11-16T08:30:00Z",
+      "trasladoSentidoCd": "E",
+      "areaServicioCd": "AS01",
+      "areaServicioTx": "Área 01"
+    },
+    "transporte": {
+      "acompFamiliar": 0,
+      "acompMedico": false,
+      "acompEnfermero": false,
+      "conOxigeno": false,
+      "conAyuudante": false,
+      "esUvi": false,
+      "esAlta": false,
+      "esUrgente": false,
+      "modalidadCd": "Consulta",
+      "conVisado": true,
+      "prioridadNivel": 5,
+      "posicionPacienteCd": "SE",
+      "tipo": "I"
+    },
+    "origen": {
+      "tipoDestinoCd": 2,
+      "centro": { "centroCCN": "0123456789" }
+    },
+    "destino": {
+      "tipoDestinoCd": 1,
+      "domicilio": {
+        "direccion": "Calle Mayor 1",
+        "municipioCd": "08019",
+        "codigoPostal": "08019"
+      }
+    }
+  }
+}
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad"></a>
+### **PUT /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}**
+
+Propiedad | Descripción
+:--|:--
+Método | PUT
+Ruta | /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}
+Resumen | Asigna un traslado existente a una unidad específica. idTrasladoCctses e idUnidad en el path.
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+
+Parámetros
+
+Path
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idTrasladoCctses | string | Si | Identificador del traslado en CCTSES
+idUnidad | string | Si | Identificador de la unidad a asignar
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/trasladoasignado/TR-2001/UNI-01
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-delete-api-v1-trasladoasignado-idtrasladocctses"></a>
+### **DELETE /api/v1/trasladoasignado/{idTrasladoCctses}**
+
+Propiedad | Descripción
+:--|:--
+Método | DELETE
+Ruta | /api/v1/trasladoasignado/{idTrasladoCctses}
+Resumen | Des-asigna la unidad actualmente asociada a un traslado
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+
+Parámetros
+
+Path
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idTrasladoCctses | string | Si | Identificador del traslado en CCTSES
+
+#### **Ejemplo de llamada**
+
+```text
+DELETE /api/v1/trasladoasignado/TR-2001
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-get-api-v1-traslado-cs"></a>
 ### **GET /api/v1/traslado/cs**
 
 Propiedad | Descripción
 :--|:--
 Método | GET
 Ruta | /api/v1/traslado/cs
-operationId | Traslado_getCurrentState
 Resumen | Devuelve el estado de todos los traslados indicados en el filtro
-Respuestas | 200: TrasladoStateDto[]
+Body | (sin cuerpo)
+Respuestas | 200: [TrasladoStateDto](#tipo-trasladostatedto)[]
 
 Parámetros
 
@@ -104,71 +311,166 @@ Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
 day | string(date-time) |  | Día a consultar
 
+#### **Ejemplo de llamada**
+
+```text
+GET /api/v1/traslado/cs?day=2025-11-16T00:00:00Z
+```
+
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
+<a id="op-post-api-v1-traslado"></a>
 ### **POST /api/v1/traslado**
 
 Propiedad | Descripción
 :--|:--
 Método | POST
 Ruta | /api/v1/traslado
-operationId | Traslado_post
 Resumen | Crea el traslado desde una orden/comando
-Body | application/json: TrasladoCmd_v1
-Respuestas | 200: CCTSesResponse
+Body | application/json: [TrasladoCmd_v1](#tipo-trasladocmd_v1)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
 Path/Query/Header: (ninguno)
 
+#### **Ejemplo de llamada**
+
+```text
+POST /api/v1/traslado
+```
+
+#### **Ejemplo de body (request)**
+
+```json
+{
+  "traslado": {
+    "general": {
+      "trasladoCctsesId": "TR-3001",
+      "trasladoFechaSolicitud": "2025-11-16T08:30:00Z",
+      "trasladoSentidoCd": "S",
+      "areaServicioCd": "AS01",
+      "areaServicioTx": "Área 01"
+    },
+    "transporte": {
+      "acompFamiliar": 0,
+      "acompMedico": false,
+      "acompEnfermero": false,
+      "conOxigeno": false,
+      "conAyuudante": false,
+      "esUvi": false,
+      "esAlta": false,
+      "esUrgente": false,
+      "modalidadCd": "Consulta",
+      "conVisado": true,
+      "prioridadNivel": 1,
+      "posicionPacienteCd": "SE",
+      "tipo": "I"
+    },
+    "origen": { "tipoDestinoCd": 1 },
+    "destino": { "tipoDestinoCd": 2, "centro": { "centroCCN": "0123456789" } }
+  }
+}
+```
+
+#### **Ejemplo de respuesta (200)**
+
+```json
+{
+  "resultado": {
+    "estado": "AA",
+    "codigo": "000",
+    "descripcion": "OK"
+  }
+}
+```
+
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
+<a id="op-delete-api-v1-traslado-trasladoids"></a>
+### **DELETE /api/v1/traslado/{trasladoIDs}**
+
+Propiedad | Descripción
+:--|:--
+Método | DELETE
+Ruta | /api/v1/traslado/{trasladoIDs}
+Resumen | Anula uno o varios traslados
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+
+Parámetros
+
+Path y Query
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+trasladoIDs (path) | string | Si | Identificador(es) del traslado
+requestId | string |  | Identificador de la solicitud específica para esta orden
+requestSource | string |  | Identificador de la fuente de la solicitud
+trasladoIDs (query) | string |  | ID o IDs de los traslados separados por ,
+fechaHora | string(date-time) |  | Fecha de la solicitud de cancelación
+idMotivo | string |  | Motivo de anulación (texto libre)
+txMotivo | string |  | Texto del motivo de la anulación
+
+#### **Ejemplo de llamada**
+
+```text
+DELETE /api/v1/traslado/TR-3001?fechaHora=2025-11-16T09:00:00Z&idMotivo=SP&txMotivo=Anula%20paciente
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-delete-api-v1-traslado-solicitudanula-trasladoids"></a>
 ### **DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}**
 
 Propiedad | Descripción
 :--|:--
 Método | DELETE
 Ruta | /api/v1/traslado/solicitudanula/{trasladoIDs}
-operationId | Traslado_trasladoSolicitudAnula
 Resumen | Anula uno o varios traslados
-Respuestas | 200: CCTSesResponse
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
-Path
+Path y Query
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-trasladoIDs | string | ? | Identificadores de traslado en la ruta
-
-Query
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-requestId | string |  | Identificador de la solicitud específica
-requestSource | string |  | Origen de la solicitud
-trasladoIDs | string |  | ID o IDs de los traslados separados por ,
+trasladoIDs (path) | string | Si | Identificador(es) del traslado
+requestId | string |  | Identificador de la solicitud específica para esta orden
+requestSource | string |  | Identificador de la fuente de la solicitud
+trasladoIDs (query) | string |  | ID o IDs de los traslados separados por ,
 fechaHora | string(date-time) |  | Fecha de la solicitud de cancelación
 idMotivo | string |  | Motivo de anulación (texto libre)
 txMotivo | string |  | Texto del motivo de la anulación
+
+#### **Ejemplo de llamada**
+
+```text
+DELETE /api/v1/traslado/solicitudanula/TR-1001,TR-1002?fechaHora=2025-11-15T09:00:00Z&idMotivo=SP&txMotivo=Anula%20paciente
+```
 
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
+<a id="op-put-api-v1-traslado-setespera-trasladoid"></a>
 ### **PUT /api/v1/traslado/setespera/{trasladoId}**
 
 Propiedad | Descripción
 :--|:--
 Método | PUT
 Ruta | /api/v1/traslado/setespera/{trasladoId}
-operationId | Traslado_putPacienteEnEspera
-Resumen | Establece el estado paciente-en-espera sobre un traslado
-Respuestas | 200: CCTSesResponse
+Resumen | Pone un traslado en estado de espera
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -176,28 +478,28 @@ Path
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-trasladoId | string | ? | Traslado identificador
+trasladoId | string | Si | Identificador del traslado
 
-Query
+#### **Ejemplo de llamada**
 
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-waitingFrom | string(date-time) |  | Fecha y hora (UTC) del momento en que se pone en espera
-enEspera | boolean |  | Indica si el traslado está en espera (por defecto, false)
+```text
+PUT /api/v1/traslado/setespera/TR-3001?waitingFrom=2025-11-16T09:00:00Z&enEspera=true
+```
 
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
+<a id="op-put-api-v1-traslado-setnoespera-trasladoid"></a>
 ### **PUT /api/v1/traslado/setnoespera/{trasladoId}**
 
 Propiedad | Descripción
 :--|:--
 Método | PUT
 Ruta | /api/v1/traslado/setnoespera/{trasladoId}
-operationId | Traslado_putPacunsetenesperaienteNoEnEspera
-Resumen | Desmarca el estado paciente-en-espera sobre un traslado
-Respuestas | 200: CCTSesResponse
+Resumen | Quita el estado de espera a un traslado
+Body | (sin cuerpo)
+Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -205,7 +507,98 @@ Path
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-trasladoId | string | ? | Traslado identificador
+trasladoId | string | Si | Identificador del traslado
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/traslado/setnoespera/TR-3001
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-get-api-v1-unidad"></a>
+### **GET /api/v1/unidad**
+
+Propiedad | Descripción
+:--|:--
+Método | GET
+Ruta | /api/v1/unidad
+Resumen | Devuelve todas las unidades adscritas al servicio de transporte
+Body | (sin cuerpo)
+Respuestas | 200: [UnidadAdscritaDto](#tipo-unidadadscritadto)[]
+
+Parámetros
+
+Path/Query/Header: (ninguno)
+
+#### **Ejemplo de llamada**
+
+```text
+GET /api/v1/unidad
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-put-api-v1-unidad-principal"></a>
+### **PUT /api/v1/unidad/principal**
+
+Propiedad | Descripción
+:--|:--
+Método | PUT
+Ruta | /api/v1/unidad/principal
+Resumen | Asigna un vehículo como Principal a la Unidad indicada
+Body | (sin cuerpo)
+Respuestas | 200: string (binary)
+
+Parámetros
+
+Query
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idUnidad | string |  | Identificador de la unidad adscrita
+idVehiculo | string |  | Identificador/matrícula del vehículo
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/unidad/principal?idUnidad=UNI-01&idVehiculo=1234ABC
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-put-api-v1-unidad-secundario"></a>
+### **PUT /api/v1/unidad/secundario**
+
+Propiedad | Descripción
+:--|:--
+Método | PUT
+Ruta | /api/v1/unidad/secundario
+Resumen | Asigna un vehículo como Secundario a la Unidad indicada
+Body | (sin cuerpo)
+Respuestas | 200: string (binary)
+
+Parámetros
+
+Query
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idUnidad | string |  | Identificador de la unidad adscrita
+idVehiculo | string |  | Identificador/matrícula del vehículo
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/unidad/secundario?idUnidad=UNI-01&idVehiculo=5678DEF
+```
 
 Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
@@ -214,157 +607,86 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="tipos-de-datos"></a>
 ## **Tipos de datos**
 
-### **PlanificacionAltaCmd_v1**
+<a id="tipo-cctsesresponse"></a>
+### **CCTSesResponse**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-planificacion | Planificacion |  | Comando para enviar planificación a la empresa
+resultado | [Result](#tipo-result) |  | Resultado de la operación
 
-### **Planificacion**
+<a id="tipo-result"></a>
+### **Result**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-idCCTSES | string | Si | Identificador planifición CCTSES
+estado | string | Si | Resultado de la operación (AA => OK, AE => Error)
+codigo | string | Si | Código del resultado
+descripcion | string | Si | Descripción del resultado
+values | [ResultValues](#tipo-resultvalues) |  | Valores adicionales (clave-valor)
+
+<a id="tipo-resultvalues"></a>
+### **ResultValues**
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+(adicionales) | string |  | Propiedades adicionales de tipo string
+
+<a id="tipo-paquetetrasladoaltacmd_v1"></a>
+### **PaqueteTrasladoAltaCmd_v1**
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+paquete | [PaqueteTraslado](#tipo-paquetetraslado) |  | Paquete de traslados
+
+<a id="tipo-paquetetraslado"></a>
+### **PaqueteTraslado**
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idCCTSES | string | Si | Identificador paquete CCTSES
 codigo | string | Si | Código de la planificación
 referencia | string | Si | Referencia de la planificación
 areasTrabajoCd | string | Si | Lista separada por ',' de las áreas de trabajo
-nombre | string | Si | Nombre de la planificación
-idLote | string | Si | Identificador del lote
-comentario | string |  | Comentario de la planificación
-fecha | string(date-time) | Si | Fecha de la planificación
-rutas | Ruta[] | Si | Rutas de la planificación
+nombre | string | Si | Nombre del paquete
+idLote | string |  | Identificador del lote
+comentario | string |  | Comentario del paquete
+fecha | string(date-time) | Si | Fecha del paquete
+traslados | [PaqueteItem](#tipo-paqueteitem)[] | Si | Lista de elementos del paquete
 
-### **Ruta**
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-idRutaCCTSES | string | Si | Identificador ruta CCTSES
-idCodigoCCTSES | string | Si | Código ruta CCTSES
-referencia | string |  | Referencia de la ruta
-horaLlegada | string | Si | Hora llegada a destino
-unidadCodigo | string |  | Código de la unidad (recurso) que ejecutará la ruta
-sentido | string | Si | Sentido: E=Entrada(Ida), S=Salida(Retorno)
-esLocalizado | integer(int32) | Si | 1 si la unidad-vehículo está geolocalizada; 0 si no
-municipioCd | string |  | Código CNM del municipio
-unidadBaseLatitud | string |  | Latitud de la base de la unidad
-unidadBaseLongitud | string |  | Longitud de la base de la unidad
-unidadLocalidadCd | string |  | Localidad (código) de la base de la unidad
-idRutaVinculadaCCTSES | string |  | Id de la ruta vinculada (IDA/VUELTA)
-traslados | RutaTraslado[] |  | Traslados incluidos
-tramos | RutaTramo[] |  | Tramos de la ruta
-incidencias | RutaIncidencia[] |  | Incidencias de la ruta
-
-### **RutaTraslado**
+<a id="tipo-paqueteitem"></a>
+### **PaqueteItem**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-idTrasladoCCTSES | string | Si | Identificador traslado CCTSES
+idTrasladoCCTSES | string | Si | Identificador del traslado CCTSES
 
-### **RutaTramo**
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-idTramoCCTSES | string | Si | Identificador tramo CCTSES
-orden | integer(int32) | Si | Nº de orden del tramo
-origenLongitud | string |  | Origen longitud
-origenLatitud | string |  | Origen latitud
-origenMunicipioCd | string | Si | Código CNM municipio de origen
-destinoLongitud | string |  | Destino longitud
-destinoLatitud | string |  | Destino latitud
-destinoMunicipioCd | string | Si | Código CNM municipio de destino
-duration | integer(int32) |  | Duración estimada tramo (segundos)
-recepcionTrayecto | integer(int32) |  | Recepción trayecto (segundos)
-
-### **RutaIncidencia**
+<a id="tipo-paquetetrasladoaltaokcmd_v1"></a>
+### **PaqueteTrasladoAltaOkCmd_v1**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-id | string | Si | Incidencia identificador
-code | string | Si | Incidencia código
-description | string |  | Descripción de la incidencia
+idCCTSES | string | Si | Identificador del paquete confirmado
 
-### **PlanificacionAltaOkCmd_v1**
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-idCCTSES | string | Si | Identificador planifición CCTSES
-
-### **PropuestaStatusCmd_v1**
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-requestId | string |  | 
-requestSource | string |  | 
-idIntegracion | string | Si | Identificador planifición CCTSES
-estado | string | Si | Estado de la propuesta
-
-### **TrasladoStateDto**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-td | string | Traslado Identificador
-tm | string | Traslado conductor nombre (date-time? nullable)
-tt | string(date-time) | Fecha del traslado
-ts | string | Código de estado del traslado
-u | string | Traslado unidad
-ua | string | Código Administrativo de unidad
-m | string | Matrícula
-codgrt | string | Código agrupación por recorrido/día
-d | string | Traslado conductor nombre
-ssinfo | StateInfo[] | Información de estados
-tms | TerminalStateInfo | Estado terminal
-
-### **StateInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-timestamp | string(date-time) | Fecha-hora del estado
-stateCode | string | Código del estado
-
-### **TerminalStateInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-j | JournalInfo | Información de journal
-g | GpsInfo | Información GPS
-
-### **JournalInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-id | string | Identificador del journal
-source | string | Origen
-created | string(date-time) | Fecha creación
-usuario | string | Usuario
-deviceId | string | Dispositivo
-
-### **GpsInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-lat | number(double) | Latitud
-lon | number(double) | Longitud
-r | integer(int32) | —
-spd | integer(int32) | Velocidad
-tst | integer(int32) | Timestamp
-
+<a id="tipo-trasladocmd_v1"></a>
 ### **TrasladoCmd_v1**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-traslado | Traslado |  | Datos del traslado
+traslado | [Traslado](#tipo-traslado) |  | Datos del traslado
 
+<a id="tipo-traslado"></a>
 ### **Traslado**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-general | General | Si | Información general del traslado
-beneficiario | Beneficiario |  | Beneficiario
-transporte | Transporte | Si | Datos del transporte
-facultativoPrescriptor | FactultativoPresciptor |  | Facultativo prescriptor
-origen | Target | Si | Origen
-destino | Target | Si | Destino
+general | [General](#tipo-general) | Si | Información general del traslado
+beneficiario | [Beneficiario](#tipo-beneficiario) |  | Beneficiario
+transporte | [Transporte](#tipo-transporte) | Si | Datos del transporte
+facultativoPrescriptor | [FactultativoPresciptor](#tipo-factultativopresciptor) |  | Facultativo prescriptor
+origen | [Target](#tipo-target) | Si | Origen
+destino | [Target](#tipo-target) | Si | Destino
 
+<a id="tipo-general"></a>
 ### **General**
 
 Propiedad | Tipo | Requerido | Descripción
@@ -385,6 +707,7 @@ areaServicioCd | string | Si | Área sanitaria (código)
 areaServicioTx | string | Si | Área sanitaria (texto)
 observaciones | string |  | Observaciones
 
+<a id="tipo-beneficiario"></a>
 ### **Beneficiario**
 
 Propiedad | Tipo | Descripción
@@ -402,8 +725,9 @@ generoCd | string | Sexo del paciente: 1-hombre 2-mujer 3-otro
 generoTx | string | Sexo del paciente (texto)
 fechaNacimiento | string | Fecha de nacimiento del paciente
 cap | string | CAP del paciente
-domicilio | Domicilio | Domicilio del paciente
+domicilio | [Domicilio](#tipo-domicilio) | Domicilio del paciente
 
+<a id="tipo-domicilio"></a>
 ### **Domicilio**
 
 Propiedad | Tipo | Descripción
@@ -413,6 +737,7 @@ municipioCd | string | Código CNM del municipio
 municipioTx | string | Municipio (texto)
 codigoPostal | string | Código postal
 
+<a id="tipo-transporte"></a>
 ### **Transporte**
 
 Propiedad | Tipo | Requerido | Descripción
@@ -436,6 +761,7 @@ posicionPacienteCd | string | Si | Posición: SE (sentado), C (silla ruedas), T 
 posicionPacienteTx | string |  | Posición (texto)
 tipo | string | Si | Tipo: I (individual), C (colectivo), M (muestras/órganos)
 
+<a id="tipo-factultativopresciptor"></a>
 ### **FactultativoPresciptor**
 
 Propiedad | Tipo | Descripción
@@ -445,15 +771,17 @@ apellido1 | string | Primer apellido del facultativo
 apellido2 | string | Segundo apellido del facultativo
 nColegiado | string | Nº de colegiado
 
+<a id="tipo-target"></a>
 ### **Target**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
 tipoDestinoCd | integer(int32) | Si | Tipo de destino: 1=domicilio, 2=centro sanitario
-gpsLocation | GpsPosition |  | Posición GPS
-domicilio | Domicilio |  | Dirección del domicilio
-centro | CentroMedico |  | Centro médico
+gpsLocation | [GpsPosition](#tipo-gpsposition) |  | Posición GPS
+domicilio | [Domicilio](#tipo-domicilio) |  | Dirección del domicilio
+centro | [CentroMedico](#tipo-centromedico) |  | Centro médico
 
+<a id="tipo-gpsposition"></a>
 ### **GpsPosition**
 
 Propiedad | Tipo | Descripción
@@ -461,6 +789,7 @@ Propiedad | Tipo | Descripción
 longitud | number(double) | Longitud
 latitud | number(double) | Latitud
 
+<a id="tipo-centromedico"></a>
 ### **CentroMedico**
 
 Propiedad | Tipo | Requerido | Descripción
@@ -469,91 +798,71 @@ centroCCN | string | Si | Código Nacional de Centro (10 dígitos)
 centroTx | string |  | Nombre/Texto del centro
 direccion | string |  | Dirección del centro médico
 
-### **UnidadStateDto**
+<a id="tipo-trasladostatedto"></a>
+### **TrasladoStateDto**
 
 Propiedad | Tipo | Descripción
 :--|:--|:--
-unidad | string | 
-unidadAdmCode | string | 
-unidadActividadCode | string | 
-unidadActividadName | string | 
-unidadCentroCode | string | Codigo del centro al que pertenece la Unidad
-unidadCentroName | string | Nombre del centro al que pertenece la Unidad
-unidadAreaCode | string | Codigo del area al que pertenece la Unidad
-unidadAreaName | string | Nombre del área al que pertenece la Unidad
-matricula | string | 
-journal | JournalStateDto | 
-gps | GpsInfo2 | 
-moveState | MovementStateInfo | 
-specialState | SpecialStateInfo | 
-connection | ConnectionInfo | 
-state | integer(int32) | Estado del terminal
-lastTimestamp | string(date-time) | Fecha del ultimo estado
-lastReception | string(date-time) | Fecha de la ultima recepción de información
-nextTrasladoTimeLeft | integer(int32) | Minutos resta para ejecutar el siguiente traslado
+td | string | Traslado Identificador
+tm | string | Traslado conductor nombre (date-time? nullable)
+tt | string(date-time) | Fecha del traslado
+ts | string | Código de estado del traslado
+u | string | Traslado unidad
+ua | string | Código Administrativo de unidad
+m | string | Matrícula
+codgrt | string | Código agrupación por recorrido/día
+d | string | Traslado conductor nombre
+ssinfo | [StateInfo](#tipo-stateinfo)[] | Información de estados
+tms | [TerminalStateInfo](#tipo-terminalstateinfo) | Estado terminal
 
-### **JournalStateDto**
+<a id="tipo-stateinfo"></a>
+### **StateInfo**
 
 Propiedad | Tipo | Descripción
 :--|:--|:--
-personalId | number(decimal) | 
-personalNombre | string | 
-personalTelefono | string | 
-state | integer(int32) | 1: abierto, 0:cerrado
-timestamp | string(date-time) | Fecha produjoj el estado
-journalId | string | 
+timestamp | string(date-time) | Fecha-hora del estado
+stateCode | string | Código del estado
 
-### **GpsInfo2**
+<a id="tipo-terminalstateinfo"></a>
+### **TerminalStateInfo**
 
 Propiedad | Tipo | Descripción
 :--|:--|:--
-latitud | number(double) | 
-longitud | number(double) | 
-altitud | integer(int32) | 
-rumbo | integer(int32) | 
-velocidad | integer(int32) | 
-geoaddress | string | 
-geociudad | string | 
+j | [JournalInfo](#tipo-journalinfo) | Información de journal
+g | [GpsInfo](#tipo-gpsinfo) | Información GPS
 
-### **MovementStateInfo**
+<a id="tipo-journalinfo"></a>
+### **JournalInfo**
 
 Propiedad | Tipo | Descripción
 :--|:--|:--
-state | integer(int32) | 0: parado 1:marcha
-timestampStopped | string(date-time) | Indica fecha produjo el estado
-timestamp | string(date-time) | Fecha desde estado está activo
+id | string | Identificador del journal
+source | string | Origen
+created | string(date-time) | Fecha creación
+usuario | string | Usuario
+deviceId | string | Dispositivo
 
-### **SpecialStateInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-state | integer(int32) | 0: ninguno 1:mod-comida 2:modo-mnto
-timestamp | string(date-time) | Indica fecha produjo el estado
-
-### **ConnectionInfo**
+<a id="tipo-gpsinfo"></a>
+### **GpsInfo**
 
 Propiedad | Tipo | Descripción
 :--|:--|:--
-state | integer(int32) | 0: no-conectado 1:conectado
-timestamp | string(date-time) | Indica fecha produjo el estado
+lat | number(double) | Latitud
+lon | number(double) | Longitud
+r | integer(int32) | —
+spd | integer(int32) | Velocidad
+tst | integer(int32) | Timestamp
 
-### **CCTSesResponse**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-resultado | Result | Resultado de la operación
-
-### **Result**
+<a id="tipo-unidadadscritadto"></a>
+### **UnidadAdscritaDto**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
-estado | string | Si | Resultado de la operación (p. ej., AA=ok, AE=Error)
-codigo | string | Si | Código del resultado
-descripcion | string | Si | Descripción del resultado
-values | ResultValues |  | Mapa de valores adicionales
+(ver esquema) | object |  | Unidad adscrita (vehículo/unidad)
 
-### **ResultValues**
+---
 
-Propiedad | Tipo | Descripción
-:--|:--|:--
-[clave] | string | Valor asociado
+Notas de formato:
+- Encabezados en negrita y sin numeración manual.
+- La columna “Requerido” indica Si cuando el campo aparece en `required` en el OpenAPI; en caso contrario queda vacía.
+- Codificación del fichero: UTF-8.

@@ -58,7 +58,7 @@ En cada *environment*, cada parte de la integración (sistemas) tendrá una conf
 
 En cada fase existirá una configuración específica de estos parámetros de conexión, y para cada circuito.
 
-//TODO:: En futuras versiones de este documento se irán incorporando las configuraciones para cada uno de los entornos.
+> En futuras versiones de este documento se irán incorporando las configuraciones para cada uno de los entornos.
 
 Las configuraciones serán distintas para cada circuito.
 

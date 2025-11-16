@@ -166,6 +166,20 @@ En base en esto los tipos de `status` se pueden puede generar por los siguientes
 
 De esta forma, los motivos de los cambios de estado son estos:
 
+| Código | Leyenda               | Descripción Funcional                                                      | Referencia                        |
+|:-------|:----------------------|:---------------------------------------------------------------------------|:----------------------------------|
+| 1      | LOCALIZACION          | Información de localización y posicionamiento GPS del vehículo             | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 11     | INFORMACION-PERIODICA | Envío periódico de información completa del estado y posición del vehículo | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 2      | TRASLADO CAMBIO ESTADO | Notificación de cambio de estado en el ciclo de vida de un traslado    | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 4      | TRASLADO-ASIGNACION    | Asignación de recursos (conductor y vehículo) a un traslado específico | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 5      | TRASLADO-DESASIGNACIÓN | Liberación de recursos previamente asignados a un traslado             | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 3      | VEHICULO CAMBIO ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados) |
+| 24     | Ninguno        | Vehículo en modo operativo normal sin modos especiales activos                              | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 25     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 26     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc. | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 30     | Inicio  | Inicio de jornada laboral del conductor con login en el sistema      | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 31     | Fin     | Finalización de jornada laboral del conductor con logout del sistema | Ver sección [Vehículo](#tb_vehiculo_estados) |
+
 #### Tipo: VEHICULO-POSICIONAMIENTO
 
 **Campos requeridos:**
@@ -185,6 +199,9 @@ Tabla de Referencia:
 |:-------|:----------------------|:---------------------------------------------------------------------------|:----------------------------------|
 | 1      | LOCALIZACION          | Información de localización y posicionamiento GPS del vehículo             | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 11     | INFORMACION-PERIODICA | Envío periódico de información completa del estado y posición del vehículo | Ver sección [Vehículo](#tb_vehiculo_estados) |
+
+> El envio del `status` localización (1) puede ser sustituido si el `status` periodico (11) se recibe con información de localización, si no fuera así, ambos `status` (1,11) deben ser enviados.
+
 
 #### Tipo: TRASLADO
 
