@@ -1,13 +1,79 @@
-﻿## **CCTSES — Documentación técnica (a partir de OpenAPI)**
+﻿# **CircuitoB. CCTSES ➡️ Empresa**
 
-Fecha de generación: 2025-11-16 18:23
+## **Documentación técnica**
 
 ## **Información general**
 
 - Título: Emmpresa: Circuito integración con CCTESES
-- Versión: 1.0.0
+- Versión: 1.6
+- Base URL: https://{server}:{puerto}/api/integra/trans/v1
 
 ---
+
+??? info "Gráfico de secuencia de operaciones"Operaciones"
+
+    ```mermaid
+    sequenceDiagram
+        %% Participantes (izquierda a derecha)
+        participant CCTSES
+        participant Empresa
+
+        %% 1) POST /api/v1/paquetetraslado
+        CCTSES->>Empresa: POST /api/v1/paquetetraslado
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 2) PUT /api/v1/paquetetraslado
+        CCTSES->>Empresa: PUT /api/v1/paquetetraslado
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 3) POST /api/v1/trasladoasignado
+        CCTSES->>Empresa: POST /api/v1/trasladoasignado
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 4) PUT /api/v1/trasladoasignado/{idTrasladoEmpresa}/{idUnidad}
+        CCTSES->>Empresa: PUT /api/v1/trasladoasignado/{idTrasladoEmpresa}/{idUnidad}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 5) DELETE /api/v1/trasladoasignado/{idTrasladoEmpresa}
+        CCTSES->>Empresa: DELETE /api/v1/trasladoasignado/{idTrasladoEmpresa}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 6) GET /api/v1/traslado/cs
+        CCTSES->>Empresa: GET /api/v1/traslado/cs
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 7) POST /api/v1/traslado
+        CCTSES->>Empresa: POST /api/v1/traslado
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 8) DELETE /api/v1/traslado/{trasladoIDs}
+        CCTSES->>Empresa: DELETE /api/v1/traslado/{trasladoIDs}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 9) DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
+        CCTSES->>Empresa: DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 10) PUT /api/v1/traslado/setespera/{trasladoId}
+        CCTSES->>Empresa: PUT /api/v1/traslado/setespera/{trasladoId}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 11) PUT /api/v1/traslado/setnoespera/{trasladoId}
+        CCTSES->>Empresa: PUT /api/v1/traslado/setnoespera/{trasladoId}
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 12) GET /api/v1/unidad
+        CCTSES->>Empresa: GET /api/v1/unidad
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 13) PUT /api/v1/unidad/principal
+        CCTSES->>Empresa: PUT /api/v1/unidad/principal
+        Empresa-->>CCTSES: 200 OK Response
+
+        %% 14) PUT /api/v1/unidad/secundario
+        CCTSES->>Empresa: PUT /api/v1/unidad/secundario
+        Empresa-->>CCTSES: 200 OK Response
+    ```
 
 ## **Operaciones**
 
@@ -30,6 +96,8 @@ Fecha de generación: 2025-11-16 18:23
 
 <a id="op-post-api-v1-paquetetraslado"></a>
 ### **POST /api/v1/paquetetraslado**
+
+Alta de paquete de traslados.
 
 Propiedad | Descripción
 :--|:--
@@ -87,6 +155,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-put-api-v1-paquetetraslado"></a>
 ### **PUT /api/v1/paquetetraslado**
 
+Asignar paquete de traslados como enviado correctamete.
+
 Propiedad | Descripción
 :--|:--
 Método | PUT
@@ -131,6 +201,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-post-api-v1-trasladoasignado"></a>
 ### **POST /api/v1/trasladoasignado**
+
+Crea el traslado con información de la unidad que lo debe ejecutar.
 
 Propiedad | Descripción
 :--|:--
@@ -212,6 +284,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad"></a>
 ### **PUT /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}**
 
+Asigna un traslado existente a una unidad específica. idTrasladoCctses e idUnidad en el path.
+
 Propiedad | Descripción
 :--|:--
 Método | PUT
@@ -254,6 +328,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-delete-api-v1-trasladoasignado-idtrasladocctses"></a>
 ### **DELETE /api/v1/trasladoasignado/{idTrasladoCctses}**
 
+Des-asigna la unidad actualmente asociada a un traslado. idTrasladoCctses en el path.
+
 Propiedad | Descripción
 :--|:--
 Método | DELETE
@@ -295,13 +371,15 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-get-api-v1-traslado-cs"></a>
 ### **GET /api/v1/traslado/cs**
 
+Devuelve el estado de todos los traslados indicados en el filtro.
+
 Propiedad | Descripción
 :--|:--
 Método | GET
 Ruta | /api/v1/traslado/cs
 Resumen | Devuelve el estado de todos los traslados indicados en el filtro
 Body | (sin cuerpo)
-Respuestas | 200: [TrasladoStateDto](#tipo-trasladostatedto)[]
+Respuestas | 200: TrasladoStateDto[]
 
 Parámetros
 
@@ -323,6 +401,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-post-api-v1-traslado"></a>
 ### **POST /api/v1/traslado**
+
+Crea el traslado desde una orden/comando.
 
 Propiedad | Descripción
 :--|:--
@@ -394,6 +474,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-delete-api-v1-traslado-trasladoids"></a>
 ### **DELETE /api/v1/traslado/{trasladoIDs}**
 
+Anula uno o varios traslados.
+
 Propiedad | Descripción
 :--|:--
 Método | DELETE
@@ -428,6 +510,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-delete-api-v1-traslado-solicitudanula-trasladoids"></a>
 ### **DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}**
+
+Anula uno o varios traslados.
 
 Propiedad | Descripción
 :--|:--
@@ -464,6 +548,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-put-api-v1-traslado-setespera-trasladoid"></a>
 ### **PUT /api/v1/traslado/setespera/{trasladoId}**
 
+Pone un traslado en estado de espera.
+
 Propiedad | Descripción
 :--|:--
 Método | PUT
@@ -492,6 +578,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-put-api-v1-traslado-setnoespera-trasladoid"></a>
 ### **PUT /api/v1/traslado/setnoespera/{trasladoId}**
+
+Quita el estado de espera a un traslado.
 
 Propiedad | Descripción
 :--|:--
@@ -522,6 +610,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 <a id="op-get-api-v1-unidad"></a>
 ### **GET /api/v1/unidad**
 
+Devuelve todas las unidades adscritas al servicio de transporte.
+
 Propiedad | Descripción
 :--|:--
 Método | GET
@@ -546,6 +636,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-put-api-v1-unidad-principal"></a>
 ### **PUT /api/v1/unidad/principal**
+
+Asigna un vehículo como Principal a la Unidad indicada. Operación idempotente (PUT).
 
 Propiedad | Descripción
 :--|:--
@@ -576,6 +668,8 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 <a id="op-put-api-v1-unidad-secundario"></a>
 ### **PUT /api/v1/unidad/secundario**
+
+Asigna un vehículo como Secundario a la Unidad indicada. Operación idempotente (PUT).
 
 Propiedad | Descripción
 :--|:--
@@ -760,6 +854,7 @@ prioridadNivel | integer(int32) | Si | Prioridad (1=Programado, 5=Medio, 8=Urgen
 posicionPacienteCd | string | Si | Posición: SE (sentado), C (silla ruedas), T (camilla)
 posicionPacienteTx | string |  | Posición (texto)
 tipo | string | Si | Tipo: I (individual), C (colectivo), M (muestras/órganos)
+idUnidad | string |  | Unidad asignada para la ejecución del traslado (solo si viene pre-asignada por CCTSES)
 
 <a id="tipo-factultativopresciptor"></a>
 ### **FactultativoPresciptor**
@@ -798,60 +893,6 @@ centroCCN | string | Si | Código Nacional de Centro (10 dígitos)
 centroTx | string |  | Nombre/Texto del centro
 direccion | string |  | Dirección del centro médico
 
-<a id="tipo-trasladostatedto"></a>
-### **TrasladoStateDto**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-td | string | Traslado Identificador
-tm | string | Traslado conductor nombre (date-time? nullable)
-tt | string(date-time) | Fecha del traslado
-ts | string | Código de estado del traslado
-u | string | Traslado unidad
-ua | string | Código Administrativo de unidad
-m | string | Matrícula
-codgrt | string | Código agrupación por recorrido/día
-d | string | Traslado conductor nombre
-ssinfo | [StateInfo](#tipo-stateinfo)[] | Información de estados
-tms | [TerminalStateInfo](#tipo-terminalstateinfo) | Estado terminal
-
-<a id="tipo-stateinfo"></a>
-### **StateInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-timestamp | string(date-time) | Fecha-hora del estado
-stateCode | string | Código del estado
-
-<a id="tipo-terminalstateinfo"></a>
-### **TerminalStateInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-j | [JournalInfo](#tipo-journalinfo) | Información de journal
-g | [GpsInfo](#tipo-gpsinfo) | Información GPS
-
-<a id="tipo-journalinfo"></a>
-### **JournalInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-id | string | Identificador del journal
-source | string | Origen
-created | string(date-time) | Fecha creación
-usuario | string | Usuario
-deviceId | string | Dispositivo
-
-<a id="tipo-gpsinfo"></a>
-### **GpsInfo**
-
-Propiedad | Tipo | Descripción
-:--|:--|:--
-lat | number(double) | Latitud
-lon | number(double) | Longitud
-r | integer(int32) | —
-spd | integer(int32) | Velocidad
-tst | integer(int32) | Timestamp
 
 <a id="tipo-unidadadscritadto"></a>
 ### **UnidadAdscritaDto**
