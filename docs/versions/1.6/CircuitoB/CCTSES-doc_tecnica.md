@@ -100,7 +100,7 @@ Método | POST
 Ruta | /api/v1/paquetetraslado
 Resumen | Alta de paquete de traslados
 Body | application/json: [PaqueteTrasladoAltaCmd_v1](#tipo-paquetetrasladoaltacmd_v1)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -158,7 +158,7 @@ Método | PUT
 Ruta | /api/v1/paquetetraslado
 Resumen | Asignar paquete de traslados como enviado correctamete
 Body | application/json: [PaqueteTrasladoAltaOkCmd_v1](#tipo-paquetetrasladoaltaokcmd_v1)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -205,7 +205,7 @@ Método | POST
 Ruta | /api/v1/trasladoasignado
 Resumen | Crea el traslado con información de la unidad que lo debe ejecutar
 Body | application/json: [TrasladoCmd_v1](#tipo-trasladocmd_v1)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -353,7 +353,7 @@ Método | PUT
 Ruta | /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}
 Resumen | Asigna un traslado existente a una unidad específica. idTrasladoCctses e idUnidad en el path.
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -400,7 +400,7 @@ Método | DELETE
 Ruta | /api/v1/trasladoasignado/{idTrasladoCctses}
 Resumen | Des-asigna la unidad actualmente asociada a un traslado
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -443,7 +443,7 @@ Método | POST
 Ruta | /api/v1/traslado
 Resumen | Crea el traslado desde una orden/comando
 Body | application/json: [TrasladoCmd_v1](#tipo-trasladocmd_v1)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -589,7 +589,7 @@ Método | DELETE
 Ruta | /api/v1/traslado/{trasladoIDs}
 Resumen | Anula uno o varios traslados
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -626,7 +626,7 @@ Método | DELETE
 Ruta | /api/v1/traslado/solicitudanula/{trasladoIDs}
 Resumen | Anula uno o varios traslados
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -663,7 +663,7 @@ Método | PUT
 Ruta | /api/v1/traslado/setespera/{trasladoId}
 Resumen | Pone un traslado en estado de espera
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -694,7 +694,7 @@ Método | PUT
 Ruta | /api/v1/traslado/setnoespera/{trasladoId}
 Resumen | Quita el estado de espera a un traslado
 Body | (sin cuerpo)
-Respuestas | 200: [CCTSesResponse](#tipo-cctsesresponse)
+Respuestas | 200: [Response](#tipo-cctsesresponse)
 
 Parámetros
 
@@ -809,7 +809,7 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 ## **Tipos de datos**
 
 <a id="tipo-cctsesresponse"></a>
-### **CCTSesResponse**
+### **Response**
 
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
