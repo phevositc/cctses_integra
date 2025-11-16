@@ -4,12 +4,12 @@ Control de versiones
 
 | Version | Fecha      | Autor      | Descripcion |
 |---------|------------|------------|-------------|
-| 0.1     | 14/10/2021 | Phevos ITC | Versión 0.1 |
-| 0.2     | 20/11/2021 | Phevos ITC | Versión 0.2 | 
-| 0.3     | 03/04/2022 | Phevos ITC | Versión 0.3 |
-| 0.4     | 05/04/2022 | Phevos ITC | Versión 0.4 |
-| 0.5     | 15/10/2023 | Phevos ITC | Versión 0.5 |
-| 0.6     | 06/06/2024 | Phevos ITC | Versión 0.6 |
+| 1.0     | 14/10/2021 | Phevos ITC | Versión 1.0 |
+| 1.2     | 20/11/2021 | Phevos ITC | Versión 1.2 | 
+| 1.3     | 03/04/2022 | Phevos ITC | Versión 1.3 |
+| 1.4     | 05/04/2022 | Phevos ITC | Versión 1.4 |
+| 1.5     | 15/10/2024 | Phevos ITC | [Versión 1.5](versions/1.5/index.md) |
+| 1.6     | 10/11/2025 | Phevos ITC | [Versión 1.6](versions/1.6/index.md) |
 
 
 ## **1. Introducción**
@@ -86,10 +86,23 @@ Esquema de ciruitos de integración
 <br>
 <br>
 
-**Detalle de cada Circuito:**
 
-- [Circuito A: Empresa ➡️ CCTSES](CircuitoA/circuitoA-doc.md)
-- [Circuito B: CCTSES ➡️ Empresa](CircuitoB-doc.md)
+## 5. Documentación
+
+La documentación de cada uno de los circuitos está dividida en sus diferentes versiones. Dentro de cada versión se encuentra la información de cada uno de los circuitos.
+
+Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Tablas de referencia".
+
+La información funcional de los aspectos técnicos específicos se encuentra en [Aspectos funcionales](./funcional-info.md).
+
+Si hubiera alguna información funcional relevante solo para una determianda versión, se incluirá en un apartado específico dentro de esa versión.
+
+**Versiones**
+
+- [Versión 1.5](versiones\1.5\index.md)
+- [Versión 1.6](versiones\1.6\index.md)
+
+
 
 
 

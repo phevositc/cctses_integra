@@ -4,12 +4,24 @@ use_directory_urls: false
 
 nav:
   - "Inicio": "index.md"
-  - "Circuito A":
-    - "4.1 Empresa - ️CCTSES": "CircuitoA/circuitoA-doc.md"
-    - "4.2 Tablas": "CircuitoA/CircuitoA-doc_funcional.md"
-  - "Circuito B":
-    - "4.1 CTSES-Empresa": "CircuitoB/CCTSES-doc_tecnica.md"
-    - "4.2 Tablas": "CircuitoB/CircuitoA-doc_funcional.md"
+  - "Requerimientos funcionales": "funcional-info.md"
+  - "Versión 1.6":
+    - "Inicio": "versions/1.6/index.md"
+    - "Circuito A":
+      - "Técnica": "versions/1.6/CircuitoA/circuitoA-doc.md"
+      - "Funcional": "versions/1.6/CircuitoA/CircuitoA-doc_funcional.md"
+    - "Circuito B":
+      - "Técnica": "versions/1.6/CircuitoB/CCTSES-doc_tecnica.md"
+      - "Funcional": "versions/1.6/CircuitoB/CircuitoB-doc_funcional.md"
+  - "Versión 1.5":
+    - "Inicio": "versions/1.5/index.md"
+    - "Circuito A":
+      - "Técnica": "versions/1.5/CircuitoA/circuitoA-doc.md"
+      - "Funcional": "versions/1.5/CircuitoA/CircuitoA-doc_funcional.md"
+    - "Circuito B":
+      - "Técnica": "versions/1.5/CircuitoB/CCTSES-doc_tecnica.md"
+      - "Funcional": "versions/1.5/CircuitoB/CircuitoB-doc_funcional.md"
+
 
 theme:
   language: es

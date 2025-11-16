@@ -1,12 +1,14 @@
-## **4.1 CircuitoA. Empresa ➡️ CCTSES**
+# **CircuitoA. Empresa ➡️ CCTSES**
+
+## **Documentación técnica**
 
 Este servicio-web recibirá las peticiones enviadas desde la empresa concesionaria a CCTSES.
 
-### 4.1.1 Información general de la API
+### Información general de la API
 
-- Nombre: API de Integración de Transporte
+- Nombre: API de Integración CCTSES. CircuitoA
 - Versión: 1.6
-- Base URL: https://api.miempresa.com/v1
+- Base URL: https://{server}:{puerto}/api/integra/trans/v1
 
 ```mermaid
 sequenceDiagram
