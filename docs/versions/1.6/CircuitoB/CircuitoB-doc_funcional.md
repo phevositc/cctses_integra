@@ -231,6 +231,43 @@ Indica el tipo de vehiculo respecto a la dotación y el uso del mismo.
 | T | Taxi |
 | U | UVI |
 
+### TB_TRASLADO_MODALIDAD
+
+Indica la modalidad del traslado.
+
+| codigo | descripción |
+| :--- | :--- |
+| U | URGENCIA |
+| O | CONSULTA |
+| C | CURA |
+| D | DIALISIS |
+| RH | REHABILITACION |
+| T | TERAPIA |
+| A | ALTA |
+
+### TB_TRASLADO_TIPO_CONSULTA
+
+Indica el tipo de consulta del traslado.
+
+| Código | Descripción                       |
+|:-------|:----------------------------------|
+| AP     | ALTA PLANTA                       |
+| AU     | ALTA URGENCIAS                    |
+| CO     | CONSULTA                          |
+| DH     | DEMENCIAS HD                      |
+| DE     | DIALISIS EXTRA                    |
+| HE     | HEMODIALISIS                      |
+| IN     | INGRESO HOSP.NO-PROGRAMADO        |
+| PD     | PRUEBAS DIAGNOSTICAS              |
+| QH     | QUIMIOTERAPIA HD                  |
+| RT     | RADIOTERAPIA                      |
+| RE     | REHABILITACION                    |
+| TD     | TRASLADO A DOMICILIO              |
+| TC     | TRASLADO FUERA COMUNIDAD          |
+| TI     | TRASLADO INTERHOSPITALARIO        |
+| TM     | TRASLADO MUESTRAS Y ÓRGANOS       |
+| UR     | URGENCIA                          |
+
 
 ### TB_UBICACION_TIPO
 
@@ -243,6 +280,33 @@ Este tipo de ubicación se utiliza en la información en el apartado `Origen` y 
 | 1 | Domicilio |
 | 2 | Centro Médico |
 | 3 | Otros
+
+
+### TB_AISLAMIENTO_TIPO
+
+Indica el tipo de aislamiento que requiere el paciente.
+
+| Código | Descripción                       |
+|:-------|:----------------------------------|
+| VR | Vía Aérea                               |
+| GT | Gotas                                     |
+| CT | Contacto                                  |
+
+
+### TB_TRASLADO_NIVEL_PRIORIDAD
+
+Indica el tipo de prioridad del traslado.
+
+| Código | Descripción                                   |
+|:-------|:----------------------------------------------|
+| 1     | Sin-prioridad=programado                    |
+| 5     | Medio (NoUrgente NoProgramado)              |
+| 8     | Urgente                                     |
+| 10     | 10=Emergencia                                 |
+
+
+
+
 
 
 

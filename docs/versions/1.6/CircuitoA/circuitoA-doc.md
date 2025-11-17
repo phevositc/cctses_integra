@@ -73,6 +73,8 @@ sequenceDiagram
     | gps | Gps | Posición GPS donde se ha generado el status (opcional según caso de uso). |
     | idActividadJornada | string | Tipo de actividad de la jornada (opcional). Referencia: [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#entidad-tb_actividad_tipos). |
     | idJornada | string | Id/código de la jornada en la que se ha generado este status (opcional). |
+    | kms       | number | Kilómetros del vehículo en el momento de la operación (opcional). |
+
 
     Gps
 
@@ -103,7 +105,8 @@ sequenceDiagram
         "velocidad": 42
       },
       "idActividadJornada": "1",
-      "idJornada": "JRN-2025-001"
+      "idJornada": "JRN-2025-001",
+      "kms": 0
     }
   ]
 }

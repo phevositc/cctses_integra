@@ -177,8 +177,15 @@ De esta forma, los motivos de los cambios de estado son estos:
 | 24     | Ninguno        | Vehículo en modo operativo normal sin modos especiales activos                              | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 25     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 26     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc. | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 27     | ITV                                                                                                          | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 30     | Inicio  | Inicio de jornada laboral del conductor con login en el sistema      | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 31     | Fin     | Finalización de jornada laboral del conductor con logout del sistema | Ver sección [Vehículo](#tb_vehiculo_estados) |
+
+
+!!! warning "Validaciones según Status"
+
+    Cada tipo de `status` tendrá una **validación diferente para los campos requeridos** según se detalla en cada tipo.
+
 
 #### Tipo: VEHICULO-POSICIONAMIENTO
 
@@ -192,6 +199,10 @@ De esta forma, los motivos de los cambios de estado son estos:
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
 - `idEstadoVehiculo` - Estado actual del vehículo (opcional pero recomendado en INFORMACION-PERIODICA)
+
+> Si no existe actividad/jornada iniciada, los campos `idActividadJornada` y `idJornada` serán nulos/vacios. El campo `idEstadoVehiculo` tendrá valor 0.
+
+
 
 Tabla de Referencia:
 
@@ -215,10 +226,14 @@ Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASL
 - `idUnidad` - Unidad administrativa
 - `idEstadoTraslado` - Estado del traslado (referencia [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados))
 - `fechaHora` - Fecha y hora del cambio de estado del traslado
-- `idMotivo` - Motivo del status (código 2: TRASLADO CAMBIO ESTADO, 4: TRASLADO-ASIGNACION, 5: TRASLADO-DESASIGNACIÓN)
+- `idMotivo` - Motivo del status ver tabla TB_TRASLADO_ESTADOS
 - `gps` - Posición GPS del vehículo en el momento del cambio de estado
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
+- `idEstadoVehiculo` - Estado actual del vehículo
+
+> En este `status` el `idJornada` tendrá un código de jornada, `idActividadJornada` deben tener en el rango permitido, `idEstadoVehiculo` valor en rango permitido. El estado de un traslado solo se puede cambiar con una jornada iniciada y el vehiculo en un estado operativo.
+
 
 Tabla de Referencia:
 
@@ -246,6 +261,9 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idActividadJornada` - Tipo de actividad de la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador de la jornada de trabajo
 
+> En este `status` el `idJornada` tendrá un código de jornada, `idActividadJornada` deben tener en el rango permitido, `idEstadoVehiculo` valor en rango permitido. El estado de un traslado solo se puede cambiar con una jornada iniciada y el vehiculo en un estado operativo.
+
+
 Tabla de Referencia:
 
 | Código | Leyenda                | Descripción Funcional                                      | Referencia                                                |
@@ -264,6 +282,7 @@ Tabla de Referencia:
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
 
+
 Tabla de Referencia:
 
 | Código | Leyenda        | Descripción Funcional                                                                       | Referencia                        |
@@ -271,6 +290,11 @@ Tabla de Referencia:
 | 24     | Ninguno        | Vehículo en modo operativo normal sin modos especiales activos                              | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 25     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      | Ver sección [Vehículo](#tb_vehiculo_estados) |
 | 26     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc. | Ver sección [Vehículo](#tb_vehiculo_estados) |
+| 27     | ITV          | Vehículo en estado de mantenimiento por ITV                                                   | Ver sección [Vehículo](#tb_vehiculo_estados) |
+
+
+> En este `status` el `idJornada` tendrá un código de jornada, `idActividadJornada` deben tener en el rango permitido.<br>
+> Se deben enviar un `status` al entrar en el Modo, y otro al salir del Modo.
 
 #### Tipo: JORNADA
 
@@ -283,6 +307,11 @@ Tabla de Referencia:
 - `gps` - Posición GPS del vehículo
 - `idActividadJornada` - Tipo de actividad que se va a realizar en la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador único de la jornada de trabajo
+- `kms` - Kilometros del vehículo en el momento de la operación
+
+> En este `status` el `idJornada` tendrá un código de jornada, `idActividadJornada` deben tener en el rango permitido.<br>
+> El campo `kms` es obligatorio y debe tener un valor >0 en el incio y fin de jornada.
+
 
 Tabla de Referencia:
 
