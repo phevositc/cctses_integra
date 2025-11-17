@@ -11,7 +11,7 @@
         <link rel="prev" href="../CircuitoA/CircuitoA-doc_funcional.html">
       
       
-        <link rel="next" href="CircuitoB-doc_funcional.html">
+        <link rel="next" href="CCTSES-doc_funcional.html">
       
       
         
@@ -1010,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CircuitoB-doc_funcional.html" class="md-nav__link">
+      <a href="CCTSES-doc_funcional.html" class="md-nav__link">
         
   
   
@@ -1972,7 +1972,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2037,7 +2037,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2091,7 +2091,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2101,8 +2101,6 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>POST /api/v1/trasladoasignado
 </span></code></pre></div>
 <h4 id="ejemplo-de-body-request_2"><strong>Ejemplo de body (request)</strong><a class="headerlink" href="#ejemplo-de-body-request_2" title="Permanent link">¶</a></h4>
-<details class="example">
-<summary>Ejemplo de body (request)</summary>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">"traslado"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">"general"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2166,7 +2164,7 @@
 </span><span id="__span-7-61"><a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="w">    </span><span class="p">},</span>
 </span><span id="__span-7-62"><a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="w">    </span><span class="nt">"facultativoPrescriptor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-63"><a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="w">      </span><span class="nt">"nombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOMBRE"</span><span class="p">,</span>
-</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="w">      </span><span class="nt">"apellido1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FACTULTATIVO PRESCRIPTOR"</span><span class="p">,</span>
+</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="w">      </span><span class="nt">"apellido1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FACULTATIVO PRESCRIPTOR"</span><span class="p">,</span>
 </span><span id="__span-7-65"><a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="w">      </span><span class="nt">"apellido2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
 </span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="w">      </span><span class="nt">"nColegiado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZZZ858447"</span><span class="p">,</span>
 </span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="w">      </span><span class="nt">"areaServicioCd"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
@@ -2201,22 +2199,18 @@
 </span><span id="__span-7-96"><a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-7-97"><a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a><span class="p">}</span>
 </span></code></pre></div>
-</details>
 <h4 id="ejemplo-de-respuesta-200_2"><strong>Ejemplo de respuesta (200)</strong><a class="headerlink" href="#ejemplo-de-respuesta-200_2" title="Permanent link">¶</a></h4>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">"codigo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">"descripcion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="nt">"trasladoEmpresaId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9885588"</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="p">{</span><span class="nt">"trasladoEmpresaId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9885588"</span><span class="p">}</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="p">]</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<blockquote>
-<p>En la respuesta se devuelve el Identificador único de traslado generado en la empresa</p>
-</blockquote>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
 <p><a id="op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad"></a></p>
@@ -2248,7 +2242,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2286,12 +2280,9 @@
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">"codigo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">"descripcion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="nt">"trasladoEmpresaId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9885588"</span><span class="p">,</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">"descripcion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
@@ -2324,7 +2315,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2391,7 +2382,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2401,8 +2392,6 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>POST /api/v1/traslado
 </span></code></pre></div>
 <h4 id="ejemplo-de-body-request_3"><strong>Ejemplo de body (request)</strong><a class="headerlink" href="#ejemplo-de-body-request_3" title="Permanent link">¶</a></h4>
-<details class="example">
-<summary>Ejemplo de body (request)</summary>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">"traslado"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">"general"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2500,22 +2489,18 @@
 </span><span id="__span-14-95"><a id="__codelineno-14-95" name="__codelineno-14-95" href="#__codelineno-14-95"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-14-96"><a id="__codelineno-14-96" name="__codelineno-14-96" href="#__codelineno-14-96"></a><span class="p">}</span>
 </span></code></pre></div>
-</details>
 <h4 id="ejemplo-de-respuesta-200_5"><strong>Ejemplo de respuesta (200)</strong><a class="headerlink" href="#ejemplo-de-respuesta-200_5" title="Permanent link">¶</a></h4>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">"codigo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">"descripcion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">"resultado"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">      </span><span class="nt">"trasladoEmpresaId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9885588"</span><span class="p">,</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">      </span><span class="p">{</span><span class="nt">"trasladoEmpresaId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9885588"</span><span class="p">}</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">]</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<blockquote>
-<p>En la respuesta se devuelve el Identificador único de traslado generado en la empresa</p>
-</blockquote>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
 <p><a id="op-delete-api-v1-traslado-trasladoids"></a></p>
@@ -2547,7 +2532,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2641,7 +2626,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
 </tr>
 </tbody>
 </table>
@@ -2735,7 +2720,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">CCTSesResponse</a></td>
 </tr>
 </tbody>
 </table>
@@ -2793,7 +2778,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">Response</a></td>
+<td style="text-align: left;">200: <a href="#tipo-cctsesresponse">CCTSesResponse</a></td>
 </tr>
 </tbody>
 </table>
@@ -2992,7 +2977,7 @@
 <hr>
 <p><a id="tipos-de-datos"></a></p>
 <h2 id="tipos-de-datos"><strong>Tipos de datos</strong><a class="headerlink" href="#tipos-de-datos" title="Permanent link">¶</a></h2>
-<p><a id="tipo-cctsesresponse"></a></p>
+<p><a id="tipo-response"></a></p>
 <h3 id="response"><strong>Response</strong><a class="headerlink" href="#response" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -3552,25 +3537,25 @@
 <td style="text-align: left;">modalidadCd</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;">Si</td>
-<td style="text-align: left;">Modalidad (código): Consulta, Cura, Diálisis, etc.</td>
+<td style="text-align: left;">Modalidad (código): Consulta, Cura, Diálisis, etc. — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_traslado_modalidad">TB_TRASLADO_MODALIDAD</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">modalidadTx</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Modalidad (texto)</td>
+<td style="text-align: left;">Modalidad (texto) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_traslado_modalidad">TB_TRASLADO_MODALIDAD</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">modalidadExtraTx</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Información adicional de la modalidad (Quimioterapia, Radioterapia...)</td>
+<td style="text-align: left;">Información adicional de la modalidad (Quimioterapia, Radioterapia...) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_traslado_tipo_consulta">TB_TRASLADO_TIPO_CONSULTA</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">tipoAislamientoCd</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Tipo de aislamiento: VR (Vía aérea), GT (Gotas), CT (Contacto)</td>
+<td style="text-align: left;">Tipo de aislamiento: VR (Vía aérea), GT (Gotas), CT (Contacto) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_traslado_tipo_aislamiento">TB_TRASLADO_TIPO_AISLAMIENTO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">conCovid</td>
@@ -3594,19 +3579,19 @@
 <td style="text-align: left;">posicionPacienteCd</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;">Si</td>
-<td style="text-align: left;">Posición: SE (sentado), C (silla ruedas), T (camilla)</td>
+<td style="text-align: left;">Posición: SE (sentado), C (silla ruedas), T (camilla) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_paciente_posicion">TB_PACIENTE_POSICION</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">posicionPacienteTx</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Posición (texto)</td>
+<td style="text-align: left;">Posición (texto) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_paciente_posicion">TB_PACIENTE_POSICION</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">tipo</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;">Si</td>
-<td style="text-align: left;">Tipo: I (individual), C (colectivo), M (muestras/órganos)</td>
+<td style="text-align: left;">Tipo: I (individual), C (colectivo), M (muestras/órganos) — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_traslado_modo">TB_TRASLADO_MODO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">idUnidad</td>
@@ -3758,10 +3743,11 @@
 <td style="text-align: left;">(ver esquema)</td>
 <td style="text-align: left;">object</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Unidad adscrita (vehículo/unidad)</td>
+<td style="text-align: left;">Unidad adscrita (vehículo/unidad). — Ver tabla: <a href="CCTSES-doc_funcional.html#tb_salud_zona">TB_SALUD_ZONA</a></td>
 </tr>
 </tbody>
 </table>
+<hr>
 
 
 

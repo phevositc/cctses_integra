@@ -582,6 +582,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tb_vehiculo_modo_especial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TB_VEHICULO_MODO_ESPECIAL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tb_motivo_status" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -696,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CircuitoB/CircuitoB-doc_funcional.html" class="md-nav__link">
+      <a href="../CircuitoB/CCTSES-doc_funcional.html" class="md-nav__link">
         
   
   
@@ -1123,6 +1134,17 @@
     <span class="md-ellipsis">
       
         TB_ACTIVIDAD_TIPOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tb_vehiculo_modo_especial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TB_VEHICULO_MODO_ESPECIAL
       
     </span>
   </a>
@@ -1680,6 +1702,34 @@
 </tr>
 </tbody>
 </table>
+<h3 id="tb_vehiculo_modo_especial">TB_VEHICULO_MODO_ESPECIAL<a class="headerlink" href="#tb_vehiculo_modo_especial" title="Permanent link">¶</a></h3>
+<p>Indica un modo de trabajo especial para el vehiculo durante su jornada de trabajo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Código</th>
+<th style="text-align: left;">Leyenda</th>
+<th style="text-align: left;">Descripción Funcional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Comida</td>
+<td style="text-align: left;">Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Fuera-Servicio</td>
+<td style="text-align: left;">Vehículo temporalmente fuera de servicio por mantenimiento, reparación en taller, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">ITV</td>
+<td style="text-align: left;">Vehículo en estado de mantenimiento por ITV</td>
+</tr>
+</tbody>
+</table>
 <h3 id="tb_motivo_status">TB_MOTIVO_STATUS<a class="headerlink" href="#tb_motivo_status" title="Permanent link">¶</a></h3>
 <p>Los llamados <code>status</code> son una parte fundamental del sistema, ya que permiten conocer en tiempo real la situación de la flota, 
 a través del estado de sus recursos, vehiculos, traslados, .. y la operativa que se realiza en cada uno de ellos.</p>
@@ -1708,13 +1758,13 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">LOCALIZACION</td>
 <td style="text-align: left;">Información de localización y posicionamiento GPS del vehículo</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">INFORMACION-PERIODICA</td>
 <td style="text-align: left;">Envío periódico de información completa del estado y posición del vehículo</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">2</td>
@@ -1742,36 +1792,28 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 </tr>
 <tr>
 <td style="text-align: left;">24</td>
-<td style="text-align: left;">Ninguno</td>
-<td style="text-align: left;">Vehículo en modo operativo normal sin modos especiales activos</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">Comida</td>
-<td style="text-align: left;">Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">Fuera-Servicio</td>
-<td style="text-align: left;">Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc.</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+<td style="text-align: left;">VEHICULO-MODO-ESPECIAL</td>
+<td style="text-align: left;">Vehículo indica inicio o fin de un modo especial de trabajo</td>
+<td style="text-align: left;">Ver <a href="#tb_vehiculo_modo_especial"><code>TB_VEHICULO_MODO_ESPECIAL</code></a></td>
 </tr>
 <tr>
 <td style="text-align: left;">30</td>
 <td style="text-align: left;">Inicio</td>
 <td style="text-align: left;">Inicio de jornada laboral del conductor con login en el sistema</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">31</td>
 <td style="text-align: left;">Fin</td>
 <td style="text-align: left;">Finalización de jornada laboral del conductor con logout del sistema</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">Validaciones según Status</p>
+<p>Cada tipo de <code>status</code> tendrá una <strong>validación diferente para los campos requeridos</strong> según se detalla en cada tipo.</p>
+</div>
 <h4 id="tipo-vehiculo-posicionamiento">Tipo: VEHICULO-POSICIONAMIENTO<a class="headerlink" href="#tipo-vehiculo-posicionamiento" title="Permanent link">¶</a></h4>
 <p><strong>Campos requeridos:</strong></p>
 <ul>
@@ -1784,33 +1826,9 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
 <li><code>idEstadoVehiculo</code> - Estado actual del vehículo (opcional pero recomendado en INFORMACION-PERIODICA)</li>
 </ul>
-<p>Tabla de Referencia:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">LOCALIZACION</td>
-<td style="text-align: left;">Información de localización y posicionamiento GPS del vehículo</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">INFORMACION-PERIODICA</td>
-<td style="text-align: left;">Envío periódico de información completa del estado y posición del vehículo</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-</tbody>
-</table>
 <blockquote>
-<p>El envio del <code>status</code> localización (1) puede ser sustituido si el <code>status</code> periodico (11) se recibe con información de localización, si no fuera así, ambos <code>status</code> (1,11) deben ser enviados.</p>
+<p>Si no existe actividad/jornada iniciada, los campos <code>idActividadJornada</code> y <code>idJornada</code> serán nulos/vacios. El campo <code>idEstadoVehiculo</code> tendrá valor 0.<br>
+El envio del <code>status</code> localización (1) puede ser sustituido si el <code>status</code> periodico (11) se recibe con información de localización, si no fuera así, ambos <code>status</code> (1,11) deben ser enviados.</p>
 </blockquote>
 <h4 id="tipo-traslado">Tipo: TRASLADO<a class="headerlink" href="#tipo-traslado" title="Permanent link">¶</a></h4>
 <p>Los estados por los que pasa un traslado están recogidos en la tabla <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a>.</p>
@@ -1822,42 +1840,15 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>idEstadoTraslado</code> - Estado del traslado (referencia <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a>)</li>
 <li><code>fechaHora</code> - Fecha y hora del cambio de estado del traslado</li>
-<li><code>idMotivo</code> - Motivo del status (código 2: TRASLADO CAMBIO ESTADO, 4: TRASLADO-ASIGNACION, 5: TRASLADO-DESASIGNACIÓN)</li>
+<li><code>idMotivo</code> - Motivo del status ver tabla TB_TRASLADO_ESTADOS</li>
 <li><code>gps</code> - Posición GPS del vehículo en el momento del cambio de estado</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
+<li><code>idEstadoVehiculo</code> - Estado actual del vehículo</li>
 </ul>
-<p>Tabla de Referencia:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">TRASLADO CAMBIO ESTADO</td>
-<td style="text-align: left;">Notificación de cambio de estado en el ciclo de vida de un traslado</td>
-<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
-</tr>
-<tr>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">TRASLADO-ASIGNACION</td>
-<td style="text-align: left;">Asignación de recursos (conductor y vehículo) a un traslado específico</td>
-<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
-</tr>
-<tr>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">TRASLADO-DESASIGNACIÓN</td>
-<td style="text-align: left;">Liberación de recursos previamente asignados a un traslado</td>
-<td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
-</tr>
-</tbody>
-</table>
+<blockquote>
+<p>En este <code>status</code> el <code>idJornada</code> tendrá un código de jornada, <code>idActividadJornada</code> deben tener en el rango permitido, <code>idEstadoVehiculo</code> valor en rango permitido. El estado de un traslado solo se puede cambiar con una jornada iniciada y el vehiculo en un estado operativo.</p>
+</blockquote>
 <h4 id="tipo-vehiculo-estado">Tipo: VEHICULO-ESTADO<a class="headerlink" href="#tipo-vehiculo-estado" title="Permanent link">¶</a></h4>
 <p>Los estados por los que pasa un vehículo están recogidos en la tabla <a href="#tb_vehiculo_estados"><code>TB_VEHICULO_ESTADOS</code></a>.</p>
 <p>La gestión de un vehículo está estrechamente vinculada a la Jornada de Trabajo y a la actividad que se realiza en ella.
@@ -1873,25 +1864,9 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada (referencia <a href="#tb_actividad_tipos"><code>TB_ACTIVIDAD_TIPOS</code></a>)</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
 </ul>
-<p>Tabla de Referencia:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">VEHICULO CAMBIO ESTADO</td>
-<td style="text-align: left;">Notificación de cambio en el estado operativo del vehículo</td>
-<td style="text-align: left;">Ver <a href="#tb_vehiculo_estados"><code>TB_VEHICULO_ESTADOS</code></a></td>
-</tr>
-</tbody>
-</table>
+<blockquote>
+<p>En este <code>status</code> el <code>idJornada</code> tendrá un código de jornada, <code>idActividadJornada</code> deben tener en el rango permitido, <code>idEstadoVehiculo</code> valor en rango permitido. El estado de un traslado solo se puede cambiar con una jornada iniciada y el vehiculo en un estado operativo.</p>
+</blockquote>
 <h4 id="tipo-vehiculo-modos-modos-especiales">Tipo: VEHICULO-MODOS (Modos Especiales)<a class="headerlink" href="#tipo-vehiculo-modos-modos-especiales" title="Permanent link">¶</a></h4>
 <p><em>Campos requeridos:</em></p>
 <ul>
@@ -1899,41 +1874,16 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>fechaHora</code> - Fecha y hora del cambio de modo</li>
 <li><code>idMotivo</code> - Motivo del status (código 24: Ninguno, 25: Comida, 26: Fuera-Servicio)</li>
+<li><code>idModoEspecial</code> - Tipo de modo especial (referencia <a href="#tb_vehiculo_modo_especial"><code>TB_VEHICULO_MODO_ESPECIAL</code></a>)</li>
 <li><code>gps</code> - Posición GPS del vehículo</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
 </ul>
-<p>Tabla de Referencia:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">Ninguno</td>
-<td style="text-align: left;">Vehículo en modo operativo normal sin modos especiales activos</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">Comida</td>
-<td style="text-align: left;">Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">Fuera-Servicio</td>
-<td style="text-align: left;">Vehículo temporalmente fuera de servicio por mantenimiento, ITV, reparación en taller, etc.</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-</tbody>
-</table>
+<blockquote>
+<p>En este <code>status</code> el <code>idJornada</code> tendrá un código de jornada, <code>idActividadJornada</code> deben tener en el rango permitido.<br>
+El campo <code>idModoEspecial</code> tendrá un valor en el rango permitido. <strong>0</strong> si se desactiva el Modo.<br>
+Se deben enviar un <code>status</code> al entrar en el Modo, y otro al salir del Modo.</p>
+</blockquote>
 <h4 id="tipo-jornada">Tipo: JORNADA<a class="headerlink" href="#tipo-jornada" title="Permanent link">¶</a></h4>
 <p><strong>Campos requeridos:</strong></p>
 <ul>
@@ -1944,51 +1894,12 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 <li><code>gps</code> - Posición GPS del vehículo</li>
 <li><code>idActividadJornada</code> - Tipo de actividad que se va a realizar en la jornada (referencia <a href="#tb_actividad_tipos"><code>TB_ACTIVIDAD_TIPOS</code></a>)</li>
 <li><code>idJornada</code> - Identificador único de la jornada de trabajo</li>
+<li><code>kms</code> - Kilometros del vehículo en el momento de la operación</li>
 </ul>
-<p>Tabla de Referencia:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">Inicio</td>
-<td style="text-align: left;">Inicio de jornada laboral del conductor con login en el sistema</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">31</td>
-<td style="text-align: left;">Fin</td>
-<td style="text-align: left;">Finalización de jornada laboral del conductor con logout del sistema</td>
-<td style="text-align: left;">Ver sección <a href="#tb_vehiculo_estados">Vehículo</a></td>
-</tr>
-</tbody>
-</table>
-<h5 id="tipo-generico">Tipo: GENÉRICO<a class="headerlink" href="#tipo-generico" title="Permanent link">¶</a></h5>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Código</th>
-<th style="text-align: left;">Leyenda</th>
-<th style="text-align: left;">Descripción Funcional</th>
-<th style="text-align: left;">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">DESCONOCIDA</td>
-<td style="text-align: left;">Estado no categorizado o error en la identificación del tipo de status</td>
-<td style="text-align: left;">N/A</td>
-</tr>
-</tbody>
-</table>
+<blockquote>
+<p>En este <code>status</code> el <code>idJornada</code> tendrá un código de jornada, <code>idActividadJornada</code> deben tener en el rango permitido.<br>
+El campo <code>kms</code> es obligatorio y debe tener un valor &gt;0 en el incio y fin de jornada.</p>
+</blockquote>
 
 
 
