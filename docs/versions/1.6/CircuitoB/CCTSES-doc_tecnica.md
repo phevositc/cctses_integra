@@ -10,7 +10,7 @@ Esta es la documentación técnica de la API del Circuito Integración CCTSES ->
 
 - Título: Emmpresa: Circuito integración con CCTESES
 - Versión: 1.6
-- Base URL: https://{server}:{puerto}/api/integra/trans/v1
+- Base URL: https://{server}:{puerto}/api/integra/cctses/v1
 
 ---
 

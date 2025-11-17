@@ -23,10 +23,10 @@ JSON como formato para el intercambio de información.
 
 Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres:
 
-- **Circuito EMPRESA-CCTSES**:<br>
+- **Circuito EMPRESA-CCTSES** (Cirtuito A):<br>
   Este servicio-web recibirá las peticiones enviadas desde el software de la Empresa al aplicativo de CCTSES..
 
-- **Circuito CCTSES-EMPRESA**:<br>
+- **Circuito CCTSES-EMPRESA** (Circuito B):<br>
   Este servicio-web enviará las peticiones enviadas desde la aplicación de CCTSES al software de la Empresa.
 
 
@@ -35,16 +35,18 @@ Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres
 
 Para poder llevar a cabo la integración de forma exitosa, se necesita completar unas determinadas fases:
 
-1. Fase de desarrollo (software de la Empresa)
-2. Fase de pruebas en entorno de pruebas (Empresa y CCTSES)
-3. Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)
-4. Puesta en producción
+1. Fase de desarrollo (software de la Empresa) y CCTSES (software de cctses)
+2. Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)
+3. Puesta en producción
 
-Para cada una de las fases de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración.
+Para la fase de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración. La configuración de este entorno correrá a cargo de la parte implicada en cada circuito. 
 
-> La fase en entorno de pruebas pueden no ser obligatorias si ambas partes estuvieran de acuerdo.
+- **Circuito A** las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de CCTSES.
+- **Circuito B** las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de la EMPRESA.
 
-En cada fase de pruebas se utilizará lo que se denomina una *enviroment* o entorno, y para cada *environment* existirán una serie de configuraciones distintas, que será necesario aplicar.
+**SIN** un entorno de *pruebas* no se podrán llevar a cabo las mismas.
+
+En cada fase de pruebas se utilizará lo que se denomina una *enviroment* o entorno, y para cada *environment* existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)
 
 En cada *environment*, cada parte de la integración (sistemas) tendrá una configuración software y hardware, que será independiente y no afectará a la misma, pero sí es necesario definir una serie de información que se utilizará para poder conectar con los sistemas.
 
@@ -57,10 +59,6 @@ En cada *environment*, cada parte de la integración (sistemas) tendrá una conf
 
 
 En cada fase existirá una configuración específica de estos parámetros de conexión, y para cada circuito.
-
-> En futuras versiones de este documento se irán incorporando las configuraciones para cada uno de los entornos.
-
-Las configuraciones serán distintas para cada circuito.
 
 
 ## **3. Comunicación entre sistemas**
@@ -75,7 +73,7 @@ Cada circuito es indipendiente y tendrá una operativa totalmente distinta.
 
 Las operaciones disponibles en cada circuito están documentadas a través de su correspondiente documentación.
 
-Esquema de ciruitos de integración
+**Esquema circuitos de integración**
 
 <figcaption>
   <img src="img/esqume-circuitos.png" width="100%" align="center">
@@ -87,11 +85,11 @@ Esquema de ciruitos de integración
 <br>
 
 
-## 5. Documentación
+## **5. Documentación**
 
 La documentación de cada uno de los circuitos está dividida en sus diferentes versiones. Dentro de cada versión se encuentra la información de cada uno de los circuitos.
 
-Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Tablas de referencia".
+Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Tablas de referencia", dentro de la documentación funcional.
 
 La información funcional de los aspectos técnicos específicos se encuentra en [Aspectos funcionales](./funcional-info.md).
 

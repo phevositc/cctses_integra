@@ -5,14 +5,8 @@ Fecha de generación: 2025-11-15 21:46
 ## **Información general**
 
 - Título: Emmpresa: Circuito integración con CCTESES
-- Versión: 1.0.0
-- Servidores:
-  - http://localhost:5000 (DEV)
-  - https://localhost:5001 (DEV)
-
-### **Notas**
-- Esta documentación se ha generado a partir de docs/CCTSES/CCTSES-openapi.yaml (OpenAPI 3.0.0) y sigue la plantilla de docs/.support/Plan-Regeneracion-Circuito.md.
-- Algunos esquemas incluyen el sufijo Dto (p. ej., TrasladoStateDto). Es coherente con la especificación actual.
+- Versión: 1.6
+- Base URL: https://{server}:{puerto}/api/integra/cctses/v1.
 
 ---
 
