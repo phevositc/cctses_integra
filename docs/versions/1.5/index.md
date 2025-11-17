@@ -1,10 +1,11 @@
 ﻿# Guía de Integración CCTSES. Versión 1.5
 
 
+**Actualizada a fecha: 17/10/2024.**
+
 ## Cambios
 
-Los cambios que incluye está versión son los siguientes.
-
+(no disponible)
 
 
 ## Documentación

@@ -2,12 +2,15 @@
 
 Este circuito recoge toda la operativa de envio de información desde CCTSES a la empresa.
 
+
 ## Resumen de la operativa
 
-Toda las operaciones
+Queda recogida en el gráfico de secuencia de operaciones.
 
 ## Especificación de operativa
 
 Toda la operativa queda recogida en los siguientes documentos:
 
 - [Documentación técnica](CCTSES-doc_tecnica.md)
+- [Documentación funcional](CCTSES-doc_funcional.md)
+
