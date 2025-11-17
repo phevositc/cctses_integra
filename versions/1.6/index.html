@@ -429,6 +429,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Documentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalle-por-circuito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle por Circuito
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacion-de-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información de Headers
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1019,6 +1047,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Documentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalle-por-circuito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle por Circuito
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacion-de-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Información de Headers
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1089,12 +1145,15 @@
 <h1 id="guia-de-integracion-cctses-version-16">Guía de Integración CCTSES. Versión 1.6<a class="headerlink" href="#guia-de-integracion-cctses-version-16" title="Permanent link">¶</a></h1>
 <p><strong>Actualizada a fecha: 17/11/2025.</strong></p>
 <h2 id="cambios">Cambios<a class="headerlink" href="#cambios" title="Permanent link">¶</a></h2>
-<p>(no disponible)</p>
+<p><em>Operaciones eliminadas</em>:</p>
+<ul>
+<li>Operacion <code>PUT /api/integra/trans/v1/traslado/setPacienteAvisar</code> en Circuito A, por nueva operativa de trabajo, ya no es requerida.</li>
+</ul>
 <h2 id="documentacion">Documentación<a class="headerlink" href="#documentacion" title="Permanent link">¶</a></h2>
 <p>Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Documentación funcional".</p>
 <p>La información funcional de los aspectos técnicos específicos se encuentra en <a href="../../funcional-info.html">Aspectos funcionales</a>.</p>
 <p>Si hubiera alguna información funcional relevante solo para una determianda versión, se incluirá en un apartado específico dentro de esa versión.</p>
-<p><strong>Detalle de cada Circuito:</strong></p>
+<h3 id="detalle-por-circuito">Detalle por Circuito<a class="headerlink" href="#detalle-por-circuito" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>Circuito A: Empresa ➡️ CCTSES</p>
@@ -1111,6 +1170,29 @@
 </ul>
 </li>
 </ul>
+<h2 id="informacion-de-headers">Información de Headers<a class="headerlink" href="#informacion-de-headers" title="Permanent link">¶</a></h2>
+<p>Todas las peticiones de cualquier tipo (POST, PUT, DELETE, ...) requieren los siguientes headers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Header</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>x-request-id</em></td>
+<td style="text-align: left;">Identificador único de la petición. Formato: Fecha de la petición en formato: YYYYMMDDHHmmSS.sss</td>
+<td style="text-align: left;">20251107115368.2525</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>x-source</em></td>
+<td style="text-align: left;">Identificador del sistema que envia la petición. (Empresa, CCTSES)</td>
+<td style="text-align: left;">Empresa</td>
+</tr>
+</tbody>
+</table>
 
 
 
