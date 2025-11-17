@@ -1201,27 +1201,28 @@ JSON como formato para el intercambio de información.</p>
 <p>Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres:</p>
 <ul>
 <li>
-<p><strong>Circuito EMPRESA-CCTSES</strong>:<br>
+<p><strong>Circuito EMPRESA-CCTSES</strong> (Cirtuito A):<br>
   Este servicio-web recibirá las peticiones enviadas desde el software de la Empresa al aplicativo de CCTSES..</p>
 </li>
 <li>
-<p><strong>Circuito CCTSES-EMPRESA</strong>:<br>
+<p><strong>Circuito CCTSES-EMPRESA</strong> (Circuito B):<br>
   Este servicio-web enviará las peticiones enviadas desde la aplicación de CCTSES al software de la Empresa.</p>
 </li>
 </ul>
 <h2 id="2-entornos"><strong>2. Entornos</strong><a class="headerlink" href="#2-entornos" title="Permanent link">¶</a></h2>
 <p>Para poder llevar a cabo la integración de forma exitosa, se necesita completar unas determinadas fases:</p>
 <ol>
-<li>Fase de desarrollo (software de la Empresa)</li>
-<li>Fase de pruebas en entorno de pruebas (Empresa y CCTSES)</li>
+<li>Fase de desarrollo (software de la Empresa) y CCTSES (software de cctses)</li>
 <li>Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)</li>
 <li>Puesta en producción</li>
 </ol>
-<p>Para cada una de las fases de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración.</p>
-<blockquote>
-<p>La fase en entorno de pruebas pueden no ser obligatorias si ambas partes estuvieran de acuerdo.</p>
-</blockquote>
-<p>En cada fase de pruebas se utilizará lo que se denomina una <em>enviroment</em> o entorno, y para cada <em>environment</em> existirán una serie de configuraciones distintas, que será necesario aplicar.</p>
+<p>Para la fase de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración. La configuración de este entorno correrá a cargo de la parte implicada en cada circuito. </p>
+<ul>
+<li><strong>Circuito A</strong> las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de CCTSES.</li>
+<li><strong>Circuito B</strong> las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de la EMPRESA.</li>
+</ul>
+<p><strong>SIN</strong> un entorno de <em>pruebas</em> no se podrán llevar a cabo las mismas.</p>
+<p>En cada fase de pruebas se utilizará lo que se denomina una <em>enviroment</em> o entorno, y para cada <em>environment</em> existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)</p>
 <p>En cada <em>environment</em>, cada parte de la integración (sistemas) tendrá una configuración software y hardware, que será independiente y no afectará a la misma, pero sí es necesario definir una serie de información que se utilizará para poder conectar con los sistemas.</p>
 <p><strong>La comunicación se realizará cifrada a través de un túnel seguro entre el Origen y el Destino de la comunicación.</strong></p>
 <h3 id="configuraciones-necesarias">Configuraciones necesarias:<a class="headerlink" href="#configuraciones-necesarias" title="Permanent link">¶</a></h3>
@@ -1230,16 +1231,12 @@ JSON como formato para el intercambio de información.</p>
 <li><em><code>{puerto}</code></em>: indica el nº puerto a través del cual se va a realizar la comunicación.</li>
 </ul>
 <p>En cada fase existirá una configuración específica de estos parámetros de conexión, y para cada circuito.</p>
-<blockquote>
-<p>En futuras versiones de este documento se irán incorporando las configuraciones para cada uno de los entornos.</p>
-</blockquote>
-<p>Las configuraciones serán distintas para cada circuito.</p>
 <h2 id="3-comunicacion-entre-sistemas"><strong>3. Comunicación entre sistemas</strong><a class="headerlink" href="#3-comunicacion-entre-sistemas" title="Permanent link">¶</a></h2>
 <p>La comunicación entre los sistemas como se ha mencionado antes se realizará a través de una conexión segura a través de un túnel. La forma de llevar a cabo esta securización de la línea queda fuera del ámbito de este documento.</p>
 <h2 id="4-circuitos"><strong>4. Circuitos</strong><a class="headerlink" href="#4-circuitos" title="Permanent link">¶</a></h2>
 <p>Cada circuito es indipendiente y tendrá una operativa totalmente distinta.</p>
 <p>Las operaciones disponibles en cada circuito están documentadas a través de su correspondiente documentación.</p>
-<p>Esquema de ciruitos de integración</p>
+<p><strong>Esquema circuitos de integración</strong></p>
 <figcaption>
   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="img/esqume-circuitos.png" data-desc-position="bottom"><img src="img/esqume-circuitos.png" width="100%" align="center"></a>
   <figcaption align="center">Esquema de ciruitos de integración</figcaption>
@@ -1247,9 +1244,9 @@ JSON como formato para el intercambio de información.</p>
 
 <p><br>
 <br></p>
-<h2 id="5-documentacion">5. Documentación<a class="headerlink" href="#5-documentacion" title="Permanent link">¶</a></h2>
+<h2 id="5-documentacion"><strong>5. Documentación</strong><a class="headerlink" href="#5-documentacion" title="Permanent link">¶</a></h2>
 <p>La documentación de cada uno de los circuitos está dividida en sus diferentes versiones. Dentro de cada versión se encuentra la información de cada uno de los circuitos.</p>
-<p>Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Tablas de referencia".</p>
+<p>Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Tablas de referencia", dentro de la documentación funcional.</p>
 <p>La información funcional de los aspectos técnicos específicos se encuentra en <a href="funcional-info.html">Aspectos funcionales</a>.</p>
 <p>Si hubiera alguna información funcional relevante solo para una determianda versión, se incluirá en un apartado específico dentro de esa versión.</p>
 <p><strong>Versiones</strong></p>
