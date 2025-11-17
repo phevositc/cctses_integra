@@ -147,7 +147,7 @@ Esta tabla recoge los tipos de actividades que son objeto de integración.
 | 8      | SVB           | Soporte Vital Básico para emergencias que requieren atención sanitaria sin medicalizar |
 
 
-###  TB_MOTIVO_STATUS
+###  TB_TIPO_STATUS
 
 Los llamados `status` son una parte fundamental del sistema, ya que permiten conocer en tiempo real la situación de la flota, 
 a través del estado de sus recursos, vehiculos, traslados, .. y la operativa que se realiza en cada uno de ellos.

@@ -888,11 +888,6 @@ Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
 trasladoCctsesId | string | Si | Id único del traslado en CCTSES
 trasladoExternoId | string |  | Id único del traslado en sistema externo
-trasladoPlanificacionIdCCTSES | string |  | Id planificación en CCTSES
-trasladoPlanificacionRutaIdCCTSES | string |  | Id planificación-ruta en CCTSES
-trasladoPlanificacionRutaCdCCTSES | string |  | Código planificación-ruta en CCTSES
-trasladoPlanficacionUnidadTransporte | string |  | Unidad transporte planificada
-trasladoRutaId | string |  | Id ruta (si no está planificado)
 trasladoFecha | string(date-time) |  | Fecha/hora objetivo en destino
 trasladoFechaSolicitud | string(date-time) | Si | Fecha de solicitud de la orden
 trasladoFechaRecogida | string(date-time) |  | Fecha de recogida en origen

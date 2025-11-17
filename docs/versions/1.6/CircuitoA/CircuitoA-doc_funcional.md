@@ -157,7 +157,7 @@ Indica un modo de trabajo especial para el vehiculo durante su jornada de trabaj
 | 2     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, reparación en taller, etc. |  |
 | 3     | ITV            | Vehículo en estado de mantenimiento por ITV                                                   |  |
 
-###  TB_MOTIVO_STATUS
+###  TB_TIPO_STATUS
 
 Los llamados `status` son una parte fundamental del sistema, ya que permiten conocer en tiempo real la situación de la flota, 
 a través del estado de sus recursos, vehiculos, traslados, .. y la operativa que se realiza en cada uno de ellos.

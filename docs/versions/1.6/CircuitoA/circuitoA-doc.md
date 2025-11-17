@@ -36,16 +36,18 @@ sequenceDiagram
 
 ---
 
-### 4.1.2 Operaciones REST
+### Operaciones REST
 
-1) POST /api/integra/trans/v1/status/
+1) **POST /api/integra/trans/v1/status/**
+
+Alta de un nuevo status (cambio de estado)
 
 | Propiedad | Descripción                                                                                                                                                                                                                                                                                                                                                                                          |
 |:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Método | POST                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Ruta | /api/integra/trans/v1/status/                                                                                                                                                                                                                                                                                                                                                                        |
 | operationId | status                                                                                                                                                                                                                                                                                                                                                                                               |
-| Resumen | Crea o actualiza una orden (evento de estado)                                                                                                                                                                                                                                                                                                                                                        |
+| Resumen | Alta de un nuevo status (cambio de estado)                                                                                                                                                                                                                                                                                                                                                                             |
 | Descripción | Informa estados puntuales de recursos (vehículo, traslado, jornada) y posicionamiento GPS.<br>Casos de uso:<br>- cambio de estado de traslado/vehículo,<br>- inicio/fin de jornada,<br> - modos especiales,<br>- información periódica,<br>- asignación/desasignación de traslado.<br><br>Todos estos casos quedan recogidos en [motivo_status](CircuitoA-doc_funcional.md#entidad-tb_motivo_status) |
 | Body | application/json: StatusInfo                                                                                                                                                                                                                                                                                                                                                                         |
 | Respuestas | 201: Response<br>400: Response (validación)<br>500: Response (error interno)                                                                                                                                                                                                                                                                                                                         |
@@ -123,13 +125,14 @@ sequenceDiagram
 }
 ```
 
-2) DELETE /api/integra/trans/v1/traslado/{trasladoIDs}
+2) **DELETE /api/integra/trans/v1/traslado/{trasladoIDs}**
+
+Anulación de un traslado. Previamente se debe haber realizado una solicitud de anulación.
 
 | Propiedad | Descripción |
 |:--|:--|
 | Método | DELETE |
 | Ruta | /api/integra/trans/v1/traslado/{trasladoIDs} |
-| operationId | traslado |
 | Resumen | Anula uno o varios traslados |
 | Descripción | Petición de anulación para una lista de traslados (IDs separados por coma). |
 | Respuestas | 201: Response<br>400: Response<br>500: Response |
@@ -148,7 +151,7 @@ sequenceDiagram
     | Propiedad | Tipo | Descripción |
     |:--|:--|:--|
     | fechaHora | date-time | Fecha y hora de la solicitud. Requerido. |
-    | idMotivo | string | Motivo de la anulación. Requerido. |
+    | idMotivo | string | Motivo de la anulación. Requerido. Ver tabla: [TB_ANULACION_MOTIVOS](./CircuitoA-doc_funcional.md#tb_anulacion_motivos) |
     | txMotivo | string | Texto libre del motivo de la anulación. Opcional. |
 
 **Ejemplo de llamada**
@@ -167,13 +170,14 @@ DELETE /api/integra/trans/v1/traslado/TR-1001,TR-1002?fechaHora=2025-11-15T09:00
 }
 ```
 
-3) PUT /api/integra/trans/v1/traslado/reactivar
+3) **PUT /api/integra/trans/v1/traslado/reactivar**
+
+Reactivación de un traslado anulado que había sido anulado previamente.
 
 | Propiedad | Descripción |
 |:--|:--|
 | Método | PUT |
 | Ruta | /api/integra/trans/v1/traslado/reactivar |
-| operationId | putTrasladoReactivacion |
 | Resumen | Reactiva uno o varios traslados |
 | Body | application/json: TrasladoReactivaDto |
 | Respuestas | 201: Response<br>400: Response<br>500: Response |
@@ -206,46 +210,6 @@ DELETE /api/integra/trans/v1/traslado/TR-1001,TR-1002?fechaHora=2025-11-15T09:00
     "estado": "AA",
     "codigo": "000",
     "descripcion": "Reactivación aceptada"
-  }
-}
-```
-
-4) PUT /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId}
-
-| Propiedad | Descripción |
-|:--|:--|
-| Método | PUT |
-| Ruta | /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId} |
-| operationId | putPacienteAvisar |
-| Resumen | Establece el estado “paciente-avisar” en un traslado |
-| Respuestas | 201: Response<br>500: Response |
-
-??? info "Parámetros"
-
-    Path
-
-    | Propiedad | Tipo | Descripción |
-    |:--|:--|:--|
-    | trasladoId | string | Identificador del traslado. Requerido. |
-
-    Query
-
-    | Propiedad | Tipo | Descripción |
-    |:--|:--|:--|
-    | horaRecoger | date-time | Fecha y hora previstas de recogida. Requerido. |
-
-**Ejemplo de llamada**
-```text
-PUT /api/integra/trans/v1/traslado/setPacienteAvisar/TR-1001?horaRecoger=2025-11-15T07:30:00Z
-```
-
-**Ejemplo de respuesta (201)**
-```json
-{
-  "resultado": {
-    "estado": "AA",
-    "codigo": "000",
-    "descripcion": "OK"
   }
 }
 ```
