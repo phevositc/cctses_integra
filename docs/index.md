@@ -69,7 +69,7 @@ La comunicación entre los sistemas como se ha mencionado antes se realizará a 
 
 ## **4. Circuitos**
 
-Cada circuito es indipendiente y tendrá una operativa totalmente distinta.
+Cada circuito es independiente y tendrá una operativa totalmente distinta.
 
 Las operaciones disponibles en cada circuito están documentadas a través de su correspondiente documentación.
 
