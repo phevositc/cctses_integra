@@ -12,7 +12,7 @@ nav:
       - "Funcional": "versions/1.6/CircuitoA/CircuitoA-doc_funcional.md"
     - "Circuito B":
       - "Técnica": "versions/1.6/CircuitoB/CCTSES-doc_tecnica.md"
-      - "Funcional": "versions/1.6/CircuitoB/CircuitoB-doc_funcional.md"
+      - "Funcional": "versions/1.6/CircuitoB/CCTSES-doc_funcional.md"
   - "Versión 1.5":
     - "Inicio": "versions/1.5/index.md"
     - "Circuito A":
