@@ -79,6 +79,7 @@ Esta tabla recoge los estados por los que un traslado puede pasar desde su alta,
 | LO     | LLEGADO-ORIGEN        | El vehículo ha llegado al punto de origen para la recogida del paciente             |
 | E      | CURSADO               | El paciente está embarcado en la ambulancia y el traslado está en curso             |
 | LD     | LLEGADO-DESTINO       | El vehículo ha llegado al punto de destino con el paciente                          |
+| R      | FINALIZADO            | Traslado finalizado                                                                 |
 
 
 **Diagrama de Flujo de Estados del Traslado**

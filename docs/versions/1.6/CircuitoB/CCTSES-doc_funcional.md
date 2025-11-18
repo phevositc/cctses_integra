@@ -2,6 +2,7 @@
 
 ## **Documentación funcional**
 
+> Estas tablas pueden sufrir modificaciones en base a las necesidades del servicio y su evolución.
 
 ## **Tablas de referencia**
 
@@ -302,7 +303,7 @@ Indica el tipo de prioridad del traslado.
 | 1     | Sin-prioridad=programado                    |
 | 5     | Medio (NoUrgente NoProgramado)              |
 | 8     | Urgente                                     |
-| 10     | 10=Emergencia                                 |
+| 10     | Emergencia                                 |
 
 
 

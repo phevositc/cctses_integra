@@ -107,6 +107,7 @@ Alta de un nuevo status (cambio de estado)
       "idUnidad": "U-12",
       "idEstadoTraslado": "E",
       "idEstadoVehiculo": "4",
+      "idModoEspecial": "0",
       "fechaHora": "2025-02-12T20:26:28+02:00",
       "idMotivo": "2",
       "gps": {
@@ -117,11 +118,14 @@ Alta de un nuevo status (cambio de estado)
       },
       "idActividadJornada": "1",
       "idJornada": "JRN-2025-001",
+      "idEstadoJonada": "0",
       "kms": 0
     }
   ]
 }
 ```
+> Ejemplo de request genérico. En cada tipo de `status` deben ir solo los campos obligatorios según el tipo
+
 
 **Ejemplo de respuesta (201)**
 ```json

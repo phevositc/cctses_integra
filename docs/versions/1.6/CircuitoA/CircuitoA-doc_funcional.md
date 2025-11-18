@@ -2,6 +2,7 @@
 
 ## **Documentación funcional**
 
+> Estas tablas pueden sufrir modificaciones en base a las necesidades del servicio y su evolución.
 
 ## **Tablas de referencia**
 
@@ -79,6 +80,7 @@ Esta tabla recoge los estados por los que un traslado puede pasar desde su alta,
 | LO     | LLEGADO-ORIGEN        | El vehículo ha llegado al punto de origen para la recogida del paciente             |
 | E      | CURSADO               | El paciente está embarcado en la ambulancia y el traslado está en curso             |
 | LD     | LLEGADO-DESTINO       | El vehículo ha llegado al punto de destino con el paciente                          |
+| R      | FINALIZADO            | Traslado finalizado                                                                 |
 
 
 **Diagrama de Flujo de Estados del Traslado**
@@ -149,13 +151,24 @@ Esta tabla recoge los tipos de actividades que son objeto de integración.
 
 ### TB_VEHICULO_MODO_ESPECIAL
 
-Indica un modo de trabajo especial para el vehiculo durante su jornada de trabajo.
+Indica un modo de trabajo especial para el vehiculo durante su jornada de trabajo. (*Este tipo de operativa puede verse incrementada para acomodar necesidades futuras de información*)
 
 | Código | Leyenda       | Descripción Funcional                                                                  |
 |:-------|:--------------|:---------------------------------------------------------------------------------------|
+| 0     | Ninguno      | Vehiculo no está en un modo especial      |  |
 | 1     | Comida         | Vehículo y tripulación en tiempo de descanso para comida (temporalmente no disponible)      |  |
 | 2     | Fuera-Servicio | Vehículo temporalmente fuera de servicio por mantenimiento, reparación en taller, etc. |  |
 | 3     | ITV            | Vehículo en estado de mantenimiento por ITV                                                   |  |
+
+
+### TB_JORNADA_ESTADO
+
+Indica el estado de la jornada.
+
+| Código | Leyenda       | Descripción Funcional                                                                  |
+|:-------|:--------------|:---------------------------------------------------------------------------------------|
+| 1     | Inicio        | Inicio de jornada      |  |
+| 2     | Fin         | Fin de jornada      |  |
 
 ###  TB_TIPO_STATUS
 
@@ -171,8 +184,8 @@ En base en esto los tipos de `status` se pueden puede generar por los siguientes
 - `VEHICULO-ESTADO`: Cambios de estado de un vehículo.
 - `VEHICULO-MODOS`: Estados especiales de funcionamiento que puede estar un vehículo. 
 - `VEHICULO-POSICIONAMIENTO`: Información a intervalos periódicos de información GPS del vehículo.
-- `TRASLADO`: Cambios de estados por los que pasa un traslado en su ejecución.
-- `JORNADA`: Cambios de estados de una jornada de trabajo.
+- `TRASLADO-ESTADO`: Cambios de estados por los que pasa un traslado en su ejecución.
+- `JORNADA-ESTADO`: Cambios de estados de una jornada de trabajo.
 
 De esta forma, los motivos de los cambios de estado son estos:
 
@@ -185,8 +198,7 @@ De esta forma, los motivos de los cambios de estado son estos:
 | 5      | TRASLADO-DESASIGNACIÓN | Liberación de recursos previamente asignados a un traslado             | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
 | 3      | VEHICULO CAMBIO ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados) |
 | 24     | VEHICULO-MODO-ESPECIAL | Vehículo indica inicio o fin de un modo especial de trabajo | Ver [`TB_VEHICULO_MODO_ESPECIAL`](#tb_vehiculo_modo_especial) |
-| 30     | Inicio  | Inicio de jornada laboral del conductor con login en el sistema      |  |
-| 31     | Fin     | Finalización de jornada laboral del conductor con logout del sistema |  |
+| 25     | JORNADA-CAMBIO-ESTADO | Se indica un cambio de estado en la jornada de trabajo | Ver [`TB_JORNADA_ESTADO`](#tb_jornada_estado) |
 
 
 !!! warning "Validaciones según Status"
@@ -201,7 +213,7 @@ De esta forma, los motivos de los cambios de estado son estos:
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora de la posición
-- `idMotivo` - Motivo del status (código 1: LOCALIZACION o código 11: INFORMACION-PERIODICA)
+- `idMotivo` - Motivo del status
 - `gps` - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
@@ -244,7 +256,7 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idUnidad` - Unidad administrativa
 - `idEstadoVehiculo` - Estado del vehículo (referencia [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados))
 - `fechaHora` - Fecha y hora del cambio de estado
-- `idMotivo` - Motivo del cambio (código 3: VEHICULO CAMBIO ESTADO)
+- `idMotivo` - Motivo del cambio
 - `gps` - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)
 - `idActividadJornada` - Tipo de actividad de la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador de la jornada de trabajo
@@ -258,7 +270,7 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora del cambio de modo
-- `idMotivo` - Motivo del status (código 24: Ninguno, 25: Comida, 26: Fuera-Servicio)
+- `idMotivo` - Motivo del status
 - `idModoEspecial` - Tipo de modo especial (referencia [`TB_VEHICULO_MODO_ESPECIAL`](#tb_vehiculo_modo_especial))
 - `gps` - Posición GPS del vehículo
 - `idActividadJornada` - Tipo de actividad de la jornada
@@ -275,14 +287,16 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora del evento de jornada
-- `idMotivo` - Motivo del status (código 30: Inicio, 31: Fin)
+- `idMotivo` - Motivo del status
 - `gps` - Posición GPS del vehículo
 - `idActividadJornada` - Tipo de actividad que se va a realizar en la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
+- `idEstadoJonada` - Estado o operación sobre la jornada (referencia [`TB_JORNADA_ESTADO`](#tb_jornada_estado))
 - `idJornada` - Identificador único de la jornada de trabajo
 - `kms` - Kilometros del vehículo en el momento de la operación
 
 > En este `status` el `idJornada` tendrá un código de jornada, `idActividadJornada` deben tener en el rango permitido.<br>
-> El campo `kms` es obligatorio y debe tener un valor >0 en el incio y fin de jornada.
+> El campo `idEstadoJonada` indica el estado de la jornada.<br>
+> El campo `kms` es obligatorio y debe tener un valor >0 en cada uno de los estados de la jornada.
 
 
 
