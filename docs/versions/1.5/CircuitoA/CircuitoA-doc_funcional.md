@@ -140,7 +140,6 @@ Esta tabla recoge los tipos de actividades que son objeto de integración.
 | 1      | PROGRAMADO    | Traslados sanitarios programados con antelación (citas, consultas, tratamientos)       |
 | 2      | URGENCIA      | Servicios de urgencia no programados que requieren atención inmediata                  |
 | 3      | UME           | Unidad Medicalizada de Emergencia para situaciones críticas con soporte vital avanzado |
-| 4      | UP            | ???                                                                                    |
 | 5      | CENTRO SALUD  | Traslados específicos desde/hacia centros de salud de atención primaria                |
 | 6      | UMTS          | Unidad Móvil de Transporte Sanitario para traslados medicalizados                      |
 | 7      | UMAR          | Unidad Móvil de Alta Resolución para atención especializada in situ                    |
