@@ -2,7 +2,6 @@
 
 Este circuito recoge toda la operativa de envio de información desde la Empresa concesionaria a CCTSES.
 
-
 ## Especificación de operativa
 
 Toda la operativa queda recogida en los siguientes documentos:

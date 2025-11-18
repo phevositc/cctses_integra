@@ -31,6 +31,15 @@ sequenceDiagram
     %% 4) PUT traslado/setPacienteAvisar/{trasladoId}
     Empresa->>cctses: PUT /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId}
     cctses-->>Empresa: 201 Created Response
+
+    %% 13) PUT /api/v1/unidad/principal
+    Empresa->>cctses: PUT /api/v1/unidad/principal
+    cctses-->>Empresa: 200 OK Response
+
+    %% 14) PUT /api/v1/unidad/secundario
+    Empresa->>cctses: PUT /api/v1/unidad/secundario
+    cctses-->>Empresa: 200 OK Response
+    
 ```
 
 
@@ -214,6 +223,74 @@ Reactivación de un traslado anulado que había sido anulado previamente.
 }
 ```
 
+---
+
+
+<a id="op-put-api-v1-unidad-principal"></a>
+
+4) **PUT /api/v1/unidad/principal**
+
+Asigna un vehículo como Principal a la Unidad indicada.
+
+Propiedad | Descripción
+:--|:--
+Método | PUT
+Ruta | /api/v1/unidad/principal
+Resumen | Asigna un vehículo como Principal a la Unidad indicada
+Body | (sin cuerpo)
+Respuestas | 201: Response<br>400: Response<br>500: Response
+
+Parámetros
+
+Query
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idUnidad | string |  | Identificador de la unidad adscrita
+idVehiculo | string |  | Identificador/matrícula del vehículo
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/unidad/principal?idUnidad=UNI-01&idVehiculo=1234ABC
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
+
+<a id="op-put-api-v1-unidad-secundario"></a>
+
+5) **PUT /api/v1/unidad/secundario**
+
+Asigna un vehículo como Secundario a la Unidad indicada.
+
+Propiedad | Descripción
+:--|:--
+Método | PUT
+Ruta | /api/v1/unidad/secundario
+Resumen | Asigna un vehículo como Secundario a la Unidad indicada
+Body | (sin cuerpo)
+Respuestas | 201: Response<br>400: Response<br>500: Response
+
+Parámetros
+
+Query
+
+Propiedad | Tipo | Requerido | Descripción
+:--|:--|:--:|:--
+idUnidad | string |  | Identificador de la unidad adscrita
+idVehiculo | string |  | Identificador/matrícula del vehículo
+
+#### **Ejemplo de llamada**
+
+```text
+PUT /api/v1/unidad/secundario?idUnidad=UNI-01&idVehiculo=5678DEF
+```
+
+Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
+
+---
 
 
 

@@ -46,10 +46,6 @@ Esta es la documentación técnica de la API del Circuito Integración CCTSES ->
         CCTSES->>Empresa: POST /api/v1/traslado
         Empresa-->>CCTSES: 200 OK Response
 
-        %% 8) DELETE /api/v1/traslado/{trasladoIDs}
-        CCTSES->>Empresa: DELETE /api/v1/traslado/{trasladoIDs}
-        Empresa-->>CCTSES: 200 OK Response
-
         %% 9) DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
         CCTSES->>Empresa: DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
         Empresa-->>CCTSES: 200 OK Response
@@ -66,13 +62,7 @@ Esta es la documentación técnica de la API del Circuito Integración CCTSES ->
         CCTSES->>Empresa: GET /api/v1/unidad
         Empresa-->>CCTSES: 200 OK Response
 
-        %% 13) PUT /api/v1/unidad/principal
-        CCTSES->>Empresa: PUT /api/v1/unidad/principal
-        Empresa-->>CCTSES: 200 OK Response
 
-        %% 14) PUT /api/v1/unidad/secundario
-        CCTSES->>Empresa: PUT /api/v1/unidad/secundario
-        Empresa-->>CCTSES: 200 OK Response
     ```
 
 ## **Operaciones**
@@ -83,13 +73,10 @@ Esta es la documentación técnica de la API del Circuito Integración CCTSES ->
 4. [PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}](#op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad)
 5. [DELETE /api/v1/trasladoasignado/{idTrasladoCctses}](#op-delete-api-v1-trasladoasignado-idtrasladocctses)
 6. [POST /api/v1/traslado](#op-post-api-v1-traslado)
-7. [DELETE /api/v1/traslado/{trasladoIDs}](#op-delete-api-v1-traslado-trasladoids)
-8. [DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}](#op-delete-api-v1-traslado-solicitudanula-trasladoids)
-9. [PUT  /api/v1/traslado/setespera/{trasladoId}](#op-put-api-v1-traslado-setespera-trasladoid)
-10. [PUT  /api/v1/traslado/setnoespera/{trasladoId}](#op-put-api-v1-traslado-setnoespera-trasladoid)
-11. [GET  /api/v1/unidad](#op-get-api-v1-unidad)
-12. [PUT  /api/v1/unidad/principal](#op-put-api-v1-unidad-principal)
-13. [PUT  /api/v1/unidad/secundario](#op-put-api-v1-unidad-secundario)
+7. [DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}](#op-delete-api-v1-traslado-solicitudanula-trasladoids)
+8. [PUT  /api/v1/traslado/setespera/{trasladoId}](#op-put-api-v1-traslado-setespera-trasladoid)
+9. [PUT  /api/v1/traslado/setnoespera/{trasladoId}](#op-put-api-v1-traslado-setnoespera-trasladoid)
+10. [GET  /api/v1/unidad](#op-get-api-v1-unidad)
 
 ---
 
@@ -572,43 +559,6 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
-<a id="op-delete-api-v1-traslado-trasladoids"></a>
-### **DELETE /api/v1/traslado/{trasladoIDs}**
-
-Anula uno o varios traslados.
-
-Propiedad | Descripción
-:--|:--
-Método | DELETE
-Ruta | /api/v1/traslado/{trasladoIDs}
-Resumen | Anula uno o varios traslados
-Body | (sin cuerpo)
-Respuestas | 200: [Response](#tipo-response)
-
-Parámetros
-
-Path y Query
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-trasladoIDs (path) | string | Si | Identificador(es) del traslado
-requestId | string |  | Identificador de la solicitud específica para esta orden
-requestSource | string |  | Identificador de la fuente de la solicitud
-trasladoIDs (query) | string |  | ID o IDs de los traslados separados por ,
-fechaHora | string(date-time) |  | Fecha de la solicitud de cancelación
-idMotivo | string |  | Motivo de anulación (texto libre)
-txMotivo | string |  | Texto del motivo de la anulación
-
-#### **Ejemplo de llamada**
-
-```text
-DELETE /api/v1/traslado/TR-3001?fechaHora=2025-11-16T09:00:00Z&idMotivo=SP&txMotivo=Anula%20paciente
-```
-
-Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
-
----
-
 <a id="op-delete-api-v1-traslado-solicitudanula-trasladoids"></a>
 ### **DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}**
 
@@ -629,8 +579,6 @@ Path y Query
 Propiedad | Tipo | Requerido | Descripción
 :--|:--|:--:|:--
 trasladoIDs (path) | string | Si | Identificador(es) del traslado
-requestId | string |  | Identificador de la solicitud específica para esta orden
-requestSource | string |  | Identificador de la fuente de la solicitud
 trasladoIDs (query) | string |  | ID o IDs de los traslados separados por ,
 fechaHora | string(date-time) |  | Fecha de la solicitud de cancelación
 idMotivo | string |  | Motivo de anulación (texto libre)
@@ -735,69 +683,6 @@ Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
 
 ---
 
-<a id="op-put-api-v1-unidad-principal"></a>
-### **PUT /api/v1/unidad/principal**
-
-Asigna un vehículo como Principal a la Unidad indicada. Operación idempotente (PUT).
-
-Propiedad | Descripción
-:--|:--
-Método | PUT
-Ruta | /api/v1/unidad/principal
-Resumen | Asigna un vehículo como Principal a la Unidad indicada
-Body | (sin cuerpo)
-Respuestas | 200: string (binary)
-
-Parámetros
-
-Query
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-idUnidad | string |  | Identificador de la unidad adscrita
-idVehiculo | string |  | Identificador/matrícula del vehículo
-
-#### **Ejemplo de llamada**
-
-```text
-PUT /api/v1/unidad/principal?idUnidad=UNI-01&idVehiculo=1234ABC
-```
-
-Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
-
----
-
-<a id="op-put-api-v1-unidad-secundario"></a>
-### **PUT /api/v1/unidad/secundario**
-
-Asigna un vehículo como Secundario a la Unidad indicada. Operación idempotente (PUT).
-
-Propiedad | Descripción
-:--|:--
-Método | PUT
-Ruta | /api/v1/unidad/secundario
-Resumen | Asigna un vehículo como Secundario a la Unidad indicada
-Body | (sin cuerpo)
-Respuestas | 200: string (binary)
-
-Parámetros
-
-Query
-
-Propiedad | Tipo | Requerido | Descripción
-:--|:--|:--:|:--
-idUnidad | string |  | Identificador de la unidad adscrita
-idVehiculo | string |  | Identificador/matrícula del vehículo
-
-#### **Ejemplo de llamada**
-
-```text
-PUT /api/v1/unidad/secundario?idUnidad=UNI-01&idVehiculo=5678DEF
-```
-
-Tipos de datos: ver sección [Tipo de datos](#tipos-de-datos).
-
----
 
 <a id="tipos-de-datos"></a>
 ## **Tipos de datos**

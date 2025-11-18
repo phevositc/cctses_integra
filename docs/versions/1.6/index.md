@@ -2,11 +2,46 @@
 
 **Actualizada a fecha: 17/11/2025.**
 
-## Cambios
+## **Cambios**
 
-*Operaciones eliminadas*:
 
-- Operacion `PUT /api/integra/trans/v1/traslado/setPacienteAvisar` en Circuito A, por nueva operativa de trabajo, ya no es requerida.
+!!! tip "Circuito A (Empresa -> CCTSES)"
+
+    Cambios respecto a la versión anterior
+
+    **UnidadAdscrita**: Se utiliza en la nueva operativa de trabajo
+
+    - Operacion `PUT /api/v1/unidad/principal`  (agregado)
+    - Operacion `PUT /api/v1/unidad/secundario`  (agregado)
+
+
+!!! info "Circuito B (CCTSES -> Empresa)"
+
+    Cambios respecto a la versión anterior
+
+    **Las planificaciones** ya no son requeridas por nueva operativa de trabajo.
+
+    - Operacion `POST /api/v1/planificacion` (eliminada)
+    - Operacion `PUT  /api/v1/planificacion` (eliminada)
+
+
+    **PaqueteTraslado**: Se utiliza en la nueva operativa de trabajo
+
+    -  Operacion `POST /api/v1/paquetetraslado`  (agregado)
+    -  Operacion `PUT  /api/v1/paquetetraslado`  (agregado)
+
+
+    **UnidadAdscrita**: Se utiliza en la nueva operativa de trabajo
+
+    - Operacion `GET /api/v1/unidad`  (agregado)
+
+    **Traslado. Pre-assignacion, asignacion y desasignacion**: Se utiliza en la nueva operativa de trabajo
+
+    - Operacion `POST /api/v1/trasladoasignado`  (agregado)
+    - Operacion `PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}`  (agregado)
+    - Operacion `DELETE /api/v1/trasladoasignado/{idTrasladoCctses}`  (agregado)
+
+
 
 
 ## Documentación

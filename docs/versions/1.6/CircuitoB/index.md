@@ -3,9 +3,19 @@
 Este circuito recoge toda la operativa de envio de información desde CCTSES a la empresa.
 
 
+
+
+
+
+1. POST /api/v1/planificacion
+2. PUT  /api/v1/planificacion
+
 ## Resumen de la operativa
 
 Queda recogida en el gráfico de secuencia de operaciones.
+
+
+
 
 ## Especificación de operativa
 
