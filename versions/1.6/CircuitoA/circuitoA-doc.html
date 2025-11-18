@@ -1168,7 +1168,16 @@
 
     %% 4) PUT traslado/setPacienteAvisar/{trasladoId}
     Empresa-&gt;&gt;cctses: PUT /api/integra/trans/v1/traslado/setPacienteAvisar/{trasladoId}
-    cctses--&gt;&gt;Empresa: 201 Created Response</code></pre>
+    cctses--&gt;&gt;Empresa: 201 Created Response
+
+    %% 13) PUT /api/v1/unidad/principal
+    Empresa-&gt;&gt;cctses: PUT /api/v1/unidad/principal
+    cctses--&gt;&gt;Empresa: 200 OK Response
+
+    %% 14) PUT /api/v1/unidad/secundario
+    Empresa-&gt;&gt;cctses: PUT /api/v1/unidad/secundario
+    cctses--&gt;&gt;Empresa: 200 OK Response
+</code></pre>
 <hr>
 <h3 id="operaciones-rest">Operaciones REST<a class="headerlink" href="#operaciones-rest" title="Permanent link">¶</a></h3>
 <p>1) <strong>POST /api/integra/trans/v1/status/</strong></p>
@@ -1548,6 +1557,135 @@
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
 </span></code></pre></div><p></p>
+<hr>
+<p><a id="op-put-api-v1-unidad-principal"></a></p>
+<p>4) <strong>PUT /api/v1/unidad/principal</strong></p>
+<p>Asigna un vehículo como Principal a la Unidad indicada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/unidad/principal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Asigna un vehículo como Principal a la Unidad indicada</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">(sin cuerpo)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">201: Response<br>400: Response<br>500: Response</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Query</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idUnidad</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Identificador de la unidad adscrita</td>
+</tr>
+<tr>
+<td style="text-align: left;">idVehiculo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Identificador/matrícula del vehículo</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplo-de-llamada"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PUT /api/v1/unidad/principal?idUnidad=UNI-01&amp;idVehiculo=1234ABC
+</span></code></pre></div>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
+<p><a id="op-put-api-v1-unidad-secundario"></a></p>
+<p>5) <strong>PUT /api/v1/unidad/secundario</strong></p>
+<p>Asigna un vehículo como Secundario a la Unidad indicada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">PUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta</td>
+<td style="text-align: left;">/api/v1/unidad/secundario</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resumen</td>
+<td style="text-align: left;">Asigna un vehículo como Secundario a la Unidad indicada</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">(sin cuerpo)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Respuestas</td>
+<td style="text-align: left;">201: Response<br>400: Response<br>500: Response</td>
+</tr>
+</tbody>
+</table>
+<p>Parámetros</p>
+<p>Query</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Propiedad</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Requerido</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">idUnidad</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Identificador de la unidad adscrita</td>
+</tr>
+<tr>
+<td style="text-align: left;">idVehiculo</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Identificador/matrícula del vehículo</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejemplo-de-llamada_1"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_1" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PUT /api/v1/unidad/secundario?idUnidad=UNI-01&amp;idVehiculo=5678DEF
+</span></code></pre></div>
+<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
+<hr>
 
 
 

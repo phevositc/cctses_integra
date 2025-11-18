@@ -698,17 +698,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-apiv1trasladotrasladoids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DELETE /api/v1/traslado/{trasladoIDs}
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#delete-apiv1trasladosolicitudanulatrasladoids" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,28 +735,6 @@
     <span class="md-ellipsis">
       
         GET /api/v1/unidad
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#put-apiv1unidadprincipal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PUT /api/v1/unidad/principal
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#put-apiv1unidadsecundario" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PUT /api/v1/unidad/secundario
       
     </span>
   </a>
@@ -1477,17 +1444,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-apiv1trasladotrasladoids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DELETE /api/v1/traslado/{trasladoIDs}
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#delete-apiv1trasladosolicitudanulatrasladoids" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1525,28 +1481,6 @@
     <span class="md-ellipsis">
       
         GET /api/v1/unidad
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#put-apiv1unidadprincipal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PUT /api/v1/unidad/principal
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#put-apiv1unidadsecundario" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PUT /api/v1/unidad/secundario
       
     </span>
   </a>
@@ -1898,10 +1832,6 @@
     CCTSES-&gt;&gt;Empresa: POST /api/v1/traslado
     Empresa--&gt;&gt;CCTSES: 200 OK Response
 
-    %% 8) DELETE /api/v1/traslado/{trasladoIDs}
-    CCTSES-&gt;&gt;Empresa: DELETE /api/v1/traslado/{trasladoIDs}
-    Empresa--&gt;&gt;CCTSES: 200 OK Response
-
     %% 9) DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
     CCTSES-&gt;&gt;Empresa: DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}
     Empresa--&gt;&gt;CCTSES: 200 OK Response
@@ -1918,13 +1848,7 @@
     CCTSES-&gt;&gt;Empresa: GET /api/v1/unidad
     Empresa--&gt;&gt;CCTSES: 200 OK Response
 
-    %% 13) PUT /api/v1/unidad/principal
-    CCTSES-&gt;&gt;Empresa: PUT /api/v1/unidad/principal
-    Empresa--&gt;&gt;CCTSES: 200 OK Response
-
-    %% 14) PUT /api/v1/unidad/secundario
-    CCTSES-&gt;&gt;Empresa: PUT /api/v1/unidad/secundario
-    Empresa--&gt;&gt;CCTSES: 200 OK Response</code></pre>
+</code></pre>
 </details>
 <h2 id="operaciones"><strong>Operaciones</strong><a class="headerlink" href="#operaciones" title="Permanent link">¶</a></h2>
 <ol>
@@ -1934,13 +1858,10 @@
 <li><a href="#op-put-api-v1-trasladoasignado-idtrasladocctses-idunidad">PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}</a></li>
 <li><a href="#op-delete-api-v1-trasladoasignado-idtrasladocctses">DELETE /api/v1/trasladoasignado/{idTrasladoCctses}</a></li>
 <li><a href="#op-post-api-v1-traslado">POST /api/v1/traslado</a></li>
-<li><a href="#op-delete-api-v1-traslado-trasladoids">DELETE /api/v1/traslado/{trasladoIDs}</a></li>
 <li><a href="#op-delete-api-v1-traslado-solicitudanula-trasladoids">DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}</a></li>
 <li><a href="#op-put-api-v1-traslado-setespera-trasladoid">PUT  /api/v1/traslado/setespera/{trasladoId}</a></li>
 <li><a href="#op-put-api-v1-traslado-setnoespera-trasladoid">PUT  /api/v1/traslado/setnoespera/{trasladoId}</a></li>
 <li><a href="#op-get-api-v1-unidad">GET  /api/v1/unidad</a></li>
-<li><a href="#op-put-api-v1-unidad-principal">PUT  /api/v1/unidad/principal</a></li>
-<li><a href="#op-put-api-v1-unidad-secundario">PUT  /api/v1/unidad/secundario</a></li>
 </ol>
 <hr>
 <p><a id="op-post-api-v1-paquetetraslado"></a></p>
@@ -2503,100 +2424,6 @@
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
-<p><a id="op-delete-api-v1-traslado-trasladoids"></a></p>
-<h3 id="delete-apiv1trasladotrasladoids"><strong>DELETE /api/v1/traslado/{trasladoIDs}</strong><a class="headerlink" href="#delete-apiv1trasladotrasladoids" title="Permanent link">¶</a></h3>
-<p>Anula uno o varios traslados.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Método</td>
-<td style="text-align: left;">DELETE</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ruta</td>
-<td style="text-align: left;">/api/v1/traslado/{trasladoIDs}</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resumen</td>
-<td style="text-align: left;">Anula uno o varios traslados</td>
-</tr>
-<tr>
-<td style="text-align: left;">Body</td>
-<td style="text-align: left;">(sin cuerpo)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: <a href="#tipo-response">Response</a></td>
-</tr>
-</tbody>
-</table>
-<p>Parámetros</p>
-<p>Path y Query</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Tipo</th>
-<th style="text-align: center;">Requerido</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">trasladoIDs (path)</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;">Si</td>
-<td style="text-align: left;">Identificador(es) del traslado</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la solicitud específica para esta orden</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestSource</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la fuente de la solicitud</td>
-</tr>
-<tr>
-<td style="text-align: left;">trasladoIDs (query)</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">ID o IDs de los traslados separados por ,</td>
-</tr>
-<tr>
-<td style="text-align: left;">fechaHora</td>
-<td style="text-align: left;">string(date-time)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fecha de la solicitud de cancelación</td>
-</tr>
-<tr>
-<td style="text-align: left;">idMotivo</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Motivo de anulación (texto libre)</td>
-</tr>
-<tr>
-<td style="text-align: left;">txMotivo</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Texto del motivo de la anulación</td>
-</tr>
-</tbody>
-</table>
-<h4 id="ejemplo-de-llamada_6"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_6" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>DELETE /api/v1/traslado/TR-3001?fechaHora=2025-11-16T09:00:00Z&amp;idMotivo=SP&amp;txMotivo=Anula%20paciente
-</span></code></pre></div>
-<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
-<hr>
 <p><a id="op-delete-api-v1-traslado-solicitudanula-trasladoids"></a></p>
 <h3 id="delete-apiv1trasladosolicitudanulatrasladoids"><strong>DELETE /api/v1/traslado/solicitudanula/{trasladoIDs}</strong><a class="headerlink" href="#delete-apiv1trasladosolicitudanulatrasladoids" title="Permanent link">¶</a></h3>
 <p>Anula uno o varios traslados.</p>
@@ -2649,18 +2476,6 @@
 <td style="text-align: left;">Identificador(es) del traslado</td>
 </tr>
 <tr>
-<td style="text-align: left;">requestId</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la solicitud específica para esta orden</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestSource</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la fuente de la solicitud</td>
-</tr>
-<tr>
 <td style="text-align: left;">trasladoIDs (query)</td>
 <td style="text-align: left;">string</td>
 <td style="text-align: center;"></td>
@@ -2686,8 +2501,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ejemplo-de-llamada_7"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_7" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>DELETE /api/v1/traslado/solicitudanula/TR-1001,TR-1002?fechaHora=2025-11-15T09:00:00Z&amp;idMotivo=SP&amp;txMotivo=Anula%20paciente
+<h4 id="ejemplo-de-llamada_6"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_6" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>DELETE /api/v1/traslado/solicitudanula/TR-1001,TR-1002?fechaHora=2025-11-15T09:00:00Z&amp;idMotivo=SP&amp;txMotivo=Anula%20paciente
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
@@ -2744,8 +2559,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ejemplo-de-llamada_8"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_8" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PUT /api/v1/traslado/setespera/TR-3001?waitingFrom=2025-11-16T09:00:00Z&amp;enEspera=true
+<h4 id="ejemplo-de-llamada_7"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_7" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>PUT /api/v1/traslado/setespera/TR-3001?waitingFrom=2025-11-16T09:00:00Z&amp;enEspera=true
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
@@ -2802,8 +2617,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ejemplo-de-llamada_9"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_9" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>PUT /api/v1/traslado/setnoespera/TR-3001
+<h4 id="ejemplo-de-llamada_8"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_8" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PUT /api/v1/traslado/setnoespera/TR-3001
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>
@@ -2842,136 +2657,8 @@
 </table>
 <p>Parámetros</p>
 <p>Path/Query/Header: (ninguno)</p>
-<h4 id="ejemplo-de-llamada_10"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_10" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>GET /api/v1/unidad
-</span></code></pre></div>
-<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
-<hr>
-<p><a id="op-put-api-v1-unidad-principal"></a></p>
-<h3 id="put-apiv1unidadprincipal"><strong>PUT /api/v1/unidad/principal</strong><a class="headerlink" href="#put-apiv1unidadprincipal" title="Permanent link">¶</a></h3>
-<p>Asigna un vehículo como Principal a la Unidad indicada. Operación idempotente (PUT).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Método</td>
-<td style="text-align: left;">PUT</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ruta</td>
-<td style="text-align: left;">/api/v1/unidad/principal</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resumen</td>
-<td style="text-align: left;">Asigna un vehículo como Principal a la Unidad indicada</td>
-</tr>
-<tr>
-<td style="text-align: left;">Body</td>
-<td style="text-align: left;">(sin cuerpo)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: string (binary)</td>
-</tr>
-</tbody>
-</table>
-<p>Parámetros</p>
-<p>Query</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Tipo</th>
-<th style="text-align: center;">Requerido</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">idUnidad</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la unidad adscrita</td>
-</tr>
-<tr>
-<td style="text-align: left;">idVehiculo</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador/matrícula del vehículo</td>
-</tr>
-</tbody>
-</table>
-<h4 id="ejemplo-de-llamada_11"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_11" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>PUT /api/v1/unidad/principal?idUnidad=UNI-01&amp;idVehiculo=1234ABC
-</span></code></pre></div>
-<p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
-<hr>
-<p><a id="op-put-api-v1-unidad-secundario"></a></p>
-<h3 id="put-apiv1unidadsecundario"><strong>PUT /api/v1/unidad/secundario</strong><a class="headerlink" href="#put-apiv1unidadsecundario" title="Permanent link">¶</a></h3>
-<p>Asigna un vehículo como Secundario a la Unidad indicada. Operación idempotente (PUT).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Método</td>
-<td style="text-align: left;">PUT</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ruta</td>
-<td style="text-align: left;">/api/v1/unidad/secundario</td>
-</tr>
-<tr>
-<td style="text-align: left;">Resumen</td>
-<td style="text-align: left;">Asigna un vehículo como Secundario a la Unidad indicada</td>
-</tr>
-<tr>
-<td style="text-align: left;">Body</td>
-<td style="text-align: left;">(sin cuerpo)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Respuestas</td>
-<td style="text-align: left;">200: string (binary)</td>
-</tr>
-</tbody>
-</table>
-<p>Parámetros</p>
-<p>Query</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Propiedad</th>
-<th style="text-align: left;">Tipo</th>
-<th style="text-align: center;">Requerido</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">idUnidad</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador de la unidad adscrita</td>
-</tr>
-<tr>
-<td style="text-align: left;">idVehiculo</td>
-<td style="text-align: left;">string</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Identificador/matrícula del vehículo</td>
-</tr>
-</tbody>
-</table>
-<h4 id="ejemplo-de-llamada_12"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_12" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>PUT /api/v1/unidad/secundario?idUnidad=UNI-01&amp;idVehiculo=5678DEF
+<h4 id="ejemplo-de-llamada_9"><strong>Ejemplo de llamada</strong><a class="headerlink" href="#ejemplo-de-llamada_9" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>GET /api/v1/unidad
 </span></code></pre></div>
 <p>Tipos de datos: ver sección <a href="#tipos-de-datos">Tipo de datos</a>.</p>
 <hr>

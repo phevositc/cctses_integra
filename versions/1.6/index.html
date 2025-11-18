@@ -1144,11 +1144,40 @@
 
 <h1 id="guia-de-integracion-cctses-version-16">Guía de Integración CCTSES. Versión 1.6<a class="headerlink" href="#guia-de-integracion-cctses-version-16" title="Permanent link">¶</a></h1>
 <p><strong>Actualizada a fecha: 17/11/2025.</strong></p>
-<h2 id="cambios">Cambios<a class="headerlink" href="#cambios" title="Permanent link">¶</a></h2>
-<p><em>Operaciones eliminadas</em>:</p>
+<h2 id="cambios"><strong>Cambios</strong><a class="headerlink" href="#cambios" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Circuito A (Empresa -&gt; CCTSES)</p>
+<p>Cambios respecto a la versión anterior</p>
+<p><strong>UnidadAdscrita</strong>: Se utiliza en la nueva operativa de trabajo</p>
 <ul>
-<li>Operacion <code>PUT /api/integra/trans/v1/traslado/setPacienteAvisar</code> en Circuito A, por nueva operativa de trabajo, ya no es requerida.</li>
+<li>Operacion <code>PUT /api/v1/unidad/principal</code>  (agregado)</li>
+<li>Operacion <code>PUT /api/v1/unidad/secundario</code>  (agregado)</li>
 </ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Circuito B (CCTSES -&gt; Empresa)</p>
+<p>Cambios respecto a la versión anterior</p>
+<p><strong>Las planificaciones</strong> ya no son requeridas por nueva operativa de trabajo.</p>
+<ul>
+<li>Operacion <code>POST /api/v1/planificacion</code> (eliminada)</li>
+<li>Operacion <code>PUT  /api/v1/planificacion</code> (eliminada)</li>
+</ul>
+<p><strong>PaqueteTraslado</strong>: Se utiliza en la nueva operativa de trabajo</p>
+<ul>
+<li>Operacion <code>POST /api/v1/paquetetraslado</code>  (agregado)</li>
+<li>Operacion <code>PUT  /api/v1/paquetetraslado</code>  (agregado)</li>
+</ul>
+<p><strong>UnidadAdscrita</strong>: Se utiliza en la nueva operativa de trabajo</p>
+<ul>
+<li>Operacion <code>GET /api/v1/unidad</code>  (agregado)</li>
+</ul>
+<p><strong>Traslado. Pre-assignacion, asignacion y desasignacion</strong>: Se utiliza en la nueva operativa de trabajo</p>
+<ul>
+<li>Operacion <code>POST /api/v1/trasladoasignado</code>  (agregado)</li>
+<li>Operacion <code>PUT  /api/v1/trasladoasignado/{idTrasladoCctses}/{idUnidad}</code>  (agregado)</li>
+<li>Operacion <code>DELETE /api/v1/trasladoasignado/{idTrasladoCctses}</code>  (agregado)</li>
+</ul>
+</div>
 <h2 id="documentacion">Documentación<a class="headerlink" href="#documentacion" title="Permanent link">¶</a></h2>
 <p>Las información de las tablas de referencia, con los código o valores que se utilizan para el intercambio unificado entre sistemas, se encuentra en el apartado "Documentación funcional".</p>
 <p>La información funcional de los aspectos técnicos específicos se encuentra en <a href="../../funcional-info.html">Aspectos funcionales</a>.</p>
