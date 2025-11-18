@@ -4,7 +4,7 @@ Fecha de generación: 2025-11-15 21:46
 
 ## **Información general**
 
-- Título: Emmpresa: Circuito integración con CCTESES
+- Título: Empresa: Circuito integración con CCTSES
 - Versión: 1.6
 - Base URL: https://{server}:{puerto}/api/integra/cctses/v1.
 

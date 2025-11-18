@@ -6,7 +6,7 @@ Este servicio-web recibirá las peticiones enviadas desde la empresa concesionar
 
 ### Información general de la API
 
-- Nombre: API de Integración CCTSES. CircuitoA
+- Nombre: Circuito A
 - Versión: 1.6
 - Base URL: https://{server}:{puerto}/api/integra/trans/v1
 

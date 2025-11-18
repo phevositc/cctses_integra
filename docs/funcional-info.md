@@ -60,7 +60,7 @@ Por esto motivo, el envio de cada uno de los `status` es una parte vital del sis
         - Dentro de población como máximo con intervalo de un 2 minuto.
         - Fuera de población como máximo con intervalo de cada 4 minutos.
         
-        > *Preferentemente la frencuencia de envio será cada mínuto, tanto en urbano como interurbano.*
+        > *Preferentemente la frecuencia de envio será cada mínuto, tanto en urbano como interurbano, siendo esta frecuencia la más parecida a tiempo real.*
 
 
 ### **Información de trazabilidad**

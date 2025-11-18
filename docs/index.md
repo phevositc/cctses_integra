@@ -36,17 +36,17 @@ Para distinguir estos 2 servicios-web, lo nombraremos con los siguientes nombres
 Para poder llevar a cabo la integración de forma exitosa, se necesita completar unas determinadas fases:
 
 1. Fase de desarrollo (software de la Empresa) y CCTSES (software de cctses)
-2. Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)
+2. Fase de pruebas en entornos habilitados para las mismas (Empresa y CCTSES)
 3. Puesta en producción
 
 Para la fase de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración. La configuración de este entorno correrá a cargo de la parte implicada en cada circuito. 
 
-- **Circuito A** las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de CCTSES.
-- **Circuito B** las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de la EMPRESA.
+- **Circuito A** las pruebas se realizarán en el entorno PRUEBAS de CCTSES.
+- **Circuito B** las pruebas se realizarán en el entorno PRUEBAS de la EMPRESA.
 
-**SIN** un entorno de *pruebas* no se podrán llevar a cabo las mismas.
+> **SIN** un entorno de *pruebas* no se podrán llevar a cabo las mismas.
 
-En cada fase de pruebas se utilizará lo que se denomina una *enviroment* o entorno, y para cada *environment* existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)
+En la fase de pruebas y para cada circuito se utilizará lo que se denomina una *enviroment* o entorno, y para cada *environment* existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)
 
 En cada *environment*, cada parte de la integración (sistemas) tendrá una configuración software y hardware, que será independiente y no afectará a la misma, pero sí es necesario definir una serie de información que se utilizará para poder conectar con los sistemas.
 
@@ -56,9 +56,6 @@ En cada *environment*, cada parte de la integración (sistemas) tendrá una conf
 
 - *`{server}`*: indica la información del servidor. Dirección IP o DNS.
 - *`{puerto}`*: indica el nº puerto a través del cual se va a realizar la comunicación.
-
-
-En cada fase existirá una configuración específica de estos parámetros de conexión, y para cada circuito.
 
 
 ## **3. Comunicación entre sistemas**
