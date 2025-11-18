@@ -1213,16 +1213,18 @@ JSON como formato para el intercambio de información.</p>
 <p>Para poder llevar a cabo la integración de forma exitosa, se necesita completar unas determinadas fases:</p>
 <ol>
 <li>Fase de desarrollo (software de la Empresa) y CCTSES (software de cctses)</li>
-<li>Fase de pruebas en entorno de pre-producción (Empresa y CCTSES)</li>
+<li>Fase de pruebas en entornos habilitados para las mismas (Empresa y CCTSES)</li>
 <li>Puesta en producción</li>
 </ol>
 <p>Para la fase de pruebas, es necesario disponer de un entorno para llevar a cabo las pruebas de integración. La configuración de este entorno correrá a cargo de la parte implicada en cada circuito. </p>
 <ul>
-<li><strong>Circuito A</strong> las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de CCTSES.</li>
-<li><strong>Circuito B</strong> las pruebas se realizarán en el entorno PRE-PRODUCCIÓN de la EMPRESA.</li>
+<li><strong>Circuito A</strong> las pruebas se realizarán en el entorno PRUEBAS de CCTSES.</li>
+<li><strong>Circuito B</strong> las pruebas se realizarán en el entorno PRUEBAS de la EMPRESA.</li>
 </ul>
+<blockquote>
 <p><strong>SIN</strong> un entorno de <em>pruebas</em> no se podrán llevar a cabo las mismas.</p>
-<p>En cada fase de pruebas se utilizará lo que se denomina una <em>enviroment</em> o entorno, y para cada <em>environment</em> existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)</p>
+</blockquote>
+<p>En la fase de pruebas y para cada circuito se utilizará lo que se denomina una <em>enviroment</em> o entorno, y para cada <em>environment</em> existirán una serie de configuraciones distintas, que será necesario aplicar. (Estas configuraciones se entregarán a través de otra vía)</p>
 <p>En cada <em>environment</em>, cada parte de la integración (sistemas) tendrá una configuración software y hardware, que será independiente y no afectará a la misma, pero sí es necesario definir una serie de información que se utilizará para poder conectar con los sistemas.</p>
 <p><strong>La comunicación se realizará cifrada a través de un túnel seguro entre el Origen y el Destino de la comunicación.</strong></p>
 <h3 id="configuraciones-necesarias">Configuraciones necesarias:<a class="headerlink" href="#configuraciones-necesarias" title="Permanent link">¶</a></h3>
@@ -1230,7 +1232,6 @@ JSON como formato para el intercambio de información.</p>
 <li><em><code>{server}</code></em>: indica la información del servidor. Dirección IP o DNS.</li>
 <li><em><code>{puerto}</code></em>: indica el nº puerto a través del cual se va a realizar la comunicación.</li>
 </ul>
-<p>En cada fase existirá una configuración específica de estos parámetros de conexión, y para cada circuito.</p>
 <h2 id="3-comunicacion-entre-sistemas"><strong>3. Comunicación entre sistemas</strong><a class="headerlink" href="#3-comunicacion-entre-sistemas" title="Permanent link">¶</a></h2>
 <p>La comunicación entre los sistemas como se ha mencionado antes se realizará a través de una conexión segura a través de un túnel. La forma de llevar a cabo esta securización de la línea queda fuera del ámbito de este documento.</p>
 <h2 id="4-circuitos"><strong>4. Circuitos</strong><a class="headerlink" href="#4-circuitos" title="Permanent link">¶</a></h2>
