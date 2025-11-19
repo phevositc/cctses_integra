@@ -1706,11 +1706,6 @@
 <td style="text-align: left;">Unidad Medicalizada de Emergencia para situaciones críticas con soporte vital avanzado</td>
 </tr>
 <tr>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">UP</td>
-<td style="text-align: left;">???</td>
-</tr>
-<tr>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">CENTRO SALUD</td>
 <td style="text-align: left;">Traslados específicos desde/hacia centros de salud de atención primaria</td>
@@ -1826,7 +1821,7 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 </tr>
 <tr>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">TRASLADO CAMBIO ESTADO</td>
+<td style="text-align: left;">TRASLADO-ESTADO</td>
 <td style="text-align: left;">Notificación de cambio de estado en el ciclo de vida de un traslado</td>
 <td style="text-align: left;">Ver <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a></td>
 </tr>
@@ -1844,19 +1839,19 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 </tr>
 <tr>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">VEHICULO CAMBIO ESTADO</td>
+<td style="text-align: left;">VEHICULO-ESTADO</td>
 <td style="text-align: left;">Notificación de cambio en el estado operativo del vehículo</td>
 <td style="text-align: left;">Ver <a href="#tb_vehiculo_estados"><code>TB_VEHICULO_ESTADOS</code></a></td>
 </tr>
 <tr>
 <td style="text-align: left;">24</td>
-<td style="text-align: left;">VEHICULO-MODO-ESPECIAL</td>
+<td style="text-align: left;">VEHICULO-MODO</td>
 <td style="text-align: left;">Vehículo indica inicio o fin de un modo especial de trabajo</td>
 <td style="text-align: left;">Ver <a href="#tb_vehiculo_modo_especial"><code>TB_VEHICULO_MODO_ESPECIAL</code></a></td>
 </tr>
 <tr>
 <td style="text-align: left;">25</td>
-<td style="text-align: left;">JORNADA-CAMBIO-ESTADO</td>
+<td style="text-align: left;">JORNADA-ESTADO</td>
 <td style="text-align: left;">Se indica un cambio de estado en la jornada de trabajo</td>
 <td style="text-align: left;">Ver <a href="#tb_jornada_estado"><code>TB_JORNADA_ESTADO</code></a></td>
 </tr>
@@ -1872,17 +1867,17 @@ a través del estado de sus recursos, vehiculos, traslados, .. y la operativa qu
 <li><code>idVehiculo</code> - Matrícula del vehículo</li>
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>fechaHora</code> - Fecha y hora de la posición</li>
-<li><code>idMotivo</code> - Motivo del status</li>
+<li><code>idMotivo</code> - Tipo/motivo del status</li>
 <li><code>gps</code> - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
-<li><code>idEstadoVehiculo</code> - Estado actual del vehículo (opcional pero recomendado en INFORMACION-PERIODICA)</li>
+<li><code>idEstadoVehiculo</code> - Estado actual del vehículo</li>
 </ul>
 <blockquote>
 <p>Si no existe actividad/jornada iniciada, los campos <code>idActividadJornada</code> y <code>idJornada</code> serán nulos/vacios. El campo <code>idEstadoVehiculo</code> tendrá valor 0.<br>
 El envio del <code>status</code> localización (1) puede ser sustituido si el <code>status</code> periodico (11) se recibe con información de localización, si no fuera así, ambos <code>status</code> (1,11) deben ser enviados.</p>
 </blockquote>
-<h4 id="tipo-traslado">Tipo: TRASLADO<a class="headerlink" href="#tipo-traslado" title="Permanent link">¶</a></h4>
+<h4 id="tipo-traslado-estado">Tipo: TRASLADO-ESTADO<a class="headerlink" href="#tipo-traslado-estado" title="Permanent link">¶</a></h4>
 <p>Los estados por los que pasa un traslado están recogidos en la tabla <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a>.</p>
 <p><strong>Campos requeridos:</strong></p>
 <ul>
@@ -1892,7 +1887,7 @@ El envio del <code>status</code> localización (1) puede ser sustituido si el <c
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>idEstadoTraslado</code> - Estado del traslado (referencia <a href="#tb_traslado_estados"><code>TB_TRASLADO_ESTADOS</code></a>)</li>
 <li><code>fechaHora</code> - Fecha y hora del cambio de estado del traslado</li>
-<li><code>idMotivo</code> - Motivo del status ver tabla TB_TRASLADO_ESTADOS</li>
+<li><code>idMotivo</code> - Tipo/motivo del status ver tabla TB_TRASLADO_ESTADOS</li>
 <li><code>gps</code> - Posición GPS del vehículo en el momento del cambio de estado</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
@@ -1911,7 +1906,7 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>idEstadoVehiculo</code> - Estado del vehículo (referencia <a href="#tb_vehiculo_estados"><code>TB_VEHICULO_ESTADOS</code></a>)</li>
 <li><code>fechaHora</code> - Fecha y hora del cambio de estado</li>
-<li><code>idMotivo</code> - Motivo del cambio</li>
+<li><code>idMotivo</code> - Tipo/Motivo del status</li>
 <li><code>gps</code> - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada (referencia <a href="#tb_actividad_tipos"><code>TB_ACTIVIDAD_TIPOS</code></a>)</li>
 <li><code>idJornada</code> - Identificador de la jornada de trabajo</li>
@@ -1925,7 +1920,7 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 <li><code>idVehiculo</code> - Matrícula del vehículo</li>
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>fechaHora</code> - Fecha y hora del cambio de modo</li>
-<li><code>idMotivo</code> - Motivo del status</li>
+<li><code>idMotivo</code> - Tipo/motivo del status</li>
 <li><code>idModoEspecial</code> - Tipo de modo especial (referencia <a href="#tb_vehiculo_modo_especial"><code>TB_VEHICULO_MODO_ESPECIAL</code></a>)</li>
 <li><code>gps</code> - Posición GPS del vehículo</li>
 <li><code>idActividadJornada</code> - Tipo de actividad de la jornada</li>
@@ -1936,13 +1931,13 @@ Un <code>status</code> de un vehículo siempre debe estar encuadrado en una Jorn
 El campo <code>idModoEspecial</code> tendrá un valor en el rango permitido. <strong>0</strong> si se desactiva el Modo.<br>
 Se deben enviar un <code>status</code> al entrar en el Modo, y otro al salir del Modo.</p>
 </blockquote>
-<h4 id="tipo-jornada">Tipo: JORNADA<a class="headerlink" href="#tipo-jornada" title="Permanent link">¶</a></h4>
+<h4 id="tipo-jornada-estado">Tipo: JORNADA-ESTADO<a class="headerlink" href="#tipo-jornada-estado" title="Permanent link">¶</a></h4>
 <p><strong>Campos requeridos:</strong></p>
 <ul>
 <li><code>idVehiculo</code> - Matrícula del vehículo</li>
 <li><code>idUnidad</code> - Unidad administrativa</li>
 <li><code>fechaHora</code> - Fecha y hora del evento de jornada</li>
-<li><code>idMotivo</code> - Motivo del status</li>
+<li><code>idMotivo</code> - Tipo/motivo del status</li>
 <li><code>gps</code> - Posición GPS del vehículo</li>
 <li><code>idActividadJornada</code> - Tipo de actividad que se va a realizar en la jornada (referencia <a href="#tb_actividad_tipos"><code>TB_ACTIVIDAD_TIPOS</code></a>)</li>
 <li><code>idEstadoJonada</code> - Estado o operación sobre la jornada (referencia <a href="#tb_jornada_estado"><code>TB_JORNADA_ESTADO</code></a>)</li>
