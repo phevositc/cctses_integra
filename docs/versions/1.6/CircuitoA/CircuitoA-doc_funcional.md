@@ -142,7 +142,6 @@ Esta tabla recoge los tipos de actividades que son objeto de integración.
 | 1      | PROGRAMADO    | Traslados sanitarios programados con antelación (citas, consultas, tratamientos)       |
 | 2      | URGENCIA      | Servicios de urgencia no programados que requieren atención inmediata                  |
 | 3      | UME           | Unidad Medicalizada de Emergencia para situaciones críticas con soporte vital avanzado |
-| 4      | UP            | ???                                                                                    |
 | 5      | CENTRO SALUD  | Traslados específicos desde/hacia centros de salud de atención primaria                |
 | 6      | UMTS          | Unidad Móvil de Transporte Sanitario para traslados medicalizados                      |
 | 7      | UMAR          | Unidad Móvil de Alta Resolución para atención especializada in situ                    |
@@ -193,12 +192,12 @@ De esta forma, los motivos de los cambios de estado son estos:
 |:-------|:----------------------|:---------------------------------------------------------------------------|:----------------------------------|
 | 1      | LOCALIZACION          | Información de localización y posicionamiento GPS del vehículo             |  |
 | 11     | INFORMACION-PERIODICA | Envío periódico de información completa del estado y posición del vehículo |  |
-| 2      | TRASLADO CAMBIO ESTADO | Notificación de cambio de estado en el ciclo de vida de un traslado    | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
+| 2      | TRASLADO-ESTADO | Notificación de cambio de estado en el ciclo de vida de un traslado    | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
 | 4      | TRASLADO-ASIGNACION    | Asignación de recursos (conductor y vehículo) a un traslado específico | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
 | 5      | TRASLADO-DESASIGNACIÓN | Liberación de recursos previamente asignados a un traslado             | Ver [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados) |
-| 3      | VEHICULO CAMBIO ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados) |
-| 24     | VEHICULO-MODO-ESPECIAL | Vehículo indica inicio o fin de un modo especial de trabajo | Ver [`TB_VEHICULO_MODO_ESPECIAL`](#tb_vehiculo_modo_especial) |
-| 25     | JORNADA-CAMBIO-ESTADO | Se indica un cambio de estado en la jornada de trabajo | Ver [`TB_JORNADA_ESTADO`](#tb_jornada_estado) |
+| 3      | VEHICULO-ESTADO | Notificación de cambio en el estado operativo del vehículo | Ver [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados) |
+| 24     | VEHICULO-MODO | Vehículo indica inicio o fin de un modo especial de trabajo | Ver [`TB_VEHICULO_MODO_ESPECIAL`](#tb_vehiculo_modo_especial) |
+| 25     | JORNADA-ESTADO | Se indica un cambio de estado en la jornada de trabajo | Ver [`TB_JORNADA_ESTADO`](#tb_jornada_estado) |
 
 
 !!! warning "Validaciones según Status"
@@ -213,17 +212,17 @@ De esta forma, los motivos de los cambios de estado son estos:
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora de la posición
-- `idMotivo` - Motivo del status
+- `idMotivo` - Tipo/motivo del status
 - `gps` - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
-- `idEstadoVehiculo` - Estado actual del vehículo (opcional pero recomendado en INFORMACION-PERIODICA)
+- `idEstadoVehiculo` - Estado actual del vehículo
 
 > Si no existe actividad/jornada iniciada, los campos `idActividadJornada` y `idJornada` serán nulos/vacios. El campo `idEstadoVehiculo` tendrá valor 0.<br>
 > El envio del `status` localización (1) puede ser sustituido si el `status` periodico (11) se recibe con información de localización, si no fuera así, ambos `status` (1,11) deben ser enviados.
 
 
-#### Tipo: TRASLADO
+#### Tipo: TRASLADO-ESTADO
 
 Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados).
 
@@ -235,7 +234,7 @@ Los estados por los que pasa un traslado están recogidos en la tabla [`TB_TRASL
 - `idUnidad` - Unidad administrativa
 - `idEstadoTraslado` - Estado del traslado (referencia [`TB_TRASLADO_ESTADOS`](#tb_traslado_estados))
 - `fechaHora` - Fecha y hora del cambio de estado del traslado
-- `idMotivo` - Motivo del status ver tabla TB_TRASLADO_ESTADOS
+- `idMotivo` - Tipo/motivo del status ver tabla TB_TRASLADO_ESTADOS
 - `gps` - Posición GPS del vehículo en el momento del cambio de estado
 - `idActividadJornada` - Tipo de actividad de la jornada
 - `idJornada` - Identificador de la jornada de trabajo
@@ -256,7 +255,7 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idUnidad` - Unidad administrativa
 - `idEstadoVehiculo` - Estado del vehículo (referencia [`TB_VEHICULO_ESTADOS`](#tb_vehiculo_estados))
 - `fechaHora` - Fecha y hora del cambio de estado
-- `idMotivo` - Motivo del cambio
+- `idMotivo` - Tipo/Motivo del status
 - `gps` - Posición GPS del vehículo (longitud, latitud, rumbo, velocidad)
 - `idActividadJornada` - Tipo de actividad de la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idJornada` - Identificador de la jornada de trabajo
@@ -270,7 +269,7 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora del cambio de modo
-- `idMotivo` - Motivo del status
+- `idMotivo` - Tipo/motivo del status
 - `idModoEspecial` - Tipo de modo especial (referencia [`TB_VEHICULO_MODO_ESPECIAL`](#tb_vehiculo_modo_especial))
 - `gps` - Posición GPS del vehículo
 - `idActividadJornada` - Tipo de actividad de la jornada
@@ -280,14 +279,14 @@ Un `status` de un vehículo siempre debe estar encuadrado en una Jornada de Trab
 > El campo `idModoEspecial` tendrá un valor en el rango permitido. **0** si se desactiva el Modo.<br>
 > Se deben enviar un `status` al entrar en el Modo, y otro al salir del Modo.
 
-#### Tipo: JORNADA
+#### Tipo: JORNADA-ESTADO
 
 **Campos requeridos:**
 
 - `idVehiculo` - Matrícula del vehículo
 - `idUnidad` - Unidad administrativa
 - `fechaHora` - Fecha y hora del evento de jornada
-- `idMotivo` - Motivo del status
+- `idMotivo` - Tipo/motivo del status
 - `gps` - Posición GPS del vehículo
 - `idActividadJornada` - Tipo de actividad que se va a realizar en la jornada (referencia [`TB_ACTIVIDAD_TIPOS`](#tb_actividad_tipos))
 - `idEstadoJonada` - Estado o operación sobre la jornada (referencia [`TB_JORNADA_ESTADO`](#tb_jornada_estado))
