@@ -77,13 +77,13 @@ Alta de un nuevo status (cambio de estado)
     | idTrasladoExterno | string | Id único del traslado en el sistema externo (opcional). |
     | idVehiculo | string | Matrícula del vehículo asociado al status (requerido). |
     | idUnidad | string | Id de la unidad administrativa asociada al status (requerido). |
-    | idEstadoTraslado | string | Id del estado del traslado (opcional). Referencia: [TB_TRASLADO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_traslado_estados). |
-    | idEstadoVehiculo | string | Id del estado del vehículo (opcional). Referencia: [TB_VEHICULO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_vehiculo_estados). |
+    | idEstadoTraslado | string | Id del estado del traslado (opcional). Referencia: [TB_TRASLADO_ESTADOS](CircuitoA-doc_funcional.md#tb_traslado_estados). |
+    | idEstadoVehiculo | string | Id del estado del vehículo (opcional). Referencia: [TB_VEHICULO_ESTADOS](CircuitoA-doc_funcional.md#tb_vehiculo_estados). |
     | fechaHora | date-time | Fecha y hora del estado en hora local (formato ISO 8601). Ejemplo: 2021-02-12T20:26:28+02:00 (requerido). |
-    | idMotivo | string | Motivo/origen del status (opcional). Referencia: [TB_MOTIVO_ESTADOS](CircuitoA-doc_funcional.md#entidad-tb_motivo_estados). |
-    | gps | Gps | Posición GPS donde se ha generado el status (opcional según caso de uso). |
-    | idActividadJornada | string | Tipo de actividad de la jornada (opcional). Referencia: [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#entidad-tb_actividad_tipos). |
-    | idJornada | string | Id/código de la jornada en la que se ha generado este status (opcional). |
+    | idMotivo | string | Motivo/origen del status. Referencia: [TB_MOTIVO_ESTADOS](CircuitoA-doc_funcional.md#tb_tipo_status). |
+    | gps | Gps | Posición GPS donde se ha generado el status. |
+    | idActividadJornada | string | Tipo de actividad de la jornada. Referencia: [TB_ACTIVIDAD_TIPOS](CircuitoA-doc_funcional.md#tb_actividad_tipos). |
+    | idJornada | string | Id/código de la jornada en la que se ha generado este status. |
     | kms       | number | Kilómetros del vehículo en el momento de la operación (opcional). |
 
 
